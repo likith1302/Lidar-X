@@ -16,8 +16,11 @@ logger = logging.getLogger(__name__)
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Application lifespan context manager for startup and shutdown routines."""
+    import os
+    import gc
     try:
-        startup_info = FastFRNetInferenceService.validate_startup()
+        is_render = os.environ.get("RENDER", "").lower() in ("true", "1")
+        startup_info = FastFRNetInferenceService.validate_startup(skip_smoke_test=is_render)
         logger.info(f"Fast-FRNet models initialized: {startup_info['status']} on {startup_info['device']}")
     except Exception as e:
         logger.warning(f"Fast-FRNet startup check encountered notice: {e}")
@@ -27,6 +30,7 @@ async def lifespan(app: FastAPI):
         logger.info("Available replay sessions initialized successfully.")
     except Exception as e:
         logger.warning(f"Could not auto-initialize default replay session: {e}")
+    gc.collect()
     yield
 
 

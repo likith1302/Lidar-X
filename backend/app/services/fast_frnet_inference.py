@@ -100,10 +100,17 @@ class FastFRNetInferenceService:
         m_type = cls.normalize_model_type(model_type)
 
         with cls._lock:
+            # On memory-constrained hosts (e.g. Render 512MB), keep at most 1 active model in RAM
+            if os.environ.get("RENDER", "").lower() in ("true", "1") and len(cls._models) >= 1:
+                cls._models.clear()
+                gc.collect()
+
             if m_type in cls._models:
                 return cls._models[m_type]
 
             device = cls.get_device()
+            if device.type == "cpu":
+                torch.set_num_threads(1)
             checkpoint_path = model_settings.get_resolved_checkpoint_path(m_type)
             spec = model_settings.get_spec(m_type)
 
@@ -381,8 +388,8 @@ class FastFRNetInferenceService:
         return samples
 
     @classmethod
-    def validate_startup(cls) -> Dict[str, Any]:
-        """Validate presence of both checkpoints, print status, and run smoke test."""
+    def validate_startup(cls, skip_smoke_test: bool = False) -> Dict[str, Any]:
+        """Validate presence of both checkpoints, print status, and optionally run smoke test."""
         rellis_path = model_settings.get_resolved_checkpoint_path("rellis")
         sk_path = model_settings.get_resolved_checkpoint_path("semantickitti")
 
@@ -409,6 +416,25 @@ class FastFRNetInferenceService:
         )
         print(banner, flush=True)
         logger.info(banner)
+
+        # Check if smoke test should be skipped (e.g. on Render 512MB RAM free tier)
+        skip = (
+            skip_smoke_test
+            or os.environ.get("RENDER", "").lower() in ("true", "1")
+            or os.environ.get("SKIP_STARTUP_SMOKE_TEST", "").lower() in ("true", "1")
+        )
+        if skip:
+            print("Render / low-memory environment detected: skipping startup smoke test to preserve 512MB RAM (models load lazily on-demand).", flush=True)
+            cls._startup_validated = True
+            return {
+                "rellis_path": str(rellis_path),
+                "rellis_size_bytes": rellis_size,
+                "semantickitti_path": str(sk_path),
+                "semantickitti_size_bytes": sk_size,
+                "device": cls.get_device().type,
+                "smoke_test_points": 0,
+                "status": "READY (Lazy Loading)",
+            }
 
         # Lightweight smoke test
         print("Running Fast-FRNet startup smoke test...", flush=True)
