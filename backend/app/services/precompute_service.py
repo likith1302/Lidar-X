@@ -364,6 +364,12 @@ class PrecomputeReplayService:
         
         Safely bounds preloading up to max_preload (default 100) to prevent RAM exhaustion on 4,000+ frame datasets.
         """
+        import os
+        if os.environ.get("RENDER", "").lower() in ("true", "1"):
+            # On memory-constrained hosts (Render 512MB), stream frames directly from disk
+            # without preloading into RAM to prevent out-of-memory crashes
+            return 0
+
         session_dir = self.get_session_dir(session_id)
         if not session_dir.exists():
             return 0

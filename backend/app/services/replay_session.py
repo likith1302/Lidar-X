@@ -112,11 +112,16 @@ class ReplaySession:
         # Determine target Fast-FRNet model and pre-load once in memory for the session
         sess_context = (self.session_id + " " + self.sequence_name).lower()
         self.target_model_type: str = "rellis" if any(k in sess_context for k in ("rellis", "offroad", "off_road")) else "semantickitti"
-        try:
-            FastFRNetInferenceService.load_model(self.target_model_type)
-            logger.info(f"Fast-FRNet ({self.target_model_type.upper()}) cached in memory for replay session '{self.session_id}'")
-        except Exception as e:
-            logger.warning(f"Fast-FRNet initial model load for session '{self.session_id}' deferred: {e}")
+        import os
+        is_render = os.environ.get("RENDER", "").lower() in ("true", "1")
+        if not self.is_demo and not is_render:
+            try:
+                FastFRNetInferenceService.load_model(self.target_model_type)
+                logger.info(f"Fast-FRNet ({self.target_model_type.upper()}) cached in memory for replay session '{self.session_id}'")
+            except Exception as e:
+                logger.warning(f"Fast-FRNet initial model load for session '{self.session_id}' deferred: {e}")
+        else:
+            logger.info(f"Fast-FRNet model load deferred for session '{self.session_id}' (is_demo={self.is_demo}, is_render={is_render})")
 
         # In-memory LRU cache: frame_index -> processed frame payload (bounded to max 128 frames)
         self._frame_cache: Dict[int, ReplayFrameStreamPayload] = {}

@@ -26,8 +26,11 @@ async def lifespan(app: FastAPI):
         logger.warning(f"Fast-FRNet startup check encountered notice: {e}")
 
     try:
-        replay_session_manager.ensure_available_sessions()
-        logger.info("Available replay sessions initialized successfully.")
+        if not is_render:
+            replay_session_manager.ensure_available_sessions()
+            logger.info("Available replay sessions initialized successfully.")
+        else:
+            logger.info("Render low-memory mode: replay sessions will initialize lazily on-demand to stay well under 512MB RAM.")
     except Exception as e:
         logger.warning(f"Could not auto-initialize default replay session: {e}")
     gc.collect()
