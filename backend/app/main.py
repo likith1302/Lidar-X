@@ -45,10 +45,11 @@ app = FastAPI(
 )
 
 
-# Configure CORS for local frontend development
+# Configure CORS for local development and Render deployment
 app.add_middleware(
     CORSMiddleware,
     allow_origins=settings.CORS_ORIGINS if isinstance(settings.CORS_ORIGINS, list) else ["*"],
+    allow_origin_regex=r"^https?://.*",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
