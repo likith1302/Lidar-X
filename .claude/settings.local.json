@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -c \"import ast; ast.parse\\(open\\('backend/app/api/routes/replay.py'\\).read\\(\\)\\); print\\('replay.py OK'\\)\")",
+      "Bash(python3 -c \"import ast; ast.parse\\(open\\('backend/app/services/replay_session.py'\\).read\\(\\)\\); print\\('replay_session.py OK'\\)\")"
+    ]
+  }
+}

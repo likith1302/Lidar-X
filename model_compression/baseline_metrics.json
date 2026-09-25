@@ -1,0 +1,160 @@
+{
+  "rellis": {
+    "model_variant": "baseline_fp32",
+    "spec": "rellis",
+    "frame_count": 5,
+    "total_points": 182237,
+    "latency_ms": {
+      "mean": 2060.66,
+      "std": 11.68,
+      "min": 2039.35,
+      "max": 2074.82,
+      "p50": 2062.33,
+      "p95": 2072.97
+    },
+    "fps": 0.49,
+    "peak_ram_mb": 982.38,
+    "frames": [
+      {
+        "frame_id": "000000",
+        "point_count": 36383,
+        "latency_ms": 2074.82,
+        "ram_mb": 815.63,
+        "output_shape": [
+          36383,
+          20
+        ]
+      },
+      {
+        "frame_id": "000001",
+        "point_count": 36468,
+        "latency_ms": 2062.33,
+        "ram_mb": 916.96,
+        "output_shape": [
+          36468,
+          20
+        ]
+      },
+      {
+        "frame_id": "000002",
+        "point_count": 36478,
+        "latency_ms": 2039.35,
+        "ram_mb": 957.89,
+        "output_shape": [
+          36478,
+          20
+        ]
+      },
+      {
+        "frame_id": "000003",
+        "point_count": 36413,
+        "latency_ms": 2065.57,
+        "ram_mb": 967.71,
+        "output_shape": [
+          36413,
+          20
+        ]
+      },
+      {
+        "frame_id": "000004",
+        "point_count": 36495,
+        "latency_ms": 2061.23,
+        "ram_mb": 982.09,
+        "output_shape": [
+          36495,
+          20
+        ]
+      }
+    ],
+    "checkpoint_file": "best_frnet_rellis.pth",
+    "file_size_bytes": 121068314,
+    "file_size_mb": 121.07,
+    "param_count": 10019252,
+    "weight_dtype": "torch.float32"
+  },
+  "semantickitti": {
+    "model_variant": "baseline_fp32",
+    "spec": "semantickitti",
+    "frame_count": 5,
+    "total_points": 621887,
+    "latency_ms": {
+      "mean": 4708.87,
+      "std": 83.06,
+      "min": 4639.22,
+      "max": 4870.43,
+      "p50": 4679.08,
+      "p95": 4835.72
+    },
+    "fps": 0.21,
+    "peak_ram_mb": 2729.34,
+    "frames": [
+      {
+        "frame_id": "000000",
+        "point_count": 124668,
+        "latency_ms": 4870.43,
+        "ram_mb": 2702.79,
+        "output_shape": [
+          124668,
+          20
+        ],
+        "miou": 0.17,
+        "accuracy": 0.33
+      },
+      {
+        "frame_id": "000001",
+        "point_count": 124605,
+        "latency_ms": 4696.88,
+        "ram_mb": 2705.97,
+        "output_shape": [
+          124605,
+          20
+        ],
+        "miou": 0.17,
+        "accuracy": 0.39
+      },
+      {
+        "frame_id": "000002",
+        "point_count": 124478,
+        "latency_ms": 4658.73,
+        "ram_mb": 2730.48,
+        "output_shape": [
+          124478,
+          20
+        ],
+        "miou": 0.11,
+        "accuracy": 0.26
+      },
+      {
+        "frame_id": "000003",
+        "point_count": 124167,
+        "latency_ms": 4639.22,
+        "ram_mb": 2732.5,
+        "output_shape": [
+          124167,
+          20
+        ],
+        "miou": 0.14,
+        "accuracy": 0.29
+      },
+      {
+        "frame_id": "000004",
+        "point_count": 123969,
+        "latency_ms": 4679.08,
+        "ram_mb": 2728.98,
+        "output_shape": [
+          123969,
+          20
+        ],
+        "miou": 0.11,
+        "accuracy": 0.28
+      }
+    ],
+    "mIoU": 0.14,
+    "accuracy": 0.31,
+    "checkpoint_file": "best_frnet_semantickitti.pth",
+    "file_size_bytes": 40327676,
+    "file_size_mb": 40.33,
+    "param_count": 10019252,
+    "weight_dtype": "torch.float32"
+  }
+}

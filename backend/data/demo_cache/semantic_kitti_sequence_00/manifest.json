@@ -1,0 +1,612 @@
+{
+  "session_id": "semantic_kitti_sequence_00",
+  "sequence_name": "semantic_kitti_sequence_00",
+  "total_frames": 100,
+  "status": "completed",
+  "completed_count": 100,
+  "failed_frames": [],
+  "created_at": "2026-09-15T14:21:57.209944+00:00",
+  "frames": [
+    {
+      "index": 0,
+      "frame_id": "000000.bin",
+      "result_file": "frames/000000.json",
+      "status": "completed"
+    },
+    {
+      "index": 1,
+      "frame_id": "000001.bin",
+      "result_file": "frames/000001.json",
+      "status": "completed"
+    },
+    {
+      "index": 2,
+      "frame_id": "000002.bin",
+      "result_file": "frames/000002.json",
+      "status": "completed"
+    },
+    {
+      "index": 3,
+      "frame_id": "000003.bin",
+      "result_file": "frames/000003.json",
+      "status": "completed"
+    },
+    {
+      "index": 4,
+      "frame_id": "000004.bin",
+      "result_file": "frames/000004.json",
+      "status": "completed"
+    },
+    {
+      "index": 5,
+      "frame_id": "000005.bin",
+      "result_file": "frames/000005.json",
+      "status": "completed"
+    },
+    {
+      "index": 6,
+      "frame_id": "000006.bin",
+      "result_file": "frames/000006.json",
+      "status": "completed"
+    },
+    {
+      "index": 7,
+      "frame_id": "000007.bin",
+      "result_file": "frames/000007.json",
+      "status": "completed"
+    },
+    {
+      "index": 8,
+      "frame_id": "000008.bin",
+      "result_file": "frames/000008.json",
+      "status": "completed"
+    },
+    {
+      "index": 9,
+      "frame_id": "000009.bin",
+      "result_file": "frames/000009.json",
+      "status": "completed"
+    },
+    {
+      "index": 10,
+      "frame_id": "000010.bin",
+      "result_file": "frames/000010.json",
+      "status": "completed"
+    },
+    {
+      "index": 11,
+      "frame_id": "000011.bin",
+      "result_file": "frames/000011.json",
+      "status": "completed"
+    },
+    {
+      "index": 12,
+      "frame_id": "000012.bin",
+      "result_file": "frames/000012.json",
+      "status": "completed"
+    },
+    {
+      "index": 13,
+      "frame_id": "000013.bin",
+      "result_file": "frames/000013.json",
+      "status": "completed"
+    },
+    {
+      "index": 14,
+      "frame_id": "000014.bin",
+      "result_file": "frames/000014.json",
+      "status": "completed"
+    },
+    {
+      "index": 15,
+      "frame_id": "000015.bin",
+      "result_file": "frames/000015.json",
+      "status": "completed"
+    },
+    {
+      "index": 16,
+      "frame_id": "000016.bin",
+      "result_file": "frames/000016.json",
+      "status": "completed"
+    },
+    {
+      "index": 17,
+      "frame_id": "000017.bin",
+      "result_file": "frames/000017.json",
+      "status": "completed"
+    },
+    {
+      "index": 18,
+      "frame_id": "000018.bin",
+      "result_file": "frames/000018.json",
+      "status": "completed"
+    },
+    {
+      "index": 19,
+      "frame_id": "000019.bin",
+      "result_file": "frames/000019.json",
+      "status": "completed"
+    },
+    {
+      "index": 20,
+      "frame_id": "000020.bin",
+      "result_file": "frames/000020.json",
+      "status": "completed"
+    },
+    {
+      "index": 21,
+      "frame_id": "000021.bin",
+      "result_file": "frames/000021.json",
+      "status": "completed"
+    },
+    {
+      "index": 22,
+      "frame_id": "000022.bin",
+      "result_file": "frames/000022.json",
+      "status": "completed"
+    },
+    {
+      "index": 23,
+      "frame_id": "000023.bin",
+      "result_file": "frames/000023.json",
+      "status": "completed"
+    },
+    {
+      "index": 24,
+      "frame_id": "000024.bin",
+      "result_file": "frames/000024.json",
+      "status": "completed"
+    },
+    {
+      "index": 25,
+      "frame_id": "000025.bin",
+      "result_file": "frames/000025.json",
+      "status": "completed"
+    },
+    {
+      "index": 26,
+      "frame_id": "000026.bin",
+      "result_file": "frames/000026.json",
+      "status": "completed"
+    },
+    {
+      "index": 27,
+      "frame_id": "000027.bin",
+      "result_file": "frames/000027.json",
+      "status": "completed"
+    },
+    {
+      "index": 28,
+      "frame_id": "000028.bin",
+      "result_file": "frames/000028.json",
+      "status": "completed"
+    },
+    {
+      "index": 29,
+      "frame_id": "000029.bin",
+      "result_file": "frames/000029.json",
+      "status": "completed"
+    },
+    {
+      "index": 30,
+      "frame_id": "000030.bin",
+      "result_file": "frames/000030.json",
+      "status": "completed"
+    },
+    {
+      "index": 31,
+      "frame_id": "000031.bin",
+      "result_file": "frames/000031.json",
+      "status": "completed"
+    },
+    {
+      "index": 32,
+      "frame_id": "000032.bin",
+      "result_file": "frames/000032.json",
+      "status": "completed"
+    },
+    {
+      "index": 33,
+      "frame_id": "000033.bin",
+      "result_file": "frames/000033.json",
+      "status": "completed"
+    },
+    {
+      "index": 34,
+      "frame_id": "000034.bin",
+      "result_file": "frames/000034.json",
+      "status": "completed"
+    },
+    {
+      "index": 35,
+      "frame_id": "000035.bin",
+      "result_file": "frames/000035.json",
+      "status": "completed"
+    },
+    {
+      "index": 36,
+      "frame_id": "000036.bin",
+      "result_file": "frames/000036.json",
+      "status": "completed"
+    },
+    {
+      "index": 37,
+      "frame_id": "000037.bin",
+      "result_file": "frames/000037.json",
+      "status": "completed"
+    },
+    {
+      "index": 38,
+      "frame_id": "000038.bin",
+      "result_file": "frames/000038.json",
+      "status": "completed"
+    },
+    {
+      "index": 39,
+      "frame_id": "000039.bin",
+      "result_file": "frames/000039.json",
+      "status": "completed"
+    },
+    {
+      "index": 40,
+      "frame_id": "000040.bin",
+      "result_file": "frames/000040.json",
+      "status": "completed"
+    },
+    {
+      "index": 41,
+      "frame_id": "000041.bin",
+      "result_file": "frames/000041.json",
+      "status": "completed"
+    },
+    {
+      "index": 42,
+      "frame_id": "000042.bin",
+      "result_file": "frames/000042.json",
+      "status": "completed"
+    },
+    {
+      "index": 43,
+      "frame_id": "000043.bin",
+      "result_file": "frames/000043.json",
+      "status": "completed"
+    },
+    {
+      "index": 44,
+      "frame_id": "000044.bin",
+      "result_file": "frames/000044.json",
+      "status": "completed"
+    },
+    {
+      "index": 45,
+      "frame_id": "000045.bin",
+      "result_file": "frames/000045.json",
+      "status": "completed"
+    },
+    {
+      "index": 46,
+      "frame_id": "000046.bin",
+      "result_file": "frames/000046.json",
+      "status": "completed"
+    },
+    {
+      "index": 47,
+      "frame_id": "000047.bin",
+      "result_file": "frames/000047.json",
+      "status": "completed"
+    },
+    {
+      "index": 48,
+      "frame_id": "000048.bin",
+      "result_file": "frames/000048.json",
+      "status": "completed"
+    },
+    {
+      "index": 49,
+      "frame_id": "000049.bin",
+      "result_file": "frames/000049.json",
+      "status": "completed"
+    },
+    {
+      "index": 50,
+      "frame_id": "000050.bin",
+      "result_file": "frames/000050.json",
+      "status": "completed"
+    },
+    {
+      "index": 51,
+      "frame_id": "000051.bin",
+      "result_file": "frames/000051.json",
+      "status": "completed"
+    },
+    {
+      "index": 52,
+      "frame_id": "000052.bin",
+      "result_file": "frames/000052.json",
+      "status": "completed"
+    },
+    {
+      "index": 53,
+      "frame_id": "000053.bin",
+      "result_file": "frames/000053.json",
+      "status": "completed"
+    },
+    {
+      "index": 54,
+      "frame_id": "000054.bin",
+      "result_file": "frames/000054.json",
+      "status": "completed"
+    },
+    {
+      "index": 55,
+      "frame_id": "000055.bin",
+      "result_file": "frames/000055.json",
+      "status": "completed"
+    },
+    {
+      "index": 56,
+      "frame_id": "000056.bin",
+      "result_file": "frames/000056.json",
+      "status": "completed"
+    },
+    {
+      "index": 57,
+      "frame_id": "000057.bin",
+      "result_file": "frames/000057.json",
+      "status": "completed"
+    },
+    {
+      "index": 58,
+      "frame_id": "000058.bin",
+      "result_file": "frames/000058.json",
+      "status": "completed"
+    },
+    {
+      "index": 59,
+      "frame_id": "000059.bin",
+      "result_file": "frames/000059.json",
+      "status": "completed"
+    },
+    {
+      "index": 60,
+      "frame_id": "000060.bin",
+      "result_file": "frames/000060.json",
+      "status": "completed"
+    },
+    {
+      "index": 61,
+      "frame_id": "000061.bin",
+      "result_file": "frames/000061.json",
+      "status": "completed"
+    },
+    {
+      "index": 62,
+      "frame_id": "000062.bin",
+      "result_file": "frames/000062.json",
+      "status": "completed"
+    },
+    {
+      "index": 63,
+      "frame_id": "000063.bin",
+      "result_file": "frames/000063.json",
+      "status": "completed"
+    },
+    {
+      "index": 64,
+      "frame_id": "000064.bin",
+      "result_file": "frames/000064.json",
+      "status": "completed"
+    },
+    {
+      "index": 65,
+      "frame_id": "000065.bin",
+      "result_file": "frames/000065.json",
+      "status": "completed"
+    },
+    {
+      "index": 66,
+      "frame_id": "000066.bin",
+      "result_file": "frames/000066.json",
+      "status": "completed"
+    },
+    {
+      "index": 67,
+      "frame_id": "000067.bin",
+      "result_file": "frames/000067.json",
+      "status": "completed"
+    },
+    {
+      "index": 68,
+      "frame_id": "000068.bin",
+      "result_file": "frames/000068.json",
+      "status": "completed"
+    },
+    {
+      "index": 69,
+      "frame_id": "000069.bin",
+      "result_file": "frames/000069.json",
+      "status": "completed"
+    },
+    {
+      "index": 70,
+      "frame_id": "000070.bin",
+      "result_file": "frames/000070.json",
+      "status": "completed"
+    },
+    {
+      "index": 71,
+      "frame_id": "000071.bin",
+      "result_file": "frames/000071.json",
+      "status": "completed"
+    },
+    {
+      "index": 72,
+      "frame_id": "000072.bin",
+      "result_file": "frames/000072.json",
+      "status": "completed"
+    },
+    {
+      "index": 73,
+      "frame_id": "000073.bin",
+      "result_file": "frames/000073.json",
+      "status": "completed"
+    },
+    {
+      "index": 74,
+      "frame_id": "000074.bin",
+      "result_file": "frames/000074.json",
+      "status": "completed"
+    },
+    {
+      "index": 75,
+      "frame_id": "000075.bin",
+      "result_file": "frames/000075.json",
+      "status": "completed"
+    },
+    {
+      "index": 76,
+      "frame_id": "000076.bin",
+      "result_file": "frames/000076.json",
+      "status": "completed"
+    },
+    {
+      "index": 77,
+      "frame_id": "000077.bin",
+      "result_file": "frames/000077.json",
+      "status": "completed"
+    },
+    {
+      "index": 78,
+      "frame_id": "000078.bin",
+      "result_file": "frames/000078.json",
+      "status": "completed"
+    },
+    {
+      "index": 79,
+      "frame_id": "000079.bin",
+      "result_file": "frames/000079.json",
+      "status": "completed"
+    },
+    {
+      "index": 80,
+      "frame_id": "000080.bin",
+      "result_file": "frames/000080.json",
+      "status": "completed"
+    },
+    {
+      "index": 81,
+      "frame_id": "000081.bin",
+      "result_file": "frames/000081.json",
+      "status": "completed"
+    },
+    {
+      "index": 82,
+      "frame_id": "000082.bin",
+      "result_file": "frames/000082.json",
+      "status": "completed"
+    },
+    {
+      "index": 83,
+      "frame_id": "000083.bin",
+      "result_file": "frames/000083.json",
+      "status": "completed"
+    },
+    {
+      "index": 84,
+      "frame_id": "000084.bin",
+      "result_file": "frames/000084.json",
+      "status": "completed"
+    },
+    {
+      "index": 85,
+      "frame_id": "000085.bin",
+      "result_file": "frames/000085.json",
+      "status": "completed"
+    },
+    {
+      "index": 86,
+      "frame_id": "000086.bin",
+      "result_file": "frames/000086.json",
+      "status": "completed"
+    },
+    {
+      "index": 87,
+      "frame_id": "000087.bin",
+      "result_file": "frames/000087.json",
+      "status": "completed"
+    },
+    {
+      "index": 88,
+      "frame_id": "000088.bin",
+      "result_file": "frames/000088.json",
+      "status": "completed"
+    },
+    {
+      "index": 89,
+      "frame_id": "000089.bin",
+      "result_file": "frames/000089.json",
+      "status": "completed"
+    },
+    {
+      "index": 90,
+      "frame_id": "000090.bin",
+      "result_file": "frames/000090.json",
+      "status": "completed"
+    },
+    {
+      "index": 91,
+      "frame_id": "000091.bin",
+      "result_file": "frames/000091.json",
+      "status": "completed"
+    },
+    {
+      "index": 92,
+      "frame_id": "000092.bin",
+      "result_file": "frames/000092.json",
+      "status": "completed"
+    },
+    {
+      "index": 93,
+      "frame_id": "000093.bin",
+      "result_file": "frames/000093.json",
+      "status": "completed"
+    },
+    {
+      "index": 94,
+      "frame_id": "000094.bin",
+      "result_file": "frames/000094.json",
+      "status": "completed"
+    },
+    {
+      "index": 95,
+      "frame_id": "000095.bin",
+      "result_file": "frames/000095.json",
+      "status": "completed"
+    },
+    {
+      "index": 96,
+      "frame_id": "000096.bin",
+      "result_file": "frames/000096.json",
+      "status": "completed"
+    },
+    {
+      "index": 97,
+      "frame_id": "000097.bin",
+      "result_file": "frames/000097.json",
+      "status": "completed"
+    },
+    {
+      "index": 98,
+      "frame_id": "000098.bin",
+      "result_file": "frames/000098.json",
+      "status": "completed"
+    },
+    {
+      "index": 99,
+      "frame_id": "000099.bin",
+      "result_file": "frames/000099.json",
+      "status": "completed"
+    }
+  ],
+  "updated_at": "2026-09-15T14:32:50.704512+00:00"
+}

@@ -1,0 +1,14 @@
+coarse_resolution_m: 3.0
+default_cells_query_limit: 5000
+far_zone_max_distance_m: 80.0
+fine_resolution_m: 0.75
+medium_resolution_m: 1.5
+mid_zone_max_distance_m: 28.0
+near_zone_max_distance_m: 12.0
+obstacle_height_span_threshold_m: 0.3
+obstacle_override: true
+roughness_refinement_threshold_m: 0.1
+safety_priority: true
+slope_refinement_threshold_deg: 10.0
+step_refinement_threshold_m: 0.1
+terrain_complexity_override: true

@@ -1,0 +1,6182 @@
+{
+  "session_id": "semantic_kitti_sequence_00",
+  "sequence_name": "semantic_kitti_sequence_00",
+  "total_frames_processed": 45,
+  "average_timings": {
+    "lidar_preprocessing_ms": 26.52,
+    "salsanext_inference_ms": 2183.04,
+    "terrain_analysis_ms": 28.9,
+    "object_detection_tracking_ms": 9.89,
+    "adaptive_grid_ms": 56.44,
+    "total_latency_ms": 2396.43,
+    "preprocessing_ms": 26.52,
+    "inference_ms": 2183.04,
+    "terrain_ms": 28.9,
+    "clustering_ms": 9.89,
+    "grid_ms": 56.44,
+    "total_ms": 2396.43
+  },
+  "average_fps": 0.43,
+  "average_memory_reduction_percentage": 98.55,
+  "total_points_processed": 5397862,
+  "total_cells_generated": 70347,
+  "session_accuracy": {
+    "accuracy_available": true,
+    "reason_unavailable": null,
+    "overall_accuracy": 0.9657,
+    "mean_iou": 0.5778,
+    "evaluated_points_count": 5217872,
+    "per_class_metrics": [
+      {
+        "class_name": "outlier",
+        "class_id": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "iou": 0.0,
+        "support_points": 78
+      },
+      {
+        "class_name": "car",
+        "class_id": 10,
+        "precision": 0.9906,
+        "recall": 0.9888,
+        "f1_score": 0.9897,
+        "iou": 0.9795,
+        "support_points": 18400
+      },
+      {
+        "class_name": "bicycle",
+        "class_id": 11,
+        "precision": 0.75,
+        "recall": 0.806,
+        "f1_score": 0.777,
+        "iou": 0.6353,
+        "support_points": 67
+      },
+      {
+        "class_name": "motorcycle",
+        "class_id": 15,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "iou": 0.0,
+        "support_points": 1
+      },
+      {
+        "class_name": "other-vehicle",
+        "class_id": 20,
+        "precision": 0.9524,
+        "recall": 0.9569,
+        "f1_score": 0.9547,
+        "iou": 0.9132,
+        "support_points": 209
+      },
+      {
+        "class_name": "road",
+        "class_id": 40,
+        "precision": 0.9845,
+        "recall": 0.9901,
+        "f1_score": 0.9873,
+        "iou": 0.9749,
+        "support_points": 35874
+      },
+      {
+        "class_name": "parking",
+        "class_id": 44,
+        "precision": 0.9463,
+        "recall": 0.9265,
+        "f1_score": 0.9363,
+        "iou": 0.8802,
+        "support_points": 6696
+      },
+      {
+        "class_name": "sidewalk",
+        "class_id": 48,
+        "precision": 0.9578,
+        "recall": 0.9704,
+        "f1_score": 0.9641,
+        "iou": 0.9306,
+        "support_points": 14863
+      },
+      {
+        "class_name": "other-ground",
+        "class_id": 49,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "iou": 0.0,
+        "support_points": 47
+      },
+      {
+        "class_name": "building",
+        "class_id": 50,
+        "precision": 0.9849,
+        "recall": 0.9967,
+        "f1_score": 0.9907,
+        "iou": 0.9816,
+        "support_points": 24887
+      },
+      {
+        "class_name": "fence",
+        "class_id": 51,
+        "precision": 0.3415,
+        "recall": 0.1217,
+        "f1_score": 0.1795,
+        "iou": 0.0986,
+        "support_points": 115
+      },
+      {
+        "class_name": "other-structure",
+        "class_id": 52,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "iou": 0.0,
+        "support_points": 46
+      },
+      {
+        "class_name": "lane-marking",
+        "class_id": 60,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "iou": 0.0,
+        "support_points": 82
+      },
+      {
+        "class_name": "vegetation",
+        "class_id": 70,
+        "precision": 0.8457,
+        "recall": 0.9563,
+        "f1_score": 0.8976,
+        "iou": 0.8142,
+        "support_points": 14381
+      },
+      {
+        "class_name": "trunk",
+        "class_id": 71,
+        "precision": 0.9141,
+        "recall": 0.9501,
+        "f1_score": 0.9318,
+        "iou": 0.8722,
+        "support_points": 1624
+      },
+      {
+        "class_name": "terrain",
+        "class_id": 72,
+        "precision": 0.5482,
+        "recall": 0.4596,
+        "f1_score": 0.5,
+        "iou": 0.3333,
+        "support_points": 235
+      },
+      {
+        "class_name": "pole",
+        "class_id": 80,
+        "precision": 0.9266,
+        "recall": 0.7773,
+        "f1_score": 0.8454,
+        "iou": 0.7321,
+        "support_points": 422
+      },
+      {
+        "class_name": "traffic-sign",
+        "class_id": 81,
+        "precision": 0.8802,
+        "recall": 0.9455,
+        "f1_score": 0.9117,
+        "iou": 0.8377,
+        "support_points": 202
+      },
+      {
+        "class_name": "other-object",
+        "class_id": 99,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "iou": 0.0,
+        "support_points": 2057
+      }
+    ],
+    "object_class_summaries": {
+      "vehicle": {
+        "class_name": "vehicle",
+        "class_id": null,
+        "precision": 0.9893,
+        "recall": 0.9878,
+        "f1_score": 0.9886,
+        "iou": 0.9774,
+        "support_points": 18677
+      },
+      "pedestrian": {
+        "class_name": "pedestrian",
+        "class_id": null,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "iou": 0.0,
+        "support_points": 0
+      },
+      "cyclist": {
+        "class_name": "cyclist",
+        "class_id": null,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "iou": 0.0,
+        "support_points": 0
+      },
+      "pole": {
+        "class_name": "pole",
+        "class_id": null,
+        "precision": 0.9192,
+        "recall": 0.9174,
+        "f1_score": 0.9183,
+        "iou": 0.8489,
+        "support_points": 2046
+      },
+      "static_obstacle": {
+        "class_name": "static_obstacle",
+        "class_id": null,
+        "precision": 0.9859,
+        "recall": 0.9188,
+        "f1_score": 0.9512,
+        "iou": 0.9069,
+        "support_points": 27683
+      }
+    },
+    "distance_bins": [
+      {
+        "bin_range": "0-10m",
+        "min_dist_m": 0.0,
+        "max_dist_m": 10.0,
+        "point_count": 63936,
+        "accuracy": 0.972,
+        "mean_iou": 0.7775
+      },
+      {
+        "bin_range": "10-30m",
+        "min_dist_m": 10.0,
+        "max_dist_m": 30.0,
+        "point_count": 50646,
+        "accuracy": 0.9469,
+        "mean_iou": 0.5421
+      },
+      {
+        "bin_range": "30-50m",
+        "min_dist_m": 30.0,
+        "max_dist_m": 50.0,
+        "point_count": 5704,
+        "accuracy": 0.9165,
+        "mean_iou": 0.3883
+      },
+      {
+        "bin_range": "50-100m",
+        "min_dist_m": 50.0,
+        "max_dist_m": 100.0,
+        "point_count": 0,
+        "accuracy": 0.0,
+        "mean_iou": 0.0
+      }
+    ]
+  },
+  "recent_frame_metrics": [
+    {
+      "frame_id": "000089.bin",
+      "session_id": "semantic_kitti_sequence_00",
+      "timestamp": "2026-09-15T14:32:23.247680+00:00",
+      "device_used": "CPU/Disk",
+      "model_name": "Fast-FRNet (SEMANTICKITTI)",
+      "timings": {
+        "lidar_preprocessing_ms": 51.52,
+        "salsanext_inference_ms": 2184.02,
+        "terrain_analysis_ms": 34.32,
+        "object_detection_tracking_ms": 12.46,
+        "adaptive_grid_ms": 55.68,
+        "total_latency_ms": 2432.2,
+        "preprocessing_ms": 51.52,
+        "inference_ms": 2184.02,
+        "terrain_ms": 34.32,
+        "clustering_ms": 12.46,
+        "grid_ms": 55.68,
+        "total_ms": 2432.2
+      },
+      "actual_fps": 0.41,
+      "resource_metrics": {
+        "input_point_count": 120549,
+        "fine_cells_count": 973,
+        "medium_cells_count": 372,
+        "coarse_cells_count": 223,
+        "total_cells_count": 1568,
+        "adaptive_grid_bytes": 100352,
+        "serialized_map_bytes": 200704,
+        "uniform_baseline_bytes": 11334400,
+        "uniform_voxel_size_m": 0.5,
+        "uniform_bytes_per_voxel": 4,
+        "uniform_total_voxels": 2833600,
+        "memory_reduction_percentage": 99.11,
+        "spatial_bounds": {
+          "min_x": -75.376,
+          "max_x": 78.325,
+          "min_y": -51.262,
+          "max_y": 63.691,
+          "min_z": -17.128,
+          "max_z": 2.829,
+          "span_x": 153.701,
+          "span_y": 114.953,
+          "span_z": 19.958,
+          "volume_m3": 352619.044
+        },
+        "methodology_note": "Uniform 3D baseline is calculated as (span_x/voxel_size) * (span_y/voxel_size) * (span_z/voxel_size) * bytes_per_voxel using real scan bounding box."
+      },
+      "accuracy_metrics": {
+        "accuracy_available": true,
+        "reason_unavailable": null,
+        "overall_accuracy": 0.9661,
+        "mean_iou": 0.5793,
+        "evaluated_points_count": 119186,
+        "per_class_metrics": [
+          {
+            "class_name": "outlier",
+            "class_id": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 57
+          },
+          {
+            "class_name": "car",
+            "class_id": 10,
+            "precision": 0.9922,
+            "recall": 0.9931,
+            "f1_score": 0.9926,
+            "iou": 0.9854,
+            "support_points": 22096
+          },
+          {
+            "class_name": "bicycle",
+            "class_id": 11,
+            "precision": 0.7541,
+            "recall": 0.7797,
+            "f1_score": 0.7667,
+            "iou": 0.6216,
+            "support_points": 59
+          },
+          {
+            "class_name": "other-vehicle",
+            "class_id": 20,
+            "precision": 0.8696,
+            "recall": 0.7921,
+            "f1_score": 0.829,
+            "iou": 0.708,
+            "support_points": 101
+          },
+          {
+            "class_name": "road",
+            "class_id": 40,
+            "precision": 0.9846,
+            "recall": 0.9907,
+            "f1_score": 0.9876,
+            "iou": 0.9755,
+            "support_points": 27829
+          },
+          {
+            "class_name": "parking",
+            "class_id": 44,
+            "precision": 0.9683,
+            "recall": 0.942,
+            "f1_score": 0.9549,
+            "iou": 0.9138,
+            "support_points": 10654
+          },
+          {
+            "class_name": "sidewalk",
+            "class_id": 48,
+            "precision": 0.9561,
+            "recall": 0.9617,
+            "f1_score": 0.9589,
+            "iou": 0.921,
+            "support_points": 6817
+          },
+          {
+            "class_name": "building",
+            "class_id": 50,
+            "precision": 0.9869,
+            "recall": 0.9929,
+            "f1_score": 0.9899,
+            "iou": 0.98,
+            "support_points": 30629
+          },
+          {
+            "class_name": "fence",
+            "class_id": 51,
+            "precision": 0.7159,
+            "recall": 0.6136,
+            "f1_score": 0.6608,
+            "iou": 0.4935,
+            "support_points": 308
+          },
+          {
+            "class_name": "other-structure",
+            "class_id": 52,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 20
+          },
+          {
+            "class_name": "lane-marking",
+            "class_id": 60,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 7
+          },
+          {
+            "class_name": "vegetation",
+            "class_id": 70,
+            "precision": 0.8866,
+            "recall": 0.9612,
+            "f1_score": 0.9224,
+            "iou": 0.8559,
+            "support_points": 15912
+          },
+          {
+            "class_name": "trunk",
+            "class_id": 71,
+            "precision": 0.8982,
+            "recall": 0.9613,
+            "f1_score": 0.9287,
+            "iou": 0.8669,
+            "support_points": 2560
+          },
+          {
+            "class_name": "terrain",
+            "class_id": 72,
+            "precision": 0.7647,
+            "recall": 0.5954,
+            "f1_score": 0.6695,
+            "iou": 0.5032,
+            "support_points": 131
+          },
+          {
+            "class_name": "pole",
+            "class_id": 80,
+            "precision": 0.9317,
+            "recall": 0.764,
+            "f1_score": 0.8395,
+            "iou": 0.7235,
+            "support_points": 339
+          },
+          {
+            "class_name": "traffic-sign",
+            "class_id": 81,
+            "precision": 0.8939,
+            "recall": 0.9821,
+            "f1_score": 0.9359,
+            "iou": 0.8795,
+            "support_points": 223
+          },
+          {
+            "class_name": "other-object",
+            "class_id": 99,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 1440
+          },
+          {
+            "class_name": "moving-bicyclist",
+            "class_id": 253,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 4
+          }
+        ],
+        "object_class_summaries": {
+          "vehicle": {
+            "class_name": "vehicle",
+            "class_id": null,
+            "precision": 0.9914,
+            "recall": 0.9917,
+            "f1_score": 0.9916,
+            "iou": 0.9833,
+            "support_points": 22260
+          },
+          "pedestrian": {
+            "class_name": "pedestrian",
+            "class_id": null,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 0
+          },
+          "cyclist": {
+            "class_name": "cyclist",
+            "class_id": null,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 4
+          },
+          "pole": {
+            "class_name": "pole",
+            "class_id": null,
+            "precision": 0.9029,
+            "recall": 0.94,
+            "f1_score": 0.9211,
+            "iou": 0.8537,
+            "support_points": 2899
+          },
+          "static_obstacle": {
+            "class_name": "static_obstacle",
+            "class_id": null,
+            "precision": 0.9878,
+            "recall": 0.9477,
+            "f1_score": 0.9673,
+            "iou": 0.9367,
+            "support_points": 32939
+          }
+        },
+        "distance_bins": [
+          {
+            "bin_range": "0-10m",
+            "min_dist_m": 0.0,
+            "max_dist_m": 10.0,
+            "point_count": 71415,
+            "accuracy": 0.9736,
+            "mean_iou": 0.7749
+          },
+          {
+            "bin_range": "10-30m",
+            "min_dist_m": 10.0,
+            "max_dist_m": 30.0,
+            "point_count": 42873,
+            "accuracy": 0.9601,
+            "mean_iou": 0.5942
+          },
+          {
+            "bin_range": "30-50m",
+            "min_dist_m": 30.0,
+            "max_dist_m": 50.0,
+            "point_count": 4898,
+            "accuracy": 0.9089,
+            "mean_iou": 0.5181
+          },
+          {
+            "bin_range": "50-100m",
+            "min_dist_m": 50.0,
+            "max_dist_m": 100.0,
+            "point_count": 0,
+            "accuracy": 0.0,
+            "mean_iou": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "frame_id": "000090.bin",
+      "session_id": "semantic_kitti_sequence_00",
+      "timestamp": "2026-09-15T14:32:25.857848+00:00",
+      "device_used": "CPU/Disk",
+      "model_name": "Fast-FRNet (SEMANTICKITTI)",
+      "timings": {
+        "lidar_preprocessing_ms": 26.6,
+        "salsanext_inference_ms": 2311.0,
+        "terrain_analysis_ms": 48.52,
+        "object_detection_tracking_ms": 13.41,
+        "adaptive_grid_ms": 55.48,
+        "total_latency_ms": 2575.06,
+        "preprocessing_ms": 26.6,
+        "inference_ms": 2311.0,
+        "terrain_ms": 48.52,
+        "clustering_ms": 13.41,
+        "grid_ms": 55.48,
+        "total_ms": 2575.06
+      },
+      "actual_fps": 0.39,
+      "resource_metrics": {
+        "input_point_count": 120965,
+        "fine_cells_count": 975,
+        "medium_cells_count": 373,
+        "coarse_cells_count": 218,
+        "total_cells_count": 1566,
+        "adaptive_grid_bytes": 100224,
+        "serialized_map_bytes": 200448,
+        "uniform_baseline_bytes": 8617392,
+        "uniform_voxel_size_m": 0.5,
+        "uniform_bytes_per_voxel": 4,
+        "uniform_total_voxels": 2154348,
+        "memory_reduction_percentage": 98.84,
+        "spatial_bounds": {
+          "min_x": -74.579,
+          "max_x": 79.708,
+          "min_y": -51.5,
+          "max_y": 72.797,
+          "min_z": -11.033,
+          "max_z": 2.901,
+          "span_x": 154.287,
+          "span_y": 124.297,
+          "span_z": 13.934,
+          "volume_m3": 267216.846
+        },
+        "methodology_note": "Uniform 3D baseline is calculated as (span_x/voxel_size) * (span_y/voxel_size) * (span_z/voxel_size) * bytes_per_voxel using real scan bounding box."
+      },
+      "accuracy_metrics": {
+        "accuracy_available": true,
+        "reason_unavailable": null,
+        "overall_accuracy": 0.9646,
+        "mean_iou": 0.5653,
+        "evaluated_points_count": 119555,
+        "per_class_metrics": [
+          {
+            "class_name": "outlier",
+            "class_id": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 81
+          },
+          {
+            "class_name": "car",
+            "class_id": 10,
+            "precision": 0.9927,
+            "recall": 0.9927,
+            "f1_score": 0.9927,
+            "iou": 0.9855,
+            "support_points": 22344
+          },
+          {
+            "class_name": "bicycle",
+            "class_id": 11,
+            "precision": 0.8182,
+            "recall": 0.6,
+            "f1_score": 0.6923,
+            "iou": 0.5294,
+            "support_points": 60
+          },
+          {
+            "class_name": "other-vehicle",
+            "class_id": 20,
+            "precision": 0.8824,
+            "recall": 0.8633,
+            "f1_score": 0.8727,
+            "iou": 0.7742,
+            "support_points": 139
+          },
+          {
+            "class_name": "road",
+            "class_id": 40,
+            "precision": 0.9825,
+            "recall": 0.9904,
+            "f1_score": 0.9864,
+            "iou": 0.9732,
+            "support_points": 28381
+          },
+          {
+            "class_name": "parking",
+            "class_id": 44,
+            "precision": 0.965,
+            "recall": 0.9389,
+            "f1_score": 0.9518,
+            "iou": 0.908,
+            "support_points": 10360
+          },
+          {
+            "class_name": "sidewalk",
+            "class_id": 48,
+            "precision": 0.948,
+            "recall": 0.9702,
+            "f1_score": 0.959,
+            "iou": 0.9212,
+            "support_points": 7746
+          },
+          {
+            "class_name": "building",
+            "class_id": 50,
+            "precision": 0.9849,
+            "recall": 0.9952,
+            "f1_score": 0.9901,
+            "iou": 0.9803,
+            "support_points": 30014
+          },
+          {
+            "class_name": "fence",
+            "class_id": 51,
+            "precision": 0.6767,
+            "recall": 0.549,
+            "f1_score": 0.6062,
+            "iou": 0.4349,
+            "support_points": 286
+          },
+          {
+            "class_name": "other-structure",
+            "class_id": 52,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 25
+          },
+          {
+            "class_name": "lane-marking",
+            "class_id": 60,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 21
+          },
+          {
+            "class_name": "vegetation",
+            "class_id": 70,
+            "precision": 0.8855,
+            "recall": 0.9512,
+            "f1_score": 0.9172,
+            "iou": 0.847,
+            "support_points": 15436
+          },
+          {
+            "class_name": "trunk",
+            "class_id": 71,
+            "precision": 0.9014,
+            "recall": 0.9602,
+            "f1_score": 0.9299,
+            "iou": 0.8689,
+            "support_points": 2485
+          },
+          {
+            "class_name": "terrain",
+            "class_id": 72,
+            "precision": 0.6555,
+            "recall": 0.4845,
+            "f1_score": 0.5571,
+            "iou": 0.3861,
+            "support_points": 161
+          },
+          {
+            "class_name": "pole",
+            "class_id": 80,
+            "precision": 0.9319,
+            "recall": 0.7625,
+            "f1_score": 0.8387,
+            "iou": 0.7222,
+            "support_points": 341
+          },
+          {
+            "class_name": "traffic-sign",
+            "class_id": 81,
+            "precision": 0.8836,
+            "recall": 0.9491,
+            "f1_score": 0.9152,
+            "iou": 0.8436,
+            "support_points": 216
+          },
+          {
+            "class_name": "other-object",
+            "class_id": 99,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 1455
+          },
+          {
+            "class_name": "moving-bicyclist",
+            "class_id": 253,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 4
+          }
+        ],
+        "object_class_summaries": {
+          "vehicle": {
+            "class_name": "vehicle",
+            "class_id": null,
+            "precision": 0.9919,
+            "recall": 0.9908,
+            "f1_score": 0.9913,
+            "iou": 0.9828,
+            "support_points": 22547
+          },
+          "pedestrian": {
+            "class_name": "pedestrian",
+            "class_id": null,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 0
+          },
+          "cyclist": {
+            "class_name": "cyclist",
+            "class_id": null,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 4
+          },
+          "pole": {
+            "class_name": "pole",
+            "class_id": null,
+            "precision": 0.906,
+            "recall": 0.9381,
+            "f1_score": 0.9218,
+            "iou": 0.8549,
+            "support_points": 2826
+          },
+          "static_obstacle": {
+            "class_name": "static_obstacle",
+            "class_id": null,
+            "precision": 0.9871,
+            "recall": 0.9492,
+            "f1_score": 0.9678,
+            "iou": 0.9376,
+            "support_points": 32312
+          }
+        },
+        "distance_bins": [
+          {
+            "bin_range": "0-10m",
+            "min_dist_m": 0.0,
+            "max_dist_m": 10.0,
+            "point_count": 70982,
+            "accuracy": 0.9735,
+            "mean_iou": 0.712
+          },
+          {
+            "bin_range": "10-30m",
+            "min_dist_m": 10.0,
+            "max_dist_m": 30.0,
+            "point_count": 43545,
+            "accuracy": 0.9563,
+            "mean_iou": 0.5772
+          },
+          {
+            "bin_range": "30-50m",
+            "min_dist_m": 30.0,
+            "max_dist_m": 50.0,
+            "point_count": 5028,
+            "accuracy": 0.9121,
+            "mean_iou": 0.4805
+          },
+          {
+            "bin_range": "50-100m",
+            "min_dist_m": 50.0,
+            "max_dist_m": 100.0,
+            "point_count": 0,
+            "accuracy": 0.0,
+            "mean_iou": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "frame_id": "000090.bin",
+      "session_id": "semantic_kitti_sequence_00",
+      "timestamp": "2026-09-15T14:32:25.857848+00:00",
+      "device_used": "CPU/Disk",
+      "model_name": "Fast-FRNet (SEMANTICKITTI)",
+      "timings": {
+        "lidar_preprocessing_ms": 26.6,
+        "salsanext_inference_ms": 2311.0,
+        "terrain_analysis_ms": 48.52,
+        "object_detection_tracking_ms": 13.41,
+        "adaptive_grid_ms": 55.48,
+        "total_latency_ms": 2575.06,
+        "preprocessing_ms": 26.6,
+        "inference_ms": 2311.0,
+        "terrain_ms": 48.52,
+        "clustering_ms": 13.41,
+        "grid_ms": 55.48,
+        "total_ms": 2575.06
+      },
+      "actual_fps": 0.39,
+      "resource_metrics": {
+        "input_point_count": 120965,
+        "fine_cells_count": 975,
+        "medium_cells_count": 373,
+        "coarse_cells_count": 218,
+        "total_cells_count": 1566,
+        "adaptive_grid_bytes": 100224,
+        "serialized_map_bytes": 200448,
+        "uniform_baseline_bytes": 8617392,
+        "uniform_voxel_size_m": 0.5,
+        "uniform_bytes_per_voxel": 4,
+        "uniform_total_voxels": 2154348,
+        "memory_reduction_percentage": 98.84,
+        "spatial_bounds": {
+          "min_x": -74.579,
+          "max_x": 79.708,
+          "min_y": -51.5,
+          "max_y": 72.797,
+          "min_z": -11.033,
+          "max_z": 2.901,
+          "span_x": 154.287,
+          "span_y": 124.297,
+          "span_z": 13.934,
+          "volume_m3": 267216.846
+        },
+        "methodology_note": "Uniform 3D baseline is calculated as (span_x/voxel_size) * (span_y/voxel_size) * (span_z/voxel_size) * bytes_per_voxel using real scan bounding box."
+      },
+      "accuracy_metrics": {
+        "accuracy_available": true,
+        "reason_unavailable": null,
+        "overall_accuracy": 0.9646,
+        "mean_iou": 0.5653,
+        "evaluated_points_count": 119555,
+        "per_class_metrics": [
+          {
+            "class_name": "outlier",
+            "class_id": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 81
+          },
+          {
+            "class_name": "car",
+            "class_id": 10,
+            "precision": 0.9927,
+            "recall": 0.9927,
+            "f1_score": 0.9927,
+            "iou": 0.9855,
+            "support_points": 22344
+          },
+          {
+            "class_name": "bicycle",
+            "class_id": 11,
+            "precision": 0.8182,
+            "recall": 0.6,
+            "f1_score": 0.6923,
+            "iou": 0.5294,
+            "support_points": 60
+          },
+          {
+            "class_name": "other-vehicle",
+            "class_id": 20,
+            "precision": 0.8824,
+            "recall": 0.8633,
+            "f1_score": 0.8727,
+            "iou": 0.7742,
+            "support_points": 139
+          },
+          {
+            "class_name": "road",
+            "class_id": 40,
+            "precision": 0.9825,
+            "recall": 0.9904,
+            "f1_score": 0.9864,
+            "iou": 0.9732,
+            "support_points": 28381
+          },
+          {
+            "class_name": "parking",
+            "class_id": 44,
+            "precision": 0.965,
+            "recall": 0.9389,
+            "f1_score": 0.9518,
+            "iou": 0.908,
+            "support_points": 10360
+          },
+          {
+            "class_name": "sidewalk",
+            "class_id": 48,
+            "precision": 0.948,
+            "recall": 0.9702,
+            "f1_score": 0.959,
+            "iou": 0.9212,
+            "support_points": 7746
+          },
+          {
+            "class_name": "building",
+            "class_id": 50,
+            "precision": 0.9849,
+            "recall": 0.9952,
+            "f1_score": 0.9901,
+            "iou": 0.9803,
+            "support_points": 30014
+          },
+          {
+            "class_name": "fence",
+            "class_id": 51,
+            "precision": 0.6767,
+            "recall": 0.549,
+            "f1_score": 0.6062,
+            "iou": 0.4349,
+            "support_points": 286
+          },
+          {
+            "class_name": "other-structure",
+            "class_id": 52,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 25
+          },
+          {
+            "class_name": "lane-marking",
+            "class_id": 60,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 21
+          },
+          {
+            "class_name": "vegetation",
+            "class_id": 70,
+            "precision": 0.8855,
+            "recall": 0.9512,
+            "f1_score": 0.9172,
+            "iou": 0.847,
+            "support_points": 15436
+          },
+          {
+            "class_name": "trunk",
+            "class_id": 71,
+            "precision": 0.9014,
+            "recall": 0.9602,
+            "f1_score": 0.9299,
+            "iou": 0.8689,
+            "support_points": 2485
+          },
+          {
+            "class_name": "terrain",
+            "class_id": 72,
+            "precision": 0.6555,
+            "recall": 0.4845,
+            "f1_score": 0.5571,
+            "iou": 0.3861,
+            "support_points": 161
+          },
+          {
+            "class_name": "pole",
+            "class_id": 80,
+            "precision": 0.9319,
+            "recall": 0.7625,
+            "f1_score": 0.8387,
+            "iou": 0.7222,
+            "support_points": 341
+          },
+          {
+            "class_name": "traffic-sign",
+            "class_id": 81,
+            "precision": 0.8836,
+            "recall": 0.9491,
+            "f1_score": 0.9152,
+            "iou": 0.8436,
+            "support_points": 216
+          },
+          {
+            "class_name": "other-object",
+            "class_id": 99,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 1455
+          },
+          {
+            "class_name": "moving-bicyclist",
+            "class_id": 253,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 4
+          }
+        ],
+        "object_class_summaries": {
+          "vehicle": {
+            "class_name": "vehicle",
+            "class_id": null,
+            "precision": 0.9919,
+            "recall": 0.9908,
+            "f1_score": 0.9913,
+            "iou": 0.9828,
+            "support_points": 22547
+          },
+          "pedestrian": {
+            "class_name": "pedestrian",
+            "class_id": null,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 0
+          },
+          "cyclist": {
+            "class_name": "cyclist",
+            "class_id": null,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 4
+          },
+          "pole": {
+            "class_name": "pole",
+            "class_id": null,
+            "precision": 0.906,
+            "recall": 0.9381,
+            "f1_score": 0.9218,
+            "iou": 0.8549,
+            "support_points": 2826
+          },
+          "static_obstacle": {
+            "class_name": "static_obstacle",
+            "class_id": null,
+            "precision": 0.9871,
+            "recall": 0.9492,
+            "f1_score": 0.9678,
+            "iou": 0.9376,
+            "support_points": 32312
+          }
+        },
+        "distance_bins": [
+          {
+            "bin_range": "0-10m",
+            "min_dist_m": 0.0,
+            "max_dist_m": 10.0,
+            "point_count": 70982,
+            "accuracy": 0.9735,
+            "mean_iou": 0.712
+          },
+          {
+            "bin_range": "10-30m",
+            "min_dist_m": 10.0,
+            "max_dist_m": 30.0,
+            "point_count": 43545,
+            "accuracy": 0.9563,
+            "mean_iou": 0.5772
+          },
+          {
+            "bin_range": "30-50m",
+            "min_dist_m": 30.0,
+            "max_dist_m": 50.0,
+            "point_count": 5028,
+            "accuracy": 0.9121,
+            "mean_iou": 0.4805
+          },
+          {
+            "bin_range": "50-100m",
+            "min_dist_m": 50.0,
+            "max_dist_m": 100.0,
+            "point_count": 0,
+            "accuracy": 0.0,
+            "mean_iou": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "frame_id": "000091.bin",
+      "session_id": "semantic_kitti_sequence_00",
+      "timestamp": "2026-09-15T14:32:28.199083+00:00",
+      "device_used": "CPU/Disk",
+      "model_name": "Fast-FRNet (SEMANTICKITTI)",
+      "timings": {
+        "lidar_preprocessing_ms": 26.38,
+        "salsanext_inference_ms": 2084.8,
+        "terrain_analysis_ms": 28.72,
+        "object_detection_tracking_ms": 10.78,
+        "adaptive_grid_ms": 49.53,
+        "total_latency_ms": 2295.71,
+        "preprocessing_ms": 26.38,
+        "inference_ms": 2084.8,
+        "terrain_ms": 28.72,
+        "clustering_ms": 10.78,
+        "grid_ms": 49.53,
+        "total_ms": 2295.71
+      },
+      "actual_fps": 0.44,
+      "resource_metrics": {
+        "input_point_count": 121333,
+        "fine_cells_count": 1030,
+        "medium_cells_count": 385,
+        "coarse_cells_count": 228,
+        "total_cells_count": 1643,
+        "adaptive_grid_bytes": 105152,
+        "serialized_map_bytes": 210304,
+        "uniform_baseline_bytes": 8506400,
+        "uniform_voxel_size_m": 0.5,
+        "uniform_bytes_per_voxel": 4,
+        "uniform_total_voxels": 2126600,
+        "memory_reduction_percentage": 98.76,
+        "spatial_bounds": {
+          "min_x": -74.914,
+          "max_x": 79.713,
+          "min_y": -49.473,
+          "max_y": 72.872,
+          "min_z": -10.816,
+          "max_z": 2.887,
+          "span_x": 154.628,
+          "span_y": 122.344,
+          "span_z": 13.703,
+          "volume_m3": 259228.378
+        },
+        "methodology_note": "Uniform 3D baseline is calculated as (span_x/voxel_size) * (span_y/voxel_size) * (span_z/voxel_size) * bytes_per_voxel using real scan bounding box."
+      },
+      "accuracy_metrics": {
+        "accuracy_available": true,
+        "reason_unavailable": null,
+        "overall_accuracy": 0.9663,
+        "mean_iou": 0.5859,
+        "evaluated_points_count": 119892,
+        "per_class_metrics": [
+          {
+            "class_name": "outlier",
+            "class_id": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 94
+          },
+          {
+            "class_name": "car",
+            "class_id": 10,
+            "precision": 0.9932,
+            "recall": 0.9928,
+            "f1_score": 0.993,
+            "iou": 0.9861,
+            "support_points": 22659
+          },
+          {
+            "class_name": "bicycle",
+            "class_id": 11,
+            "precision": 0.9318,
+            "recall": 0.6833,
+            "f1_score": 0.7885,
+            "iou": 0.6508,
+            "support_points": 60
+          },
+          {
+            "class_name": "other-vehicle",
+            "class_id": 20,
+            "precision": 0.9375,
+            "recall": 0.894,
+            "f1_score": 0.9153,
+            "iou": 0.8438,
+            "support_points": 151
+          },
+          {
+            "class_name": "road",
+            "class_id": 40,
+            "precision": 0.9826,
+            "recall": 0.9915,
+            "f1_score": 0.9871,
+            "iou": 0.9745,
+            "support_points": 28867
+          },
+          {
+            "class_name": "parking",
+            "class_id": 44,
+            "precision": 0.968,
+            "recall": 0.9449,
+            "f1_score": 0.9563,
+            "iou": 0.9163,
+            "support_points": 9573
+          },
+          {
+            "class_name": "sidewalk",
+            "class_id": 48,
+            "precision": 0.9563,
+            "recall": 0.9699,
+            "f1_score": 0.9631,
+            "iou": 0.9288,
+            "support_points": 8682
+          },
+          {
+            "class_name": "building",
+            "class_id": 50,
+            "precision": 0.9914,
+            "recall": 0.9947,
+            "f1_score": 0.993,
+            "iou": 0.9861,
+            "support_points": 29697
+          },
+          {
+            "class_name": "fence",
+            "class_id": 51,
+            "precision": 0.8125,
+            "recall": 0.6602,
+            "f1_score": 0.7284,
+            "iou": 0.5729,
+            "support_points": 256
+          },
+          {
+            "class_name": "other-structure",
+            "class_id": 52,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 26
+          },
+          {
+            "class_name": "lane-marking",
+            "class_id": 60,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 21
+          },
+          {
+            "class_name": "vegetation",
+            "class_id": 70,
+            "precision": 0.8774,
+            "recall": 0.9624,
+            "f1_score": 0.9179,
+            "iou": 0.8483,
+            "support_points": 15114
+          },
+          {
+            "class_name": "trunk",
+            "class_id": 71,
+            "precision": 0.9059,
+            "recall": 0.9468,
+            "f1_score": 0.9259,
+            "iou": 0.862,
+            "support_points": 2389
+          },
+          {
+            "class_name": "terrain",
+            "class_id": 72,
+            "precision": 0.5444,
+            "recall": 0.5476,
+            "f1_score": 0.546,
+            "iou": 0.3755,
+            "support_points": 168
+          },
+          {
+            "class_name": "pole",
+            "class_id": 80,
+            "precision": 0.9461,
+            "recall": 0.772,
+            "f1_score": 0.8502,
+            "iou": 0.7395,
+            "support_points": 364
+          },
+          {
+            "class_name": "traffic-sign",
+            "class_id": 81,
+            "precision": 0.8952,
+            "recall": 0.9579,
+            "f1_score": 0.9255,
+            "iou": 0.8613,
+            "support_points": 214
+          },
+          {
+            "class_name": "other-object",
+            "class_id": 99,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 1555
+          },
+          {
+            "class_name": "moving-bicyclist",
+            "class_id": 253,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 2
+          }
+        ],
+        "object_class_summaries": {
+          "vehicle": {
+            "class_name": "vehicle",
+            "class_id": null,
+            "precision": 0.9928,
+            "recall": 0.9913,
+            "f1_score": 0.9921,
+            "iou": 0.9843,
+            "support_points": 22872
+          },
+          "pedestrian": {
+            "class_name": "pedestrian",
+            "class_id": null,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 0
+          },
+          "cyclist": {
+            "class_name": "cyclist",
+            "class_id": null,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 2
+          },
+          "pole": {
+            "class_name": "pole",
+            "class_id": null,
+            "precision": 0.9112,
+            "recall": 0.9248,
+            "f1_score": 0.918,
+            "iou": 0.8484,
+            "support_points": 2753
+          },
+          "static_obstacle": {
+            "class_name": "static_obstacle",
+            "class_id": null,
+            "precision": 0.9917,
+            "recall": 0.9436,
+            "f1_score": 0.9671,
+            "iou": 0.9362,
+            "support_points": 32086
+          }
+        },
+        "distance_bins": [
+          {
+            "bin_range": "0-10m",
+            "min_dist_m": 0.0,
+            "max_dist_m": 10.0,
+            "point_count": 70077,
+            "accuracy": 0.9751,
+            "mean_iou": 0.7856
+          },
+          {
+            "bin_range": "10-30m",
+            "min_dist_m": 10.0,
+            "max_dist_m": 30.0,
+            "point_count": 44570,
+            "accuracy": 0.9577,
+            "mean_iou": 0.5899
+          },
+          {
+            "bin_range": "30-50m",
+            "min_dist_m": 30.0,
+            "max_dist_m": 50.0,
+            "point_count": 5245,
+            "accuracy": 0.9232,
+            "mean_iou": 0.568
+          },
+          {
+            "bin_range": "50-100m",
+            "min_dist_m": 50.0,
+            "max_dist_m": 100.0,
+            "point_count": 0,
+            "accuracy": 0.0,
+            "mean_iou": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "frame_id": "000091.bin",
+      "session_id": "semantic_kitti_sequence_00",
+      "timestamp": "2026-09-15T14:32:28.199083+00:00",
+      "device_used": "CPU/Disk",
+      "model_name": "Fast-FRNet (SEMANTICKITTI)",
+      "timings": {
+        "lidar_preprocessing_ms": 26.38,
+        "salsanext_inference_ms": 2084.8,
+        "terrain_analysis_ms": 28.72,
+        "object_detection_tracking_ms": 10.78,
+        "adaptive_grid_ms": 49.53,
+        "total_latency_ms": 2295.71,
+        "preprocessing_ms": 26.38,
+        "inference_ms": 2084.8,
+        "terrain_ms": 28.72,
+        "clustering_ms": 10.78,
+        "grid_ms": 49.53,
+        "total_ms": 2295.71
+      },
+      "actual_fps": 0.44,
+      "resource_metrics": {
+        "input_point_count": 121333,
+        "fine_cells_count": 1030,
+        "medium_cells_count": 385,
+        "coarse_cells_count": 228,
+        "total_cells_count": 1643,
+        "adaptive_grid_bytes": 105152,
+        "serialized_map_bytes": 210304,
+        "uniform_baseline_bytes": 8506400,
+        "uniform_voxel_size_m": 0.5,
+        "uniform_bytes_per_voxel": 4,
+        "uniform_total_voxels": 2126600,
+        "memory_reduction_percentage": 98.76,
+        "spatial_bounds": {
+          "min_x": -74.914,
+          "max_x": 79.713,
+          "min_y": -49.473,
+          "max_y": 72.872,
+          "min_z": -10.816,
+          "max_z": 2.887,
+          "span_x": 154.628,
+          "span_y": 122.344,
+          "span_z": 13.703,
+          "volume_m3": 259228.378
+        },
+        "methodology_note": "Uniform 3D baseline is calculated as (span_x/voxel_size) * (span_y/voxel_size) * (span_z/voxel_size) * bytes_per_voxel using real scan bounding box."
+      },
+      "accuracy_metrics": {
+        "accuracy_available": true,
+        "reason_unavailable": null,
+        "overall_accuracy": 0.9663,
+        "mean_iou": 0.5859,
+        "evaluated_points_count": 119892,
+        "per_class_metrics": [
+          {
+            "class_name": "outlier",
+            "class_id": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 94
+          },
+          {
+            "class_name": "car",
+            "class_id": 10,
+            "precision": 0.9932,
+            "recall": 0.9928,
+            "f1_score": 0.993,
+            "iou": 0.9861,
+            "support_points": 22659
+          },
+          {
+            "class_name": "bicycle",
+            "class_id": 11,
+            "precision": 0.9318,
+            "recall": 0.6833,
+            "f1_score": 0.7885,
+            "iou": 0.6508,
+            "support_points": 60
+          },
+          {
+            "class_name": "other-vehicle",
+            "class_id": 20,
+            "precision": 0.9375,
+            "recall": 0.894,
+            "f1_score": 0.9153,
+            "iou": 0.8438,
+            "support_points": 151
+          },
+          {
+            "class_name": "road",
+            "class_id": 40,
+            "precision": 0.9826,
+            "recall": 0.9915,
+            "f1_score": 0.9871,
+            "iou": 0.9745,
+            "support_points": 28867
+          },
+          {
+            "class_name": "parking",
+            "class_id": 44,
+            "precision": 0.968,
+            "recall": 0.9449,
+            "f1_score": 0.9563,
+            "iou": 0.9163,
+            "support_points": 9573
+          },
+          {
+            "class_name": "sidewalk",
+            "class_id": 48,
+            "precision": 0.9563,
+            "recall": 0.9699,
+            "f1_score": 0.9631,
+            "iou": 0.9288,
+            "support_points": 8682
+          },
+          {
+            "class_name": "building",
+            "class_id": 50,
+            "precision": 0.9914,
+            "recall": 0.9947,
+            "f1_score": 0.993,
+            "iou": 0.9861,
+            "support_points": 29697
+          },
+          {
+            "class_name": "fence",
+            "class_id": 51,
+            "precision": 0.8125,
+            "recall": 0.6602,
+            "f1_score": 0.7284,
+            "iou": 0.5729,
+            "support_points": 256
+          },
+          {
+            "class_name": "other-structure",
+            "class_id": 52,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 26
+          },
+          {
+            "class_name": "lane-marking",
+            "class_id": 60,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 21
+          },
+          {
+            "class_name": "vegetation",
+            "class_id": 70,
+            "precision": 0.8774,
+            "recall": 0.9624,
+            "f1_score": 0.9179,
+            "iou": 0.8483,
+            "support_points": 15114
+          },
+          {
+            "class_name": "trunk",
+            "class_id": 71,
+            "precision": 0.9059,
+            "recall": 0.9468,
+            "f1_score": 0.9259,
+            "iou": 0.862,
+            "support_points": 2389
+          },
+          {
+            "class_name": "terrain",
+            "class_id": 72,
+            "precision": 0.5444,
+            "recall": 0.5476,
+            "f1_score": 0.546,
+            "iou": 0.3755,
+            "support_points": 168
+          },
+          {
+            "class_name": "pole",
+            "class_id": 80,
+            "precision": 0.9461,
+            "recall": 0.772,
+            "f1_score": 0.8502,
+            "iou": 0.7395,
+            "support_points": 364
+          },
+          {
+            "class_name": "traffic-sign",
+            "class_id": 81,
+            "precision": 0.8952,
+            "recall": 0.9579,
+            "f1_score": 0.9255,
+            "iou": 0.8613,
+            "support_points": 214
+          },
+          {
+            "class_name": "other-object",
+            "class_id": 99,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 1555
+          },
+          {
+            "class_name": "moving-bicyclist",
+            "class_id": 253,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 2
+          }
+        ],
+        "object_class_summaries": {
+          "vehicle": {
+            "class_name": "vehicle",
+            "class_id": null,
+            "precision": 0.9928,
+            "recall": 0.9913,
+            "f1_score": 0.9921,
+            "iou": 0.9843,
+            "support_points": 22872
+          },
+          "pedestrian": {
+            "class_name": "pedestrian",
+            "class_id": null,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 0
+          },
+          "cyclist": {
+            "class_name": "cyclist",
+            "class_id": null,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 2
+          },
+          "pole": {
+            "class_name": "pole",
+            "class_id": null,
+            "precision": 0.9112,
+            "recall": 0.9248,
+            "f1_score": 0.918,
+            "iou": 0.8484,
+            "support_points": 2753
+          },
+          "static_obstacle": {
+            "class_name": "static_obstacle",
+            "class_id": null,
+            "precision": 0.9917,
+            "recall": 0.9436,
+            "f1_score": 0.9671,
+            "iou": 0.9362,
+            "support_points": 32086
+          }
+        },
+        "distance_bins": [
+          {
+            "bin_range": "0-10m",
+            "min_dist_m": 0.0,
+            "max_dist_m": 10.0,
+            "point_count": 70077,
+            "accuracy": 0.9751,
+            "mean_iou": 0.7856
+          },
+          {
+            "bin_range": "10-30m",
+            "min_dist_m": 10.0,
+            "max_dist_m": 30.0,
+            "point_count": 44570,
+            "accuracy": 0.9577,
+            "mean_iou": 0.5899
+          },
+          {
+            "bin_range": "30-50m",
+            "min_dist_m": 30.0,
+            "max_dist_m": 50.0,
+            "point_count": 5245,
+            "accuracy": 0.9232,
+            "mean_iou": 0.568
+          },
+          {
+            "bin_range": "50-100m",
+            "min_dist_m": 50.0,
+            "max_dist_m": 100.0,
+            "point_count": 0,
+            "accuracy": 0.0,
+            "mean_iou": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "frame_id": "000092.bin",
+      "session_id": "semantic_kitti_sequence_00",
+      "timestamp": "2026-09-15T14:32:30.787849+00:00",
+      "device_used": "CPU/Disk",
+      "model_name": "Fast-FRNet (SEMANTICKITTI)",
+      "timings": {
+        "lidar_preprocessing_ms": 25.93,
+        "salsanext_inference_ms": 2290.92,
+        "terrain_analysis_ms": 30.04,
+        "object_detection_tracking_ms": 20.4,
+        "adaptive_grid_ms": 73.62,
+        "total_latency_ms": 2553.06,
+        "preprocessing_ms": 25.93,
+        "inference_ms": 2290.92,
+        "terrain_ms": 30.04,
+        "clustering_ms": 20.4,
+        "grid_ms": 73.62,
+        "total_ms": 2553.06
+      },
+      "actual_fps": 0.39,
+      "resource_metrics": {
+        "input_point_count": 121500,
+        "fine_cells_count": 1043,
+        "medium_cells_count": 381,
+        "coarse_cells_count": 228,
+        "total_cells_count": 1652,
+        "adaptive_grid_bytes": 105728,
+        "serialized_map_bytes": 211456,
+        "uniform_baseline_bytes": 8701056,
+        "uniform_voxel_size_m": 0.5,
+        "uniform_bytes_per_voxel": 4,
+        "uniform_total_voxels": 2175264,
+        "memory_reduction_percentage": 98.78,
+        "spatial_bounds": {
+          "min_x": -75.875,
+          "max_x": 79.692,
+          "min_y": -50.99,
+          "max_y": 73.104,
+          "min_z": -10.635,
+          "max_z": 2.873,
+          "span_x": 155.566,
+          "span_y": 124.094,
+          "span_z": 13.509,
+          "volume_m3": 260786.241
+        },
+        "methodology_note": "Uniform 3D baseline is calculated as (span_x/voxel_size) * (span_y/voxel_size) * (span_z/voxel_size) * bytes_per_voxel using real scan bounding box."
+      },
+      "accuracy_metrics": {
+        "accuracy_available": true,
+        "reason_unavailable": null,
+        "overall_accuracy": 0.9639,
+        "mean_iou": 0.5822,
+        "evaluated_points_count": 119988,
+        "per_class_metrics": [
+          {
+            "class_name": "outlier",
+            "class_id": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 73
+          },
+          {
+            "class_name": "car",
+            "class_id": 10,
+            "precision": 0.9923,
+            "recall": 0.9928,
+            "f1_score": 0.9925,
+            "iou": 0.9851,
+            "support_points": 22381
+          },
+          {
+            "class_name": "bicycle",
+            "class_id": 11,
+            "precision": 0.82,
+            "recall": 0.7455,
+            "f1_score": 0.781,
+            "iou": 0.6406,
+            "support_points": 55
+          },
+          {
+            "class_name": "other-vehicle",
+            "class_id": 20,
+            "precision": 0.8811,
+            "recall": 0.9532,
+            "f1_score": 0.9157,
+            "iou": 0.8446,
+            "support_points": 171
+          },
+          {
+            "class_name": "road",
+            "class_id": 40,
+            "precision": 0.9826,
+            "recall": 0.9912,
+            "f1_score": 0.9869,
+            "iou": 0.9741,
+            "support_points": 29467
+          },
+          {
+            "class_name": "parking",
+            "class_id": 44,
+            "precision": 0.9568,
+            "recall": 0.9415,
+            "f1_score": 0.9491,
+            "iou": 0.9032,
+            "support_points": 9067
+          },
+          {
+            "class_name": "sidewalk",
+            "class_id": 48,
+            "precision": 0.9563,
+            "recall": 0.9702,
+            "f1_score": 0.9632,
+            "iou": 0.929,
+            "support_points": 9686
+          },
+          {
+            "class_name": "building",
+            "class_id": 50,
+            "precision": 0.9886,
+            "recall": 0.995,
+            "f1_score": 0.9918,
+            "iou": 0.9837,
+            "support_points": 29199
+          },
+          {
+            "class_name": "fence",
+            "class_id": 51,
+            "precision": 0.8246,
+            "recall": 0.6078,
+            "f1_score": 0.6998,
+            "iou": 0.5382,
+            "support_points": 232
+          },
+          {
+            "class_name": "other-structure",
+            "class_id": 52,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 25
+          },
+          {
+            "class_name": "lane-marking",
+            "class_id": 60,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 20
+          },
+          {
+            "class_name": "vegetation",
+            "class_id": 70,
+            "precision": 0.8732,
+            "recall": 0.9449,
+            "f1_score": 0.9076,
+            "iou": 0.8309,
+            "support_points": 14979
+          },
+          {
+            "class_name": "trunk",
+            "class_id": 71,
+            "precision": 0.9023,
+            "recall": 0.9444,
+            "f1_score": 0.9229,
+            "iou": 0.8569,
+            "support_points": 2250
+          },
+          {
+            "class_name": "terrain",
+            "class_id": 72,
+            "precision": 0.5234,
+            "recall": 0.6292,
+            "f1_score": 0.5714,
+            "iou": 0.4,
+            "support_points": 178
+          },
+          {
+            "class_name": "pole",
+            "class_id": 80,
+            "precision": 0.9475,
+            "recall": 0.7686,
+            "f1_score": 0.8488,
+            "iou": 0.7372,
+            "support_points": 376
+          },
+          {
+            "class_name": "traffic-sign",
+            "class_id": 81,
+            "precision": 0.8694,
+            "recall": 0.9816,
+            "f1_score": 0.9221,
+            "iou": 0.8554,
+            "support_points": 217
+          },
+          {
+            "class_name": "other-object",
+            "class_id": 99,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 1606
+          },
+          {
+            "class_name": "moving-bicyclist",
+            "class_id": 253,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 6
+          }
+        ],
+        "object_class_summaries": {
+          "vehicle": {
+            "class_name": "vehicle",
+            "class_id": null,
+            "precision": 0.991,
+            "recall": 0.9916,
+            "f1_score": 0.9913,
+            "iou": 0.9827,
+            "support_points": 22613
+          },
+          "pedestrian": {
+            "class_name": "pedestrian",
+            "class_id": null,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 0
+          },
+          "cyclist": {
+            "class_name": "cyclist",
+            "class_id": null,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 6
+          },
+          "pole": {
+            "class_name": "pole",
+            "class_id": null,
+            "precision": 0.9083,
+            "recall": 0.92,
+            "f1_score": 0.9141,
+            "iou": 0.8418,
+            "support_points": 2626
+          },
+          "static_obstacle": {
+            "class_name": "static_obstacle",
+            "class_id": null,
+            "precision": 0.9898,
+            "recall": 0.9422,
+            "f1_score": 0.9654,
+            "iou": 0.9331,
+            "support_points": 31630
+          }
+        },
+        "distance_bins": [
+          {
+            "bin_range": "0-10m",
+            "min_dist_m": 0.0,
+            "max_dist_m": 10.0,
+            "point_count": 68731,
+            "accuracy": 0.9716,
+            "mean_iou": 0.7781
+          },
+          {
+            "bin_range": "10-30m",
+            "min_dist_m": 10.0,
+            "max_dist_m": 30.0,
+            "point_count": 45714,
+            "accuracy": 0.9566,
+            "mean_iou": 0.588
+          },
+          {
+            "bin_range": "30-50m",
+            "min_dist_m": 30.0,
+            "max_dist_m": 50.0,
+            "point_count": 5543,
+            "accuracy": 0.9268,
+            "mean_iou": 0.4968
+          },
+          {
+            "bin_range": "50-100m",
+            "min_dist_m": 50.0,
+            "max_dist_m": 100.0,
+            "point_count": 0,
+            "accuracy": 0.0,
+            "mean_iou": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "frame_id": "000092.bin",
+      "session_id": "semantic_kitti_sequence_00",
+      "timestamp": "2026-09-15T14:32:30.787849+00:00",
+      "device_used": "CPU/Disk",
+      "model_name": "Fast-FRNet (SEMANTICKITTI)",
+      "timings": {
+        "lidar_preprocessing_ms": 25.93,
+        "salsanext_inference_ms": 2290.92,
+        "terrain_analysis_ms": 30.04,
+        "object_detection_tracking_ms": 20.4,
+        "adaptive_grid_ms": 73.62,
+        "total_latency_ms": 2553.06,
+        "preprocessing_ms": 25.93,
+        "inference_ms": 2290.92,
+        "terrain_ms": 30.04,
+        "clustering_ms": 20.4,
+        "grid_ms": 73.62,
+        "total_ms": 2553.06
+      },
+      "actual_fps": 0.39,
+      "resource_metrics": {
+        "input_point_count": 121500,
+        "fine_cells_count": 1043,
+        "medium_cells_count": 381,
+        "coarse_cells_count": 228,
+        "total_cells_count": 1652,
+        "adaptive_grid_bytes": 105728,
+        "serialized_map_bytes": 211456,
+        "uniform_baseline_bytes": 8701056,
+        "uniform_voxel_size_m": 0.5,
+        "uniform_bytes_per_voxel": 4,
+        "uniform_total_voxels": 2175264,
+        "memory_reduction_percentage": 98.78,
+        "spatial_bounds": {
+          "min_x": -75.875,
+          "max_x": 79.692,
+          "min_y": -50.99,
+          "max_y": 73.104,
+          "min_z": -10.635,
+          "max_z": 2.873,
+          "span_x": 155.566,
+          "span_y": 124.094,
+          "span_z": 13.509,
+          "volume_m3": 260786.241
+        },
+        "methodology_note": "Uniform 3D baseline is calculated as (span_x/voxel_size) * (span_y/voxel_size) * (span_z/voxel_size) * bytes_per_voxel using real scan bounding box."
+      },
+      "accuracy_metrics": {
+        "accuracy_available": true,
+        "reason_unavailable": null,
+        "overall_accuracy": 0.9639,
+        "mean_iou": 0.5822,
+        "evaluated_points_count": 119988,
+        "per_class_metrics": [
+          {
+            "class_name": "outlier",
+            "class_id": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 73
+          },
+          {
+            "class_name": "car",
+            "class_id": 10,
+            "precision": 0.9923,
+            "recall": 0.9928,
+            "f1_score": 0.9925,
+            "iou": 0.9851,
+            "support_points": 22381
+          },
+          {
+            "class_name": "bicycle",
+            "class_id": 11,
+            "precision": 0.82,
+            "recall": 0.7455,
+            "f1_score": 0.781,
+            "iou": 0.6406,
+            "support_points": 55
+          },
+          {
+            "class_name": "other-vehicle",
+            "class_id": 20,
+            "precision": 0.8811,
+            "recall": 0.9532,
+            "f1_score": 0.9157,
+            "iou": 0.8446,
+            "support_points": 171
+          },
+          {
+            "class_name": "road",
+            "class_id": 40,
+            "precision": 0.9826,
+            "recall": 0.9912,
+            "f1_score": 0.9869,
+            "iou": 0.9741,
+            "support_points": 29467
+          },
+          {
+            "class_name": "parking",
+            "class_id": 44,
+            "precision": 0.9568,
+            "recall": 0.9415,
+            "f1_score": 0.9491,
+            "iou": 0.9032,
+            "support_points": 9067
+          },
+          {
+            "class_name": "sidewalk",
+            "class_id": 48,
+            "precision": 0.9563,
+            "recall": 0.9702,
+            "f1_score": 0.9632,
+            "iou": 0.929,
+            "support_points": 9686
+          },
+          {
+            "class_name": "building",
+            "class_id": 50,
+            "precision": 0.9886,
+            "recall": 0.995,
+            "f1_score": 0.9918,
+            "iou": 0.9837,
+            "support_points": 29199
+          },
+          {
+            "class_name": "fence",
+            "class_id": 51,
+            "precision": 0.8246,
+            "recall": 0.6078,
+            "f1_score": 0.6998,
+            "iou": 0.5382,
+            "support_points": 232
+          },
+          {
+            "class_name": "other-structure",
+            "class_id": 52,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 25
+          },
+          {
+            "class_name": "lane-marking",
+            "class_id": 60,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 20
+          },
+          {
+            "class_name": "vegetation",
+            "class_id": 70,
+            "precision": 0.8732,
+            "recall": 0.9449,
+            "f1_score": 0.9076,
+            "iou": 0.8309,
+            "support_points": 14979
+          },
+          {
+            "class_name": "trunk",
+            "class_id": 71,
+            "precision": 0.9023,
+            "recall": 0.9444,
+            "f1_score": 0.9229,
+            "iou": 0.8569,
+            "support_points": 2250
+          },
+          {
+            "class_name": "terrain",
+            "class_id": 72,
+            "precision": 0.5234,
+            "recall": 0.6292,
+            "f1_score": 0.5714,
+            "iou": 0.4,
+            "support_points": 178
+          },
+          {
+            "class_name": "pole",
+            "class_id": 80,
+            "precision": 0.9475,
+            "recall": 0.7686,
+            "f1_score": 0.8488,
+            "iou": 0.7372,
+            "support_points": 376
+          },
+          {
+            "class_name": "traffic-sign",
+            "class_id": 81,
+            "precision": 0.8694,
+            "recall": 0.9816,
+            "f1_score": 0.9221,
+            "iou": 0.8554,
+            "support_points": 217
+          },
+          {
+            "class_name": "other-object",
+            "class_id": 99,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 1606
+          },
+          {
+            "class_name": "moving-bicyclist",
+            "class_id": 253,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 6
+          }
+        ],
+        "object_class_summaries": {
+          "vehicle": {
+            "class_name": "vehicle",
+            "class_id": null,
+            "precision": 0.991,
+            "recall": 0.9916,
+            "f1_score": 0.9913,
+            "iou": 0.9827,
+            "support_points": 22613
+          },
+          "pedestrian": {
+            "class_name": "pedestrian",
+            "class_id": null,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 0
+          },
+          "cyclist": {
+            "class_name": "cyclist",
+            "class_id": null,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 6
+          },
+          "pole": {
+            "class_name": "pole",
+            "class_id": null,
+            "precision": 0.9083,
+            "recall": 0.92,
+            "f1_score": 0.9141,
+            "iou": 0.8418,
+            "support_points": 2626
+          },
+          "static_obstacle": {
+            "class_name": "static_obstacle",
+            "class_id": null,
+            "precision": 0.9898,
+            "recall": 0.9422,
+            "f1_score": 0.9654,
+            "iou": 0.9331,
+            "support_points": 31630
+          }
+        },
+        "distance_bins": [
+          {
+            "bin_range": "0-10m",
+            "min_dist_m": 0.0,
+            "max_dist_m": 10.0,
+            "point_count": 68731,
+            "accuracy": 0.9716,
+            "mean_iou": 0.7781
+          },
+          {
+            "bin_range": "10-30m",
+            "min_dist_m": 10.0,
+            "max_dist_m": 30.0,
+            "point_count": 45714,
+            "accuracy": 0.9566,
+            "mean_iou": 0.588
+          },
+          {
+            "bin_range": "30-50m",
+            "min_dist_m": 30.0,
+            "max_dist_m": 50.0,
+            "point_count": 5543,
+            "accuracy": 0.9268,
+            "mean_iou": 0.4968
+          },
+          {
+            "bin_range": "50-100m",
+            "min_dist_m": 50.0,
+            "max_dist_m": 100.0,
+            "point_count": 0,
+            "accuracy": 0.0,
+            "mean_iou": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "frame_id": "000093.bin",
+      "session_id": "semantic_kitti_sequence_00",
+      "timestamp": "2026-09-15T14:32:33.310922+00:00",
+      "device_used": "CPU/Disk",
+      "model_name": "Fast-FRNet (SEMANTICKITTI)",
+      "timings": {
+        "lidar_preprocessing_ms": 25.6,
+        "salsanext_inference_ms": 2225.57,
+        "terrain_analysis_ms": 35.79,
+        "object_detection_tracking_ms": 12.02,
+        "adaptive_grid_ms": 88.99,
+        "total_latency_ms": 2488.9,
+        "preprocessing_ms": 25.6,
+        "inference_ms": 2225.57,
+        "terrain_ms": 35.79,
+        "clustering_ms": 12.02,
+        "grid_ms": 88.99,
+        "total_ms": 2488.9
+      },
+      "actual_fps": 0.4,
+      "resource_metrics": {
+        "input_point_count": 121595,
+        "fine_cells_count": 1047,
+        "medium_cells_count": 402,
+        "coarse_cells_count": 260,
+        "total_cells_count": 1709,
+        "adaptive_grid_bytes": 109376,
+        "serialized_map_bytes": 218752,
+        "uniform_baseline_bytes": 8390304,
+        "uniform_voxel_size_m": 0.5,
+        "uniform_bytes_per_voxel": 4,
+        "uniform_total_voxels": 2097576,
+        "memory_reduction_percentage": 98.7,
+        "spatial_bounds": {
+          "min_x": -76.375,
+          "max_x": 79.301,
+          "min_y": -50.728,
+          "max_y": 73.391,
+          "min_z": -10.417,
+          "max_z": 2.857,
+          "span_x": 155.676,
+          "span_y": 124.119,
+          "span_z": 13.274,
+          "volume_m3": 256479.244
+        },
+        "methodology_note": "Uniform 3D baseline is calculated as (span_x/voxel_size) * (span_y/voxel_size) * (span_z/voxel_size) * bytes_per_voxel using real scan bounding box."
+      },
+      "accuracy_metrics": {
+        "accuracy_available": true,
+        "reason_unavailable": null,
+        "overall_accuracy": 0.9623,
+        "mean_iou": 0.5712,
+        "evaluated_points_count": 120037,
+        "per_class_metrics": [
+          {
+            "class_name": "outlier",
+            "class_id": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 64
+          },
+          {
+            "class_name": "car",
+            "class_id": 10,
+            "precision": 0.9924,
+            "recall": 0.9934,
+            "f1_score": 0.9929,
+            "iou": 0.9859,
+            "support_points": 22040
+          },
+          {
+            "class_name": "bicycle",
+            "class_id": 11,
+            "precision": 0.8696,
+            "recall": 0.7273,
+            "f1_score": 0.7921,
+            "iou": 0.6557,
+            "support_points": 55
+          },
+          {
+            "class_name": "other-vehicle",
+            "class_id": 20,
+            "precision": 0.9279,
+            "recall": 0.9602,
+            "f1_score": 0.9438,
+            "iou": 0.8935,
+            "support_points": 201
+          },
+          {
+            "class_name": "road",
+            "class_id": 40,
+            "precision": 0.984,
+            "recall": 0.9925,
+            "f1_score": 0.9883,
+            "iou": 0.9768,
+            "support_points": 30396
+          },
+          {
+            "class_name": "parking",
+            "class_id": 44,
+            "precision": 0.9668,
+            "recall": 0.9243,
+            "f1_score": 0.9451,
+            "iou": 0.8959,
+            "support_points": 8881
+          },
+          {
+            "class_name": "sidewalk",
+            "class_id": 48,
+            "precision": 0.9446,
+            "recall": 0.9726,
+            "f1_score": 0.9584,
+            "iou": 0.9201,
+            "support_points": 10405
+          },
+          {
+            "class_name": "building",
+            "class_id": 50,
+            "precision": 0.9829,
+            "recall": 0.9951,
+            "f1_score": 0.989,
+            "iou": 0.9782,
+            "support_points": 28142
+          },
+          {
+            "class_name": "fence",
+            "class_id": 51,
+            "precision": 0.6423,
+            "recall": 0.3305,
+            "f1_score": 0.4365,
+            "iou": 0.2792,
+            "support_points": 239
+          },
+          {
+            "class_name": "other-structure",
+            "class_id": 52,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 27
+          },
+          {
+            "class_name": "lane-marking",
+            "class_id": 60,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 37
+          },
+          {
+            "class_name": "vegetation",
+            "class_id": 70,
+            "precision": 0.8705,
+            "recall": 0.949,
+            "f1_score": 0.9081,
+            "iou": 0.8316,
+            "support_points": 14959
+          },
+          {
+            "class_name": "trunk",
+            "class_id": 71,
+            "precision": 0.9132,
+            "recall": 0.956,
+            "f1_score": 0.9341,
+            "iou": 0.8764,
+            "support_points": 2092
+          },
+          {
+            "class_name": "terrain",
+            "class_id": 72,
+            "precision": 0.5512,
+            "recall": 0.5855,
+            "f1_score": 0.5678,
+            "iou": 0.3965,
+            "support_points": 193
+          },
+          {
+            "class_name": "pole",
+            "class_id": 80,
+            "precision": 0.9441,
+            "recall": 0.7573,
+            "f1_score": 0.8404,
+            "iou": 0.7247,
+            "support_points": 379
+          },
+          {
+            "class_name": "traffic-sign",
+            "class_id": 81,
+            "precision": 0.8992,
+            "recall": 0.9596,
+            "f1_score": 0.9284,
+            "iou": 0.8664,
+            "support_points": 223
+          },
+          {
+            "class_name": "other-object",
+            "class_id": 99,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 1703
+          },
+          {
+            "class_name": "moving-bicyclist",
+            "class_id": 253,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 1
+          }
+        ],
+        "object_class_summaries": {
+          "vehicle": {
+            "class_name": "vehicle",
+            "class_id": null,
+            "precision": 0.9915,
+            "recall": 0.9924,
+            "f1_score": 0.992,
+            "iou": 0.984,
+            "support_points": 22297
+          },
+          "pedestrian": {
+            "class_name": "pedestrian",
+            "class_id": null,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 0
+          },
+          "cyclist": {
+            "class_name": "cyclist",
+            "class_id": null,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 1
+          },
+          "pole": {
+            "class_name": "pole",
+            "class_id": null,
+            "precision": 0.9206,
+            "recall": 0.9292,
+            "f1_score": 0.9249,
+            "iou": 0.8602,
+            "support_points": 2471
+          },
+          "static_obstacle": {
+            "class_name": "static_obstacle",
+            "class_id": null,
+            "precision": 0.987,
+            "recall": 0.9377,
+            "f1_score": 0.9617,
+            "iou": 0.9263,
+            "support_points": 30686
+          }
+        },
+        "distance_bins": [
+          {
+            "bin_range": "0-10m",
+            "min_dist_m": 0.0,
+            "max_dist_m": 10.0,
+            "point_count": 67839,
+            "accuracy": 0.9707,
+            "mean_iou": 0.7088
+          },
+          {
+            "bin_range": "10-30m",
+            "min_dist_m": 10.0,
+            "max_dist_m": 30.0,
+            "point_count": 46555,
+            "accuracy": 0.9559,
+            "mean_iou": 0.5839
+          },
+          {
+            "bin_range": "30-50m",
+            "min_dist_m": 30.0,
+            "max_dist_m": 50.0,
+            "point_count": 5643,
+            "accuracy": 0.9158,
+            "mean_iou": 0.5196
+          },
+          {
+            "bin_range": "50-100m",
+            "min_dist_m": 50.0,
+            "max_dist_m": 100.0,
+            "point_count": 0,
+            "accuracy": 0.0,
+            "mean_iou": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "frame_id": "000093.bin",
+      "session_id": "semantic_kitti_sequence_00",
+      "timestamp": "2026-09-15T14:32:33.310922+00:00",
+      "device_used": "CPU/Disk",
+      "model_name": "Fast-FRNet (SEMANTICKITTI)",
+      "timings": {
+        "lidar_preprocessing_ms": 25.6,
+        "salsanext_inference_ms": 2225.57,
+        "terrain_analysis_ms": 35.79,
+        "object_detection_tracking_ms": 12.02,
+        "adaptive_grid_ms": 88.99,
+        "total_latency_ms": 2488.9,
+        "preprocessing_ms": 25.6,
+        "inference_ms": 2225.57,
+        "terrain_ms": 35.79,
+        "clustering_ms": 12.02,
+        "grid_ms": 88.99,
+        "total_ms": 2488.9
+      },
+      "actual_fps": 0.4,
+      "resource_metrics": {
+        "input_point_count": 121595,
+        "fine_cells_count": 1047,
+        "medium_cells_count": 402,
+        "coarse_cells_count": 260,
+        "total_cells_count": 1709,
+        "adaptive_grid_bytes": 109376,
+        "serialized_map_bytes": 218752,
+        "uniform_baseline_bytes": 8390304,
+        "uniform_voxel_size_m": 0.5,
+        "uniform_bytes_per_voxel": 4,
+        "uniform_total_voxels": 2097576,
+        "memory_reduction_percentage": 98.7,
+        "spatial_bounds": {
+          "min_x": -76.375,
+          "max_x": 79.301,
+          "min_y": -50.728,
+          "max_y": 73.391,
+          "min_z": -10.417,
+          "max_z": 2.857,
+          "span_x": 155.676,
+          "span_y": 124.119,
+          "span_z": 13.274,
+          "volume_m3": 256479.244
+        },
+        "methodology_note": "Uniform 3D baseline is calculated as (span_x/voxel_size) * (span_y/voxel_size) * (span_z/voxel_size) * bytes_per_voxel using real scan bounding box."
+      },
+      "accuracy_metrics": {
+        "accuracy_available": true,
+        "reason_unavailable": null,
+        "overall_accuracy": 0.9623,
+        "mean_iou": 0.5712,
+        "evaluated_points_count": 120037,
+        "per_class_metrics": [
+          {
+            "class_name": "outlier",
+            "class_id": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 64
+          },
+          {
+            "class_name": "car",
+            "class_id": 10,
+            "precision": 0.9924,
+            "recall": 0.9934,
+            "f1_score": 0.9929,
+            "iou": 0.9859,
+            "support_points": 22040
+          },
+          {
+            "class_name": "bicycle",
+            "class_id": 11,
+            "precision": 0.8696,
+            "recall": 0.7273,
+            "f1_score": 0.7921,
+            "iou": 0.6557,
+            "support_points": 55
+          },
+          {
+            "class_name": "other-vehicle",
+            "class_id": 20,
+            "precision": 0.9279,
+            "recall": 0.9602,
+            "f1_score": 0.9438,
+            "iou": 0.8935,
+            "support_points": 201
+          },
+          {
+            "class_name": "road",
+            "class_id": 40,
+            "precision": 0.984,
+            "recall": 0.9925,
+            "f1_score": 0.9883,
+            "iou": 0.9768,
+            "support_points": 30396
+          },
+          {
+            "class_name": "parking",
+            "class_id": 44,
+            "precision": 0.9668,
+            "recall": 0.9243,
+            "f1_score": 0.9451,
+            "iou": 0.8959,
+            "support_points": 8881
+          },
+          {
+            "class_name": "sidewalk",
+            "class_id": 48,
+            "precision": 0.9446,
+            "recall": 0.9726,
+            "f1_score": 0.9584,
+            "iou": 0.9201,
+            "support_points": 10405
+          },
+          {
+            "class_name": "building",
+            "class_id": 50,
+            "precision": 0.9829,
+            "recall": 0.9951,
+            "f1_score": 0.989,
+            "iou": 0.9782,
+            "support_points": 28142
+          },
+          {
+            "class_name": "fence",
+            "class_id": 51,
+            "precision": 0.6423,
+            "recall": 0.3305,
+            "f1_score": 0.4365,
+            "iou": 0.2792,
+            "support_points": 239
+          },
+          {
+            "class_name": "other-structure",
+            "class_id": 52,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 27
+          },
+          {
+            "class_name": "lane-marking",
+            "class_id": 60,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 37
+          },
+          {
+            "class_name": "vegetation",
+            "class_id": 70,
+            "precision": 0.8705,
+            "recall": 0.949,
+            "f1_score": 0.9081,
+            "iou": 0.8316,
+            "support_points": 14959
+          },
+          {
+            "class_name": "trunk",
+            "class_id": 71,
+            "precision": 0.9132,
+            "recall": 0.956,
+            "f1_score": 0.9341,
+            "iou": 0.8764,
+            "support_points": 2092
+          },
+          {
+            "class_name": "terrain",
+            "class_id": 72,
+            "precision": 0.5512,
+            "recall": 0.5855,
+            "f1_score": 0.5678,
+            "iou": 0.3965,
+            "support_points": 193
+          },
+          {
+            "class_name": "pole",
+            "class_id": 80,
+            "precision": 0.9441,
+            "recall": 0.7573,
+            "f1_score": 0.8404,
+            "iou": 0.7247,
+            "support_points": 379
+          },
+          {
+            "class_name": "traffic-sign",
+            "class_id": 81,
+            "precision": 0.8992,
+            "recall": 0.9596,
+            "f1_score": 0.9284,
+            "iou": 0.8664,
+            "support_points": 223
+          },
+          {
+            "class_name": "other-object",
+            "class_id": 99,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 1703
+          },
+          {
+            "class_name": "moving-bicyclist",
+            "class_id": 253,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 1
+          }
+        ],
+        "object_class_summaries": {
+          "vehicle": {
+            "class_name": "vehicle",
+            "class_id": null,
+            "precision": 0.9915,
+            "recall": 0.9924,
+            "f1_score": 0.992,
+            "iou": 0.984,
+            "support_points": 22297
+          },
+          "pedestrian": {
+            "class_name": "pedestrian",
+            "class_id": null,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 0
+          },
+          "cyclist": {
+            "class_name": "cyclist",
+            "class_id": null,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 1
+          },
+          "pole": {
+            "class_name": "pole",
+            "class_id": null,
+            "precision": 0.9206,
+            "recall": 0.9292,
+            "f1_score": 0.9249,
+            "iou": 0.8602,
+            "support_points": 2471
+          },
+          "static_obstacle": {
+            "class_name": "static_obstacle",
+            "class_id": null,
+            "precision": 0.987,
+            "recall": 0.9377,
+            "f1_score": 0.9617,
+            "iou": 0.9263,
+            "support_points": 30686
+          }
+        },
+        "distance_bins": [
+          {
+            "bin_range": "0-10m",
+            "min_dist_m": 0.0,
+            "max_dist_m": 10.0,
+            "point_count": 67839,
+            "accuracy": 0.9707,
+            "mean_iou": 0.7088
+          },
+          {
+            "bin_range": "10-30m",
+            "min_dist_m": 10.0,
+            "max_dist_m": 30.0,
+            "point_count": 46555,
+            "accuracy": 0.9559,
+            "mean_iou": 0.5839
+          },
+          {
+            "bin_range": "30-50m",
+            "min_dist_m": 30.0,
+            "max_dist_m": 50.0,
+            "point_count": 5643,
+            "accuracy": 0.9158,
+            "mean_iou": 0.5196
+          },
+          {
+            "bin_range": "50-100m",
+            "min_dist_m": 50.0,
+            "max_dist_m": 100.0,
+            "point_count": 0,
+            "accuracy": 0.0,
+            "mean_iou": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "frame_id": "000094.bin",
+      "session_id": "semantic_kitti_sequence_00",
+      "timestamp": "2026-09-15T14:32:36.448755+00:00",
+      "device_used": "CPU/Disk",
+      "model_name": "Fast-FRNet (SEMANTICKITTI)",
+      "timings": {
+        "lidar_preprocessing_ms": 28.94,
+        "salsanext_inference_ms": 2808.17,
+        "terrain_analysis_ms": 40.35,
+        "object_detection_tracking_ms": 12.12,
+        "adaptive_grid_ms": 63.12,
+        "total_latency_ms": 3098.74,
+        "preprocessing_ms": 28.94,
+        "inference_ms": 2808.17,
+        "terrain_ms": 40.35,
+        "clustering_ms": 12.12,
+        "grid_ms": 63.12,
+        "total_ms": 3098.74
+      },
+      "actual_fps": 0.32,
+      "resource_metrics": {
+        "input_point_count": 121618,
+        "fine_cells_count": 1067,
+        "medium_cells_count": 392,
+        "coarse_cells_count": 260,
+        "total_cells_count": 1719,
+        "adaptive_grid_bytes": 110016,
+        "serialized_map_bytes": 220032,
+        "uniform_baseline_bytes": 8681472,
+        "uniform_voxel_size_m": 0.5,
+        "uniform_bytes_per_voxel": 4,
+        "uniform_total_voxels": 2170368,
+        "memory_reduction_percentage": 98.73,
+        "spatial_bounds": {
+          "min_x": -77.402,
+          "max_x": 79.285,
+          "min_y": -54.094,
+          "max_y": 73.479,
+          "min_z": -10.246,
+          "max_z": 2.84,
+          "span_x": 156.688,
+          "span_y": 127.573,
+          "span_z": 13.086,
+          "volume_m3": 261574.818
+        },
+        "methodology_note": "Uniform 3D baseline is calculated as (span_x/voxel_size) * (span_y/voxel_size) * (span_z/voxel_size) * bytes_per_voxel using real scan bounding box."
+      },
+      "accuracy_metrics": {
+        "accuracy_available": true,
+        "reason_unavailable": null,
+        "overall_accuracy": 0.963,
+        "mean_iou": 0.5196,
+        "evaluated_points_count": 119995,
+        "per_class_metrics": [
+          {
+            "class_name": "outlier",
+            "class_id": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 52
+          },
+          {
+            "class_name": "car",
+            "class_id": 10,
+            "precision": 0.9933,
+            "recall": 0.9939,
+            "f1_score": 0.9936,
+            "iou": 0.9874,
+            "support_points": 21288
+          },
+          {
+            "class_name": "bicycle",
+            "class_id": 11,
+            "precision": 0.9111,
+            "recall": 0.6721,
+            "f1_score": 0.7736,
+            "iou": 0.6308,
+            "support_points": 61
+          },
+          {
+            "class_name": "motorcycle",
+            "class_id": 15,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 1
+          },
+          {
+            "class_name": "other-vehicle",
+            "class_id": 20,
+            "precision": 0.9241,
+            "recall": 0.9628,
+            "f1_score": 0.9431,
+            "iou": 0.8922,
+            "support_points": 215
+          },
+          {
+            "class_name": "road",
+            "class_id": 40,
+            "precision": 0.9846,
+            "recall": 0.9914,
+            "f1_score": 0.988,
+            "iou": 0.9763,
+            "support_points": 31574
+          },
+          {
+            "class_name": "parking",
+            "class_id": 44,
+            "precision": 0.9738,
+            "recall": 0.9345,
+            "f1_score": 0.9538,
+            "iou": 0.9116,
+            "support_points": 8584
+          },
+          {
+            "class_name": "sidewalk",
+            "class_id": 48,
+            "precision": 0.9495,
+            "recall": 0.9758,
+            "f1_score": 0.9625,
+            "iou": 0.9277,
+            "support_points": 11357
+          },
+          {
+            "class_name": "other-ground",
+            "class_id": 49,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 12
+          },
+          {
+            "class_name": "building",
+            "class_id": 50,
+            "precision": 0.9866,
+            "recall": 0.9908,
+            "f1_score": 0.9887,
+            "iou": 0.9776,
+            "support_points": 27135
+          },
+          {
+            "class_name": "fence",
+            "class_id": 51,
+            "precision": 0.6849,
+            "recall": 0.5128,
+            "f1_score": 0.5865,
+            "iou": 0.4149,
+            "support_points": 195
+          },
+          {
+            "class_name": "other-structure",
+            "class_id": 52,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 22
+          },
+          {
+            "class_name": "lane-marking",
+            "class_id": 60,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 45
+          },
+          {
+            "class_name": "vegetation",
+            "class_id": 70,
+            "precision": 0.863,
+            "recall": 0.9583,
+            "f1_score": 0.9081,
+            "iou": 0.8317,
+            "support_points": 14938
+          },
+          {
+            "class_name": "trunk",
+            "class_id": 71,
+            "precision": 0.9052,
+            "recall": 0.9447,
+            "f1_score": 0.9245,
+            "iou": 0.8596,
+            "support_points": 1971
+          },
+          {
+            "class_name": "terrain",
+            "class_id": 72,
+            "precision": 0.6733,
+            "recall": 0.5401,
+            "f1_score": 0.5994,
+            "iou": 0.428,
+            "support_points": 187
+          },
+          {
+            "class_name": "pole",
+            "class_id": 80,
+            "precision": 0.9307,
+            "recall": 0.7344,
+            "f1_score": 0.821,
+            "iou": 0.6963,
+            "support_points": 384
+          },
+          {
+            "class_name": "traffic-sign",
+            "class_id": 81,
+            "precision": 0.8734,
+            "recall": 0.9804,
+            "f1_score": 0.9238,
+            "iou": 0.8584,
+            "support_points": 204
+          },
+          {
+            "class_name": "other-object",
+            "class_id": 99,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 1765
+          },
+          {
+            "class_name": "moving-bicyclist",
+            "class_id": 253,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 5
+          }
+        ],
+        "object_class_summaries": {
+          "vehicle": {
+            "class_name": "vehicle",
+            "class_id": null,
+            "precision": 0.9924,
+            "recall": 0.9924,
+            "f1_score": 0.9924,
+            "iou": 0.985,
+            "support_points": 21570
+          },
+          "pedestrian": {
+            "class_name": "pedestrian",
+            "class_id": null,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 0
+          },
+          "cyclist": {
+            "class_name": "cyclist",
+            "class_id": null,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 5
+          },
+          "pole": {
+            "class_name": "pole",
+            "class_id": null,
+            "precision": 0.9153,
+            "recall": 0.9172,
+            "f1_score": 0.9162,
+            "iou": 0.8454,
+            "support_points": 2355
+          },
+          "static_obstacle": {
+            "class_name": "static_obstacle",
+            "class_id": null,
+            "precision": 0.9896,
+            "recall": 0.9311,
+            "f1_score": 0.9595,
+            "iou": 0.9221,
+            "support_points": 29683
+          }
+        },
+        "distance_bins": [
+          {
+            "bin_range": "0-10m",
+            "min_dist_m": 0.0,
+            "max_dist_m": 10.0,
+            "point_count": 67078,
+            "accuracy": 0.9714,
+            "mean_iou": 0.7122
+          },
+          {
+            "bin_range": "10-30m",
+            "min_dist_m": 10.0,
+            "max_dist_m": 30.0,
+            "point_count": 47328,
+            "accuracy": 0.9544,
+            "mean_iou": 0.5422
+          },
+          {
+            "bin_range": "30-50m",
+            "min_dist_m": 30.0,
+            "max_dist_m": 50.0,
+            "point_count": 5589,
+            "accuracy": 0.9365,
+            "mean_iou": 0.494
+          },
+          {
+            "bin_range": "50-100m",
+            "min_dist_m": 50.0,
+            "max_dist_m": 100.0,
+            "point_count": 0,
+            "accuracy": 0.0,
+            "mean_iou": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "frame_id": "000094.bin",
+      "session_id": "semantic_kitti_sequence_00",
+      "timestamp": "2026-09-15T14:32:36.448755+00:00",
+      "device_used": "CPU/Disk",
+      "model_name": "Fast-FRNet (SEMANTICKITTI)",
+      "timings": {
+        "lidar_preprocessing_ms": 28.94,
+        "salsanext_inference_ms": 2808.17,
+        "terrain_analysis_ms": 40.35,
+        "object_detection_tracking_ms": 12.12,
+        "adaptive_grid_ms": 63.12,
+        "total_latency_ms": 3098.74,
+        "preprocessing_ms": 28.94,
+        "inference_ms": 2808.17,
+        "terrain_ms": 40.35,
+        "clustering_ms": 12.12,
+        "grid_ms": 63.12,
+        "total_ms": 3098.74
+      },
+      "actual_fps": 0.32,
+      "resource_metrics": {
+        "input_point_count": 121618,
+        "fine_cells_count": 1067,
+        "medium_cells_count": 392,
+        "coarse_cells_count": 260,
+        "total_cells_count": 1719,
+        "adaptive_grid_bytes": 110016,
+        "serialized_map_bytes": 220032,
+        "uniform_baseline_bytes": 8681472,
+        "uniform_voxel_size_m": 0.5,
+        "uniform_bytes_per_voxel": 4,
+        "uniform_total_voxels": 2170368,
+        "memory_reduction_percentage": 98.73,
+        "spatial_bounds": {
+          "min_x": -77.402,
+          "max_x": 79.285,
+          "min_y": -54.094,
+          "max_y": 73.479,
+          "min_z": -10.246,
+          "max_z": 2.84,
+          "span_x": 156.688,
+          "span_y": 127.573,
+          "span_z": 13.086,
+          "volume_m3": 261574.818
+        },
+        "methodology_note": "Uniform 3D baseline is calculated as (span_x/voxel_size) * (span_y/voxel_size) * (span_z/voxel_size) * bytes_per_voxel using real scan bounding box."
+      },
+      "accuracy_metrics": {
+        "accuracy_available": true,
+        "reason_unavailable": null,
+        "overall_accuracy": 0.963,
+        "mean_iou": 0.5196,
+        "evaluated_points_count": 119995,
+        "per_class_metrics": [
+          {
+            "class_name": "outlier",
+            "class_id": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 52
+          },
+          {
+            "class_name": "car",
+            "class_id": 10,
+            "precision": 0.9933,
+            "recall": 0.9939,
+            "f1_score": 0.9936,
+            "iou": 0.9874,
+            "support_points": 21288
+          },
+          {
+            "class_name": "bicycle",
+            "class_id": 11,
+            "precision": 0.9111,
+            "recall": 0.6721,
+            "f1_score": 0.7736,
+            "iou": 0.6308,
+            "support_points": 61
+          },
+          {
+            "class_name": "motorcycle",
+            "class_id": 15,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 1
+          },
+          {
+            "class_name": "other-vehicle",
+            "class_id": 20,
+            "precision": 0.9241,
+            "recall": 0.9628,
+            "f1_score": 0.9431,
+            "iou": 0.8922,
+            "support_points": 215
+          },
+          {
+            "class_name": "road",
+            "class_id": 40,
+            "precision": 0.9846,
+            "recall": 0.9914,
+            "f1_score": 0.988,
+            "iou": 0.9763,
+            "support_points": 31574
+          },
+          {
+            "class_name": "parking",
+            "class_id": 44,
+            "precision": 0.9738,
+            "recall": 0.9345,
+            "f1_score": 0.9538,
+            "iou": 0.9116,
+            "support_points": 8584
+          },
+          {
+            "class_name": "sidewalk",
+            "class_id": 48,
+            "precision": 0.9495,
+            "recall": 0.9758,
+            "f1_score": 0.9625,
+            "iou": 0.9277,
+            "support_points": 11357
+          },
+          {
+            "class_name": "other-ground",
+            "class_id": 49,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 12
+          },
+          {
+            "class_name": "building",
+            "class_id": 50,
+            "precision": 0.9866,
+            "recall": 0.9908,
+            "f1_score": 0.9887,
+            "iou": 0.9776,
+            "support_points": 27135
+          },
+          {
+            "class_name": "fence",
+            "class_id": 51,
+            "precision": 0.6849,
+            "recall": 0.5128,
+            "f1_score": 0.5865,
+            "iou": 0.4149,
+            "support_points": 195
+          },
+          {
+            "class_name": "other-structure",
+            "class_id": 52,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 22
+          },
+          {
+            "class_name": "lane-marking",
+            "class_id": 60,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 45
+          },
+          {
+            "class_name": "vegetation",
+            "class_id": 70,
+            "precision": 0.863,
+            "recall": 0.9583,
+            "f1_score": 0.9081,
+            "iou": 0.8317,
+            "support_points": 14938
+          },
+          {
+            "class_name": "trunk",
+            "class_id": 71,
+            "precision": 0.9052,
+            "recall": 0.9447,
+            "f1_score": 0.9245,
+            "iou": 0.8596,
+            "support_points": 1971
+          },
+          {
+            "class_name": "terrain",
+            "class_id": 72,
+            "precision": 0.6733,
+            "recall": 0.5401,
+            "f1_score": 0.5994,
+            "iou": 0.428,
+            "support_points": 187
+          },
+          {
+            "class_name": "pole",
+            "class_id": 80,
+            "precision": 0.9307,
+            "recall": 0.7344,
+            "f1_score": 0.821,
+            "iou": 0.6963,
+            "support_points": 384
+          },
+          {
+            "class_name": "traffic-sign",
+            "class_id": 81,
+            "precision": 0.8734,
+            "recall": 0.9804,
+            "f1_score": 0.9238,
+            "iou": 0.8584,
+            "support_points": 204
+          },
+          {
+            "class_name": "other-object",
+            "class_id": 99,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 1765
+          },
+          {
+            "class_name": "moving-bicyclist",
+            "class_id": 253,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 5
+          }
+        ],
+        "object_class_summaries": {
+          "vehicle": {
+            "class_name": "vehicle",
+            "class_id": null,
+            "precision": 0.9924,
+            "recall": 0.9924,
+            "f1_score": 0.9924,
+            "iou": 0.985,
+            "support_points": 21570
+          },
+          "pedestrian": {
+            "class_name": "pedestrian",
+            "class_id": null,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 0
+          },
+          "cyclist": {
+            "class_name": "cyclist",
+            "class_id": null,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 5
+          },
+          "pole": {
+            "class_name": "pole",
+            "class_id": null,
+            "precision": 0.9153,
+            "recall": 0.9172,
+            "f1_score": 0.9162,
+            "iou": 0.8454,
+            "support_points": 2355
+          },
+          "static_obstacle": {
+            "class_name": "static_obstacle",
+            "class_id": null,
+            "precision": 0.9896,
+            "recall": 0.9311,
+            "f1_score": 0.9595,
+            "iou": 0.9221,
+            "support_points": 29683
+          }
+        },
+        "distance_bins": [
+          {
+            "bin_range": "0-10m",
+            "min_dist_m": 0.0,
+            "max_dist_m": 10.0,
+            "point_count": 67078,
+            "accuracy": 0.9714,
+            "mean_iou": 0.7122
+          },
+          {
+            "bin_range": "10-30m",
+            "min_dist_m": 10.0,
+            "max_dist_m": 30.0,
+            "point_count": 47328,
+            "accuracy": 0.9544,
+            "mean_iou": 0.5422
+          },
+          {
+            "bin_range": "30-50m",
+            "min_dist_m": 30.0,
+            "max_dist_m": 50.0,
+            "point_count": 5589,
+            "accuracy": 0.9365,
+            "mean_iou": 0.494
+          },
+          {
+            "bin_range": "50-100m",
+            "min_dist_m": 50.0,
+            "max_dist_m": 100.0,
+            "point_count": 0,
+            "accuracy": 0.0,
+            "mean_iou": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "frame_id": "000095.bin",
+      "session_id": "semantic_kitti_sequence_00",
+      "timestamp": "2026-09-15T14:32:39.537831+00:00",
+      "device_used": "CPU/Disk",
+      "model_name": "Fast-FRNet (SEMANTICKITTI)",
+      "timings": {
+        "lidar_preprocessing_ms": 28.75,
+        "salsanext_inference_ms": 2753.85,
+        "terrain_analysis_ms": 29.55,
+        "object_detection_tracking_ms": 20.7,
+        "adaptive_grid_ms": 79.71,
+        "total_latency_ms": 3042.86,
+        "preprocessing_ms": 28.75,
+        "inference_ms": 2753.85,
+        "terrain_ms": 29.55,
+        "clustering_ms": 20.7,
+        "grid_ms": 79.71,
+        "total_ms": 3042.86
+      },
+      "actual_fps": 0.33,
+      "resource_metrics": {
+        "input_point_count": 121671,
+        "fine_cells_count": 1122,
+        "medium_cells_count": 420,
+        "coarse_cells_count": 286,
+        "total_cells_count": 1828,
+        "adaptive_grid_bytes": 116992,
+        "serialized_map_bytes": 233984,
+        "uniform_baseline_bytes": 8484840,
+        "uniform_voxel_size_m": 0.5,
+        "uniform_bytes_per_voxel": 4,
+        "uniform_total_voxels": 2121210,
+        "memory_reduction_percentage": 98.62,
+        "spatial_bounds": {
+          "min_x": -78.272,
+          "max_x": 78.792,
+          "min_y": -56.339,
+          "max_y": 72.762,
+          "min_z": -10.055,
+          "max_z": 2.888,
+          "span_x": 157.064,
+          "span_y": 129.101,
+          "span_z": 12.943,
+          "volume_m3": 262451.269
+        },
+        "methodology_note": "Uniform 3D baseline is calculated as (span_x/voxel_size) * (span_y/voxel_size) * (span_z/voxel_size) * bytes_per_voxel using real scan bounding box."
+      },
+      "accuracy_metrics": {
+        "accuracy_available": true,
+        "reason_unavailable": null,
+        "overall_accuracy": 0.9611,
+        "mean_iou": 0.5266,
+        "evaluated_points_count": 119976,
+        "per_class_metrics": [
+          {
+            "class_name": "outlier",
+            "class_id": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 45
+          },
+          {
+            "class_name": "car",
+            "class_id": 10,
+            "precision": 0.9923,
+            "recall": 0.9916,
+            "f1_score": 0.992,
+            "iou": 0.984,
+            "support_points": 20455
+          },
+          {
+            "class_name": "bicycle",
+            "class_id": 11,
+            "precision": 0.8846,
+            "recall": 0.8214,
+            "f1_score": 0.8519,
+            "iou": 0.7419,
+            "support_points": 56
+          },
+          {
+            "class_name": "motorcycle",
+            "class_id": 15,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 2
+          },
+          {
+            "class_name": "other-vehicle",
+            "class_id": 20,
+            "precision": 0.9368,
+            "recall": 0.9634,
+            "f1_score": 0.9499,
+            "iou": 0.9046,
+            "support_points": 246
+          },
+          {
+            "class_name": "road",
+            "class_id": 40,
+            "precision": 0.9845,
+            "recall": 0.9923,
+            "f1_score": 0.9884,
+            "iou": 0.977,
+            "support_points": 32682
+          },
+          {
+            "class_name": "parking",
+            "class_id": 44,
+            "precision": 0.9623,
+            "recall": 0.9306,
+            "f1_score": 0.9462,
+            "iou": 0.8978,
+            "support_points": 8328
+          },
+          {
+            "class_name": "sidewalk",
+            "class_id": 48,
+            "precision": 0.9525,
+            "recall": 0.9715,
+            "f1_score": 0.9619,
+            "iou": 0.9266,
+            "support_points": 12369
+          },
+          {
+            "class_name": "other-ground",
+            "class_id": 49,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 21
+          },
+          {
+            "class_name": "building",
+            "class_id": 50,
+            "precision": 0.9883,
+            "recall": 0.9917,
+            "f1_score": 0.99,
+            "iou": 0.9802,
+            "support_points": 26217
+          },
+          {
+            "class_name": "fence",
+            "class_id": 51,
+            "precision": 0.7286,
+            "recall": 0.5862,
+            "f1_score": 0.6497,
+            "iou": 0.4811,
+            "support_points": 174
+          },
+          {
+            "class_name": "other-structure",
+            "class_id": 52,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 29
+          },
+          {
+            "class_name": "lane-marking",
+            "class_id": 60,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 56
+          },
+          {
+            "class_name": "vegetation",
+            "class_id": 70,
+            "precision": 0.8509,
+            "recall": 0.9581,
+            "f1_score": 0.9013,
+            "iou": 0.8204,
+            "support_points": 14720
+          },
+          {
+            "class_name": "trunk",
+            "class_id": 71,
+            "precision": 0.9225,
+            "recall": 0.9118,
+            "f1_score": 0.9171,
+            "iou": 0.8469,
+            "support_points": 1893
+          },
+          {
+            "class_name": "terrain",
+            "class_id": 72,
+            "precision": 0.646,
+            "recall": 0.5361,
+            "f1_score": 0.5859,
+            "iou": 0.4143,
+            "support_points": 194
+          },
+          {
+            "class_name": "pole",
+            "class_id": 80,
+            "precision": 0.95,
+            "recall": 0.7308,
+            "f1_score": 0.8261,
+            "iou": 0.7037,
+            "support_points": 416
+          },
+          {
+            "class_name": "traffic-sign",
+            "class_id": 81,
+            "precision": 0.8594,
+            "recall": 0.9907,
+            "f1_score": 0.9204,
+            "iou": 0.8526,
+            "support_points": 216
+          },
+          {
+            "class_name": "other-object",
+            "class_id": 99,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 1854
+          },
+          {
+            "class_name": "moving-bicyclist",
+            "class_id": 253,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 3
+          }
+        ],
+        "object_class_summaries": {
+          "vehicle": {
+            "class_name": "vehicle",
+            "class_id": null,
+            "precision": 0.9915,
+            "recall": 0.9908,
+            "f1_score": 0.9911,
+            "iou": 0.9824,
+            "support_points": 20762
+          },
+          "pedestrian": {
+            "class_name": "pedestrian",
+            "class_id": null,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 0
+          },
+          "cyclist": {
+            "class_name": "cyclist",
+            "class_id": null,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 3
+          },
+          "pole": {
+            "class_name": "pole",
+            "class_id": null,
+            "precision": 0.9297,
+            "recall": 0.8822,
+            "f1_score": 0.9053,
+            "iou": 0.827,
+            "support_points": 2309
+          },
+          "static_obstacle": {
+            "class_name": "static_obstacle",
+            "class_id": null,
+            "precision": 0.9886,
+            "recall": 0.9249,
+            "f1_score": 0.9557,
+            "iou": 0.9151,
+            "support_points": 28877
+          }
+        },
+        "distance_bins": [
+          {
+            "bin_range": "0-10m",
+            "min_dist_m": 0.0,
+            "max_dist_m": 10.0,
+            "point_count": 66153,
+            "accuracy": 0.9705,
+            "mean_iou": 0.7115
+          },
+          {
+            "bin_range": "10-30m",
+            "min_dist_m": 10.0,
+            "max_dist_m": 30.0,
+            "point_count": 48185,
+            "accuracy": 0.9528,
+            "mean_iou": 0.5464
+          },
+          {
+            "bin_range": "30-50m",
+            "min_dist_m": 30.0,
+            "max_dist_m": 50.0,
+            "point_count": 5638,
+            "accuracy": 0.923,
+            "mean_iou": 0.4663
+          },
+          {
+            "bin_range": "50-100m",
+            "min_dist_m": 50.0,
+            "max_dist_m": 100.0,
+            "point_count": 0,
+            "accuracy": 0.0,
+            "mean_iou": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "frame_id": "000095.bin",
+      "session_id": "semantic_kitti_sequence_00",
+      "timestamp": "2026-09-15T14:32:39.537831+00:00",
+      "device_used": "CPU/Disk",
+      "model_name": "Fast-FRNet (SEMANTICKITTI)",
+      "timings": {
+        "lidar_preprocessing_ms": 28.75,
+        "salsanext_inference_ms": 2753.85,
+        "terrain_analysis_ms": 29.55,
+        "object_detection_tracking_ms": 20.7,
+        "adaptive_grid_ms": 79.71,
+        "total_latency_ms": 3042.86,
+        "preprocessing_ms": 28.75,
+        "inference_ms": 2753.85,
+        "terrain_ms": 29.55,
+        "clustering_ms": 20.7,
+        "grid_ms": 79.71,
+        "total_ms": 3042.86
+      },
+      "actual_fps": 0.33,
+      "resource_metrics": {
+        "input_point_count": 121671,
+        "fine_cells_count": 1122,
+        "medium_cells_count": 420,
+        "coarse_cells_count": 286,
+        "total_cells_count": 1828,
+        "adaptive_grid_bytes": 116992,
+        "serialized_map_bytes": 233984,
+        "uniform_baseline_bytes": 8484840,
+        "uniform_voxel_size_m": 0.5,
+        "uniform_bytes_per_voxel": 4,
+        "uniform_total_voxels": 2121210,
+        "memory_reduction_percentage": 98.62,
+        "spatial_bounds": {
+          "min_x": -78.272,
+          "max_x": 78.792,
+          "min_y": -56.339,
+          "max_y": 72.762,
+          "min_z": -10.055,
+          "max_z": 2.888,
+          "span_x": 157.064,
+          "span_y": 129.101,
+          "span_z": 12.943,
+          "volume_m3": 262451.269
+        },
+        "methodology_note": "Uniform 3D baseline is calculated as (span_x/voxel_size) * (span_y/voxel_size) * (span_z/voxel_size) * bytes_per_voxel using real scan bounding box."
+      },
+      "accuracy_metrics": {
+        "accuracy_available": true,
+        "reason_unavailable": null,
+        "overall_accuracy": 0.9611,
+        "mean_iou": 0.5266,
+        "evaluated_points_count": 119976,
+        "per_class_metrics": [
+          {
+            "class_name": "outlier",
+            "class_id": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 45
+          },
+          {
+            "class_name": "car",
+            "class_id": 10,
+            "precision": 0.9923,
+            "recall": 0.9916,
+            "f1_score": 0.992,
+            "iou": 0.984,
+            "support_points": 20455
+          },
+          {
+            "class_name": "bicycle",
+            "class_id": 11,
+            "precision": 0.8846,
+            "recall": 0.8214,
+            "f1_score": 0.8519,
+            "iou": 0.7419,
+            "support_points": 56
+          },
+          {
+            "class_name": "motorcycle",
+            "class_id": 15,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 2
+          },
+          {
+            "class_name": "other-vehicle",
+            "class_id": 20,
+            "precision": 0.9368,
+            "recall": 0.9634,
+            "f1_score": 0.9499,
+            "iou": 0.9046,
+            "support_points": 246
+          },
+          {
+            "class_name": "road",
+            "class_id": 40,
+            "precision": 0.9845,
+            "recall": 0.9923,
+            "f1_score": 0.9884,
+            "iou": 0.977,
+            "support_points": 32682
+          },
+          {
+            "class_name": "parking",
+            "class_id": 44,
+            "precision": 0.9623,
+            "recall": 0.9306,
+            "f1_score": 0.9462,
+            "iou": 0.8978,
+            "support_points": 8328
+          },
+          {
+            "class_name": "sidewalk",
+            "class_id": 48,
+            "precision": 0.9525,
+            "recall": 0.9715,
+            "f1_score": 0.9619,
+            "iou": 0.9266,
+            "support_points": 12369
+          },
+          {
+            "class_name": "other-ground",
+            "class_id": 49,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 21
+          },
+          {
+            "class_name": "building",
+            "class_id": 50,
+            "precision": 0.9883,
+            "recall": 0.9917,
+            "f1_score": 0.99,
+            "iou": 0.9802,
+            "support_points": 26217
+          },
+          {
+            "class_name": "fence",
+            "class_id": 51,
+            "precision": 0.7286,
+            "recall": 0.5862,
+            "f1_score": 0.6497,
+            "iou": 0.4811,
+            "support_points": 174
+          },
+          {
+            "class_name": "other-structure",
+            "class_id": 52,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 29
+          },
+          {
+            "class_name": "lane-marking",
+            "class_id": 60,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 56
+          },
+          {
+            "class_name": "vegetation",
+            "class_id": 70,
+            "precision": 0.8509,
+            "recall": 0.9581,
+            "f1_score": 0.9013,
+            "iou": 0.8204,
+            "support_points": 14720
+          },
+          {
+            "class_name": "trunk",
+            "class_id": 71,
+            "precision": 0.9225,
+            "recall": 0.9118,
+            "f1_score": 0.9171,
+            "iou": 0.8469,
+            "support_points": 1893
+          },
+          {
+            "class_name": "terrain",
+            "class_id": 72,
+            "precision": 0.646,
+            "recall": 0.5361,
+            "f1_score": 0.5859,
+            "iou": 0.4143,
+            "support_points": 194
+          },
+          {
+            "class_name": "pole",
+            "class_id": 80,
+            "precision": 0.95,
+            "recall": 0.7308,
+            "f1_score": 0.8261,
+            "iou": 0.7037,
+            "support_points": 416
+          },
+          {
+            "class_name": "traffic-sign",
+            "class_id": 81,
+            "precision": 0.8594,
+            "recall": 0.9907,
+            "f1_score": 0.9204,
+            "iou": 0.8526,
+            "support_points": 216
+          },
+          {
+            "class_name": "other-object",
+            "class_id": 99,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 1854
+          },
+          {
+            "class_name": "moving-bicyclist",
+            "class_id": 253,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 3
+          }
+        ],
+        "object_class_summaries": {
+          "vehicle": {
+            "class_name": "vehicle",
+            "class_id": null,
+            "precision": 0.9915,
+            "recall": 0.9908,
+            "f1_score": 0.9911,
+            "iou": 0.9824,
+            "support_points": 20762
+          },
+          "pedestrian": {
+            "class_name": "pedestrian",
+            "class_id": null,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 0
+          },
+          "cyclist": {
+            "class_name": "cyclist",
+            "class_id": null,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 3
+          },
+          "pole": {
+            "class_name": "pole",
+            "class_id": null,
+            "precision": 0.9297,
+            "recall": 0.8822,
+            "f1_score": 0.9053,
+            "iou": 0.827,
+            "support_points": 2309
+          },
+          "static_obstacle": {
+            "class_name": "static_obstacle",
+            "class_id": null,
+            "precision": 0.9886,
+            "recall": 0.9249,
+            "f1_score": 0.9557,
+            "iou": 0.9151,
+            "support_points": 28877
+          }
+        },
+        "distance_bins": [
+          {
+            "bin_range": "0-10m",
+            "min_dist_m": 0.0,
+            "max_dist_m": 10.0,
+            "point_count": 66153,
+            "accuracy": 0.9705,
+            "mean_iou": 0.7115
+          },
+          {
+            "bin_range": "10-30m",
+            "min_dist_m": 10.0,
+            "max_dist_m": 30.0,
+            "point_count": 48185,
+            "accuracy": 0.9528,
+            "mean_iou": 0.5464
+          },
+          {
+            "bin_range": "30-50m",
+            "min_dist_m": 30.0,
+            "max_dist_m": 50.0,
+            "point_count": 5638,
+            "accuracy": 0.923,
+            "mean_iou": 0.4663
+          },
+          {
+            "bin_range": "50-100m",
+            "min_dist_m": 50.0,
+            "max_dist_m": 100.0,
+            "point_count": 0,
+            "accuracy": 0.0,
+            "mean_iou": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "frame_id": "000096.bin",
+      "session_id": "semantic_kitti_sequence_00",
+      "timestamp": "2026-09-15T14:32:42.502858+00:00",
+      "device_used": "CPU/Disk",
+      "model_name": "Fast-FRNet (SEMANTICKITTI)",
+      "timings": {
+        "lidar_preprocessing_ms": 41.24,
+        "salsanext_inference_ms": 2568.75,
+        "terrain_analysis_ms": 40.03,
+        "object_detection_tracking_ms": 12.4,
+        "adaptive_grid_ms": 81.62,
+        "total_latency_ms": 2894.49,
+        "preprocessing_ms": 41.24,
+        "inference_ms": 2568.75,
+        "terrain_ms": 40.03,
+        "clustering_ms": 12.4,
+        "grid_ms": 81.62,
+        "total_ms": 2894.49
+      },
+      "actual_fps": 0.35,
+      "resource_metrics": {
+        "input_point_count": 121760,
+        "fine_cells_count": 1153,
+        "medium_cells_count": 412,
+        "coarse_cells_count": 261,
+        "total_cells_count": 1826,
+        "adaptive_grid_bytes": 116864,
+        "serialized_map_bytes": 233728,
+        "uniform_baseline_bytes": 8464184,
+        "uniform_voxel_size_m": 0.5,
+        "uniform_bytes_per_voxel": 4,
+        "uniform_total_voxels": 2116046,
+        "memory_reduction_percentage": 98.62,
+        "spatial_bounds": {
+          "min_x": -78.536,
+          "max_x": 78.185,
+          "min_y": -69.313,
+          "max_y": 76.921,
+          "min_z": -8.403,
+          "max_z": 2.893,
+          "span_x": 156.721,
+          "span_y": 146.234,
+          "span_z": 11.297,
+          "volume_m3": 258893.445
+        },
+        "methodology_note": "Uniform 3D baseline is calculated as (span_x/voxel_size) * (span_y/voxel_size) * (span_z/voxel_size) * bytes_per_voxel using real scan bounding box."
+      },
+      "accuracy_metrics": {
+        "accuracy_available": true,
+        "reason_unavailable": null,
+        "overall_accuracy": 0.9608,
+        "mean_iou": 0.4994,
+        "evaluated_points_count": 120003,
+        "per_class_metrics": [
+          {
+            "class_name": "outlier",
+            "class_id": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 50
+          },
+          {
+            "class_name": "car",
+            "class_id": 10,
+            "precision": 0.9912,
+            "recall": 0.9932,
+            "f1_score": 0.9922,
+            "iou": 0.9846,
+            "support_points": 19699
+          },
+          {
+            "class_name": "bicycle",
+            "class_id": 11,
+            "precision": 0.8039,
+            "recall": 0.6212,
+            "f1_score": 0.7009,
+            "iou": 0.5395,
+            "support_points": 66
+          },
+          {
+            "class_name": "motorcycle",
+            "class_id": 15,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 1
+          },
+          {
+            "class_name": "other-vehicle",
+            "class_id": 20,
+            "precision": 0.9136,
+            "recall": 0.9911,
+            "f1_score": 0.9507,
+            "iou": 0.9061,
+            "support_points": 224
+          },
+          {
+            "class_name": "road",
+            "class_id": 40,
+            "precision": 0.9853,
+            "recall": 0.9901,
+            "f1_score": 0.9877,
+            "iou": 0.9757,
+            "support_points": 33739
+          },
+          {
+            "class_name": "parking",
+            "class_id": 44,
+            "precision": 0.9714,
+            "recall": 0.9283,
+            "f1_score": 0.9494,
+            "iou": 0.9037,
+            "support_points": 7911
+          },
+          {
+            "class_name": "sidewalk",
+            "class_id": 48,
+            "precision": 0.9543,
+            "recall": 0.9689,
+            "f1_score": 0.9616,
+            "iou": 0.926,
+            "support_points": 13192
+          },
+          {
+            "class_name": "other-ground",
+            "class_id": 49,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 26
+          },
+          {
+            "class_name": "building",
+            "class_id": 50,
+            "precision": 0.9851,
+            "recall": 0.9937,
+            "f1_score": 0.9894,
+            "iou": 0.979,
+            "support_points": 25746
+          },
+          {
+            "class_name": "fence",
+            "class_id": 51,
+            "precision": 0.1718,
+            "recall": 0.2154,
+            "f1_score": 0.1911,
+            "iou": 0.1057,
+            "support_points": 130
+          },
+          {
+            "class_name": "other-structure",
+            "class_id": 52,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 34
+          },
+          {
+            "class_name": "lane-marking",
+            "class_id": 60,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 67
+          },
+          {
+            "class_name": "vegetation",
+            "class_id": 70,
+            "precision": 0.8543,
+            "recall": 0.9634,
+            "f1_score": 0.9056,
+            "iou": 0.8274,
+            "support_points": 14582
+          },
+          {
+            "class_name": "trunk",
+            "class_id": 71,
+            "precision": 0.9238,
+            "recall": 0.9349,
+            "f1_score": 0.9293,
+            "iou": 0.8679,
+            "support_points": 1750
+          },
+          {
+            "class_name": "terrain",
+            "class_id": 72,
+            "precision": 0.7126,
+            "recall": 0.5336,
+            "f1_score": 0.6103,
+            "iou": 0.4391,
+            "support_points": 223
+          },
+          {
+            "class_name": "pole",
+            "class_id": 80,
+            "precision": 0.9185,
+            "recall": 0.773,
+            "f1_score": 0.8395,
+            "iou": 0.7235,
+            "support_points": 423
+          },
+          {
+            "class_name": "traffic-sign",
+            "class_id": 81,
+            "precision": 0.8442,
+            "recall": 0.9512,
+            "f1_score": 0.8945,
+            "iou": 0.8091,
+            "support_points": 205
+          },
+          {
+            "class_name": "other-object",
+            "class_id": 99,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 1923
+          },
+          {
+            "class_name": "moving-bicyclist",
+            "class_id": 253,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 12
+          }
+        ],
+        "object_class_summaries": {
+          "vehicle": {
+            "class_name": "vehicle",
+            "class_id": null,
+            "precision": 0.9898,
+            "recall": 0.9914,
+            "f1_score": 0.9906,
+            "iou": 0.9814,
+            "support_points": 20002
+          },
+          "pedestrian": {
+            "class_name": "pedestrian",
+            "class_id": null,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 0
+          },
+          "cyclist": {
+            "class_name": "cyclist",
+            "class_id": null,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 12
+          },
+          "pole": {
+            "class_name": "pole",
+            "class_id": null,
+            "precision": 0.9243,
+            "recall": 0.9047,
+            "f1_score": 0.9144,
+            "iou": 0.8423,
+            "support_points": 2173
+          },
+          "static_obstacle": {
+            "class_name": "static_obstacle",
+            "class_id": null,
+            "precision": 0.9849,
+            "recall": 0.9259,
+            "f1_score": 0.9545,
+            "iou": 0.9129,
+            "support_points": 28427
+          }
+        },
+        "distance_bins": [
+          {
+            "bin_range": "0-10m",
+            "min_dist_m": 0.0,
+            "max_dist_m": 10.0,
+            "point_count": 64914,
+            "accuracy": 0.9718,
+            "mean_iou": 0.7112
+          },
+          {
+            "bin_range": "10-30m",
+            "min_dist_m": 10.0,
+            "max_dist_m": 30.0,
+            "point_count": 49396,
+            "accuracy": 0.9527,
+            "mean_iou": 0.5426
+          },
+          {
+            "bin_range": "30-50m",
+            "min_dist_m": 30.0,
+            "max_dist_m": 50.0,
+            "point_count": 5693,
+            "accuracy": 0.9053,
+            "mean_iou": 0.403
+          },
+          {
+            "bin_range": "50-100m",
+            "min_dist_m": 50.0,
+            "max_dist_m": 100.0,
+            "point_count": 0,
+            "accuracy": 0.0,
+            "mean_iou": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "frame_id": "000096.bin",
+      "session_id": "semantic_kitti_sequence_00",
+      "timestamp": "2026-09-15T14:32:42.502858+00:00",
+      "device_used": "CPU/Disk",
+      "model_name": "Fast-FRNet (SEMANTICKITTI)",
+      "timings": {
+        "lidar_preprocessing_ms": 41.24,
+        "salsanext_inference_ms": 2568.75,
+        "terrain_analysis_ms": 40.03,
+        "object_detection_tracking_ms": 12.4,
+        "adaptive_grid_ms": 81.62,
+        "total_latency_ms": 2894.49,
+        "preprocessing_ms": 41.24,
+        "inference_ms": 2568.75,
+        "terrain_ms": 40.03,
+        "clustering_ms": 12.4,
+        "grid_ms": 81.62,
+        "total_ms": 2894.49
+      },
+      "actual_fps": 0.35,
+      "resource_metrics": {
+        "input_point_count": 121760,
+        "fine_cells_count": 1153,
+        "medium_cells_count": 412,
+        "coarse_cells_count": 261,
+        "total_cells_count": 1826,
+        "adaptive_grid_bytes": 116864,
+        "serialized_map_bytes": 233728,
+        "uniform_baseline_bytes": 8464184,
+        "uniform_voxel_size_m": 0.5,
+        "uniform_bytes_per_voxel": 4,
+        "uniform_total_voxels": 2116046,
+        "memory_reduction_percentage": 98.62,
+        "spatial_bounds": {
+          "min_x": -78.536,
+          "max_x": 78.185,
+          "min_y": -69.313,
+          "max_y": 76.921,
+          "min_z": -8.403,
+          "max_z": 2.893,
+          "span_x": 156.721,
+          "span_y": 146.234,
+          "span_z": 11.297,
+          "volume_m3": 258893.445
+        },
+        "methodology_note": "Uniform 3D baseline is calculated as (span_x/voxel_size) * (span_y/voxel_size) * (span_z/voxel_size) * bytes_per_voxel using real scan bounding box."
+      },
+      "accuracy_metrics": {
+        "accuracy_available": true,
+        "reason_unavailable": null,
+        "overall_accuracy": 0.9608,
+        "mean_iou": 0.4994,
+        "evaluated_points_count": 120003,
+        "per_class_metrics": [
+          {
+            "class_name": "outlier",
+            "class_id": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 50
+          },
+          {
+            "class_name": "car",
+            "class_id": 10,
+            "precision": 0.9912,
+            "recall": 0.9932,
+            "f1_score": 0.9922,
+            "iou": 0.9846,
+            "support_points": 19699
+          },
+          {
+            "class_name": "bicycle",
+            "class_id": 11,
+            "precision": 0.8039,
+            "recall": 0.6212,
+            "f1_score": 0.7009,
+            "iou": 0.5395,
+            "support_points": 66
+          },
+          {
+            "class_name": "motorcycle",
+            "class_id": 15,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 1
+          },
+          {
+            "class_name": "other-vehicle",
+            "class_id": 20,
+            "precision": 0.9136,
+            "recall": 0.9911,
+            "f1_score": 0.9507,
+            "iou": 0.9061,
+            "support_points": 224
+          },
+          {
+            "class_name": "road",
+            "class_id": 40,
+            "precision": 0.9853,
+            "recall": 0.9901,
+            "f1_score": 0.9877,
+            "iou": 0.9757,
+            "support_points": 33739
+          },
+          {
+            "class_name": "parking",
+            "class_id": 44,
+            "precision": 0.9714,
+            "recall": 0.9283,
+            "f1_score": 0.9494,
+            "iou": 0.9037,
+            "support_points": 7911
+          },
+          {
+            "class_name": "sidewalk",
+            "class_id": 48,
+            "precision": 0.9543,
+            "recall": 0.9689,
+            "f1_score": 0.9616,
+            "iou": 0.926,
+            "support_points": 13192
+          },
+          {
+            "class_name": "other-ground",
+            "class_id": 49,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 26
+          },
+          {
+            "class_name": "building",
+            "class_id": 50,
+            "precision": 0.9851,
+            "recall": 0.9937,
+            "f1_score": 0.9894,
+            "iou": 0.979,
+            "support_points": 25746
+          },
+          {
+            "class_name": "fence",
+            "class_id": 51,
+            "precision": 0.1718,
+            "recall": 0.2154,
+            "f1_score": 0.1911,
+            "iou": 0.1057,
+            "support_points": 130
+          },
+          {
+            "class_name": "other-structure",
+            "class_id": 52,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 34
+          },
+          {
+            "class_name": "lane-marking",
+            "class_id": 60,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 67
+          },
+          {
+            "class_name": "vegetation",
+            "class_id": 70,
+            "precision": 0.8543,
+            "recall": 0.9634,
+            "f1_score": 0.9056,
+            "iou": 0.8274,
+            "support_points": 14582
+          },
+          {
+            "class_name": "trunk",
+            "class_id": 71,
+            "precision": 0.9238,
+            "recall": 0.9349,
+            "f1_score": 0.9293,
+            "iou": 0.8679,
+            "support_points": 1750
+          },
+          {
+            "class_name": "terrain",
+            "class_id": 72,
+            "precision": 0.7126,
+            "recall": 0.5336,
+            "f1_score": 0.6103,
+            "iou": 0.4391,
+            "support_points": 223
+          },
+          {
+            "class_name": "pole",
+            "class_id": 80,
+            "precision": 0.9185,
+            "recall": 0.773,
+            "f1_score": 0.8395,
+            "iou": 0.7235,
+            "support_points": 423
+          },
+          {
+            "class_name": "traffic-sign",
+            "class_id": 81,
+            "precision": 0.8442,
+            "recall": 0.9512,
+            "f1_score": 0.8945,
+            "iou": 0.8091,
+            "support_points": 205
+          },
+          {
+            "class_name": "other-object",
+            "class_id": 99,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 1923
+          },
+          {
+            "class_name": "moving-bicyclist",
+            "class_id": 253,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 12
+          }
+        ],
+        "object_class_summaries": {
+          "vehicle": {
+            "class_name": "vehicle",
+            "class_id": null,
+            "precision": 0.9898,
+            "recall": 0.9914,
+            "f1_score": 0.9906,
+            "iou": 0.9814,
+            "support_points": 20002
+          },
+          "pedestrian": {
+            "class_name": "pedestrian",
+            "class_id": null,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 0
+          },
+          "cyclist": {
+            "class_name": "cyclist",
+            "class_id": null,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 12
+          },
+          "pole": {
+            "class_name": "pole",
+            "class_id": null,
+            "precision": 0.9243,
+            "recall": 0.9047,
+            "f1_score": 0.9144,
+            "iou": 0.8423,
+            "support_points": 2173
+          },
+          "static_obstacle": {
+            "class_name": "static_obstacle",
+            "class_id": null,
+            "precision": 0.9849,
+            "recall": 0.9259,
+            "f1_score": 0.9545,
+            "iou": 0.9129,
+            "support_points": 28427
+          }
+        },
+        "distance_bins": [
+          {
+            "bin_range": "0-10m",
+            "min_dist_m": 0.0,
+            "max_dist_m": 10.0,
+            "point_count": 64914,
+            "accuracy": 0.9718,
+            "mean_iou": 0.7112
+          },
+          {
+            "bin_range": "10-30m",
+            "min_dist_m": 10.0,
+            "max_dist_m": 30.0,
+            "point_count": 49396,
+            "accuracy": 0.9527,
+            "mean_iou": 0.5426
+          },
+          {
+            "bin_range": "30-50m",
+            "min_dist_m": 30.0,
+            "max_dist_m": 50.0,
+            "point_count": 5693,
+            "accuracy": 0.9053,
+            "mean_iou": 0.403
+          },
+          {
+            "bin_range": "50-100m",
+            "min_dist_m": 50.0,
+            "max_dist_m": 100.0,
+            "point_count": 0,
+            "accuracy": 0.0,
+            "mean_iou": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "frame_id": "000097.bin",
+      "session_id": "semantic_kitti_sequence_00",
+      "timestamp": "2026-09-15T14:32:46.378523+00:00",
+      "device_used": "CPU/Disk",
+      "model_name": "Fast-FRNet (SEMANTICKITTI)",
+      "timings": {
+        "lidar_preprocessing_ms": 27.17,
+        "salsanext_inference_ms": 3347.26,
+        "terrain_analysis_ms": 24.08,
+        "object_detection_tracking_ms": 6.7,
+        "adaptive_grid_ms": 44.9,
+        "total_latency_ms": 3540.73,
+        "preprocessing_ms": 27.17,
+        "inference_ms": 3347.26,
+        "terrain_ms": 24.08,
+        "clustering_ms": 6.7,
+        "grid_ms": 44.9,
+        "total_ms": 3540.73
+      },
+      "actual_fps": 0.28,
+      "resource_metrics": {
+        "input_point_count": 121951,
+        "fine_cells_count": 1133,
+        "medium_cells_count": 401,
+        "coarse_cells_count": 288,
+        "total_cells_count": 1822,
+        "adaptive_grid_bytes": 116608,
+        "serialized_map_bytes": 233216,
+        "uniform_baseline_bytes": 8367216,
+        "uniform_voxel_size_m": 0.5,
+        "uniform_bytes_per_voxel": 4,
+        "uniform_total_voxels": 2091804,
+        "memory_reduction_percentage": 98.61,
+        "spatial_bounds": {
+          "min_x": -79.01,
+          "max_x": 79.736,
+          "min_y": -76.224,
+          "max_y": 72.892,
+          "min_z": -8.053,
+          "max_z": 2.894,
+          "span_x": 158.746,
+          "span_y": 149.116,
+          "span_z": 10.947,
+          "volume_m3": 259122.924
+        },
+        "methodology_note": "Uniform 3D baseline is calculated as (span_x/voxel_size) * (span_y/voxel_size) * (span_z/voxel_size) * bytes_per_voxel using real scan bounding box."
+      },
+      "accuracy_metrics": {
+        "accuracy_available": true,
+        "reason_unavailable": null,
+        "overall_accuracy": 0.9595,
+        "mean_iou": 0.5612,
+        "evaluated_points_count": 120134,
+        "per_class_metrics": [
+          {
+            "class_name": "outlier",
+            "class_id": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 58
+          },
+          {
+            "class_name": "car",
+            "class_id": 10,
+            "precision": 0.9907,
+            "recall": 0.9927,
+            "f1_score": 0.9917,
+            "iou": 0.9836,
+            "support_points": 19077
+          },
+          {
+            "class_name": "bicycle",
+            "class_id": 11,
+            "precision": 0.8594,
+            "recall": 0.8333,
+            "f1_score": 0.8462,
+            "iou": 0.7333,
+            "support_points": 66
+          },
+          {
+            "class_name": "other-vehicle",
+            "class_id": 20,
+            "precision": 0.9358,
+            "recall": 0.9315,
+            "f1_score": 0.9336,
+            "iou": 0.8755,
+            "support_points": 219
+          },
+          {
+            "class_name": "road",
+            "class_id": 40,
+            "precision": 0.9825,
+            "recall": 0.9914,
+            "f1_score": 0.9869,
+            "iou": 0.9742,
+            "support_points": 34740
+          },
+          {
+            "class_name": "parking",
+            "class_id": 44,
+            "precision": 0.969,
+            "recall": 0.9064,
+            "f1_score": 0.9367,
+            "iou": 0.8809,
+            "support_points": 7308
+          },
+          {
+            "class_name": "sidewalk",
+            "class_id": 48,
+            "precision": 0.9516,
+            "recall": 0.967,
+            "f1_score": 0.9592,
+            "iou": 0.9217,
+            "support_points": 14102
+          },
+          {
+            "class_name": "other-ground",
+            "class_id": 49,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 35
+          },
+          {
+            "class_name": "building",
+            "class_id": 50,
+            "precision": 0.9873,
+            "recall": 0.9956,
+            "f1_score": 0.9914,
+            "iou": 0.983,
+            "support_points": 25338
+          },
+          {
+            "class_name": "fence",
+            "class_id": 51,
+            "precision": 0.2326,
+            "recall": 0.24,
+            "f1_score": 0.2362,
+            "iou": 0.1339,
+            "support_points": 125
+          },
+          {
+            "class_name": "other-structure",
+            "class_id": 52,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 34
+          },
+          {
+            "class_name": "lane-marking",
+            "class_id": 60,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 74
+          },
+          {
+            "class_name": "vegetation",
+            "class_id": 70,
+            "precision": 0.8492,
+            "recall": 0.9643,
+            "f1_score": 0.9031,
+            "iou": 0.8233,
+            "support_points": 14410
+          },
+          {
+            "class_name": "trunk",
+            "class_id": 71,
+            "precision": 0.9291,
+            "recall": 0.9346,
+            "f1_score": 0.9318,
+            "iou": 0.8724,
+            "support_points": 1697
+          },
+          {
+            "class_name": "terrain",
+            "class_id": 72,
+            "precision": 0.64,
+            "recall": 0.5045,
+            "f1_score": 0.5642,
+            "iou": 0.393,
+            "support_points": 222
+          },
+          {
+            "class_name": "pole",
+            "class_id": 80,
+            "precision": 0.8984,
+            "recall": 0.7658,
+            "f1_score": 0.8268,
+            "iou": 0.7047,
+            "support_points": 427
+          },
+          {
+            "class_name": "traffic-sign",
+            "class_id": 81,
+            "precision": 0.8773,
+            "recall": 0.9279,
+            "f1_score": 0.9019,
+            "iou": 0.8213,
+            "support_points": 208
+          },
+          {
+            "class_name": "other-object",
+            "class_id": 99,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 1994
+          }
+        ],
+        "object_class_summaries": {
+          "vehicle": {
+            "class_name": "vehicle",
+            "class_id": null,
+            "precision": 0.99,
+            "recall": 0.9918,
+            "f1_score": 0.9909,
+            "iou": 0.9819,
+            "support_points": 19362
+          },
+          "pedestrian": {
+            "class_name": "pedestrian",
+            "class_id": null,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 0
+          },
+          "cyclist": {
+            "class_name": "cyclist",
+            "class_id": null,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 0
+          },
+          "pole": {
+            "class_name": "pole",
+            "class_id": null,
+            "precision": 0.9252,
+            "recall": 0.9021,
+            "f1_score": 0.9135,
+            "iou": 0.8407,
+            "support_points": 2124
+          },
+          "static_obstacle": {
+            "class_name": "static_obstacle",
+            "class_id": null,
+            "precision": 0.9858,
+            "recall": 0.9217,
+            "f1_score": 0.9526,
+            "iou": 0.9095,
+            "support_points": 28092
+          }
+        },
+        "distance_bins": [
+          {
+            "bin_range": "0-10m",
+            "min_dist_m": 0.0,
+            "max_dist_m": 10.0,
+            "point_count": 64239,
+            "accuracy": 0.9704,
+            "mean_iou": 0.7638
+          },
+          {
+            "bin_range": "10-30m",
+            "min_dist_m": 10.0,
+            "max_dist_m": 30.0,
+            "point_count": 50198,
+            "accuracy": 0.9507,
+            "mean_iou": 0.5612
+          },
+          {
+            "bin_range": "30-50m",
+            "min_dist_m": 30.0,
+            "max_dist_m": 50.0,
+            "point_count": 5697,
+            "accuracy": 0.9143,
+            "mean_iou": 0.4363
+          },
+          {
+            "bin_range": "50-100m",
+            "min_dist_m": 50.0,
+            "max_dist_m": 100.0,
+            "point_count": 0,
+            "accuracy": 0.0,
+            "mean_iou": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "frame_id": "000097.bin",
+      "session_id": "semantic_kitti_sequence_00",
+      "timestamp": "2026-09-15T14:32:46.378523+00:00",
+      "device_used": "CPU/Disk",
+      "model_name": "Fast-FRNet (SEMANTICKITTI)",
+      "timings": {
+        "lidar_preprocessing_ms": 27.17,
+        "salsanext_inference_ms": 3347.26,
+        "terrain_analysis_ms": 24.08,
+        "object_detection_tracking_ms": 6.7,
+        "adaptive_grid_ms": 44.9,
+        "total_latency_ms": 3540.73,
+        "preprocessing_ms": 27.17,
+        "inference_ms": 3347.26,
+        "terrain_ms": 24.08,
+        "clustering_ms": 6.7,
+        "grid_ms": 44.9,
+        "total_ms": 3540.73
+      },
+      "actual_fps": 0.28,
+      "resource_metrics": {
+        "input_point_count": 121951,
+        "fine_cells_count": 1133,
+        "medium_cells_count": 401,
+        "coarse_cells_count": 288,
+        "total_cells_count": 1822,
+        "adaptive_grid_bytes": 116608,
+        "serialized_map_bytes": 233216,
+        "uniform_baseline_bytes": 8367216,
+        "uniform_voxel_size_m": 0.5,
+        "uniform_bytes_per_voxel": 4,
+        "uniform_total_voxels": 2091804,
+        "memory_reduction_percentage": 98.61,
+        "spatial_bounds": {
+          "min_x": -79.01,
+          "max_x": 79.736,
+          "min_y": -76.224,
+          "max_y": 72.892,
+          "min_z": -8.053,
+          "max_z": 2.894,
+          "span_x": 158.746,
+          "span_y": 149.116,
+          "span_z": 10.947,
+          "volume_m3": 259122.924
+        },
+        "methodology_note": "Uniform 3D baseline is calculated as (span_x/voxel_size) * (span_y/voxel_size) * (span_z/voxel_size) * bytes_per_voxel using real scan bounding box."
+      },
+      "accuracy_metrics": {
+        "accuracy_available": true,
+        "reason_unavailable": null,
+        "overall_accuracy": 0.9595,
+        "mean_iou": 0.5612,
+        "evaluated_points_count": 120134,
+        "per_class_metrics": [
+          {
+            "class_name": "outlier",
+            "class_id": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 58
+          },
+          {
+            "class_name": "car",
+            "class_id": 10,
+            "precision": 0.9907,
+            "recall": 0.9927,
+            "f1_score": 0.9917,
+            "iou": 0.9836,
+            "support_points": 19077
+          },
+          {
+            "class_name": "bicycle",
+            "class_id": 11,
+            "precision": 0.8594,
+            "recall": 0.8333,
+            "f1_score": 0.8462,
+            "iou": 0.7333,
+            "support_points": 66
+          },
+          {
+            "class_name": "other-vehicle",
+            "class_id": 20,
+            "precision": 0.9358,
+            "recall": 0.9315,
+            "f1_score": 0.9336,
+            "iou": 0.8755,
+            "support_points": 219
+          },
+          {
+            "class_name": "road",
+            "class_id": 40,
+            "precision": 0.9825,
+            "recall": 0.9914,
+            "f1_score": 0.9869,
+            "iou": 0.9742,
+            "support_points": 34740
+          },
+          {
+            "class_name": "parking",
+            "class_id": 44,
+            "precision": 0.969,
+            "recall": 0.9064,
+            "f1_score": 0.9367,
+            "iou": 0.8809,
+            "support_points": 7308
+          },
+          {
+            "class_name": "sidewalk",
+            "class_id": 48,
+            "precision": 0.9516,
+            "recall": 0.967,
+            "f1_score": 0.9592,
+            "iou": 0.9217,
+            "support_points": 14102
+          },
+          {
+            "class_name": "other-ground",
+            "class_id": 49,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 35
+          },
+          {
+            "class_name": "building",
+            "class_id": 50,
+            "precision": 0.9873,
+            "recall": 0.9956,
+            "f1_score": 0.9914,
+            "iou": 0.983,
+            "support_points": 25338
+          },
+          {
+            "class_name": "fence",
+            "class_id": 51,
+            "precision": 0.2326,
+            "recall": 0.24,
+            "f1_score": 0.2362,
+            "iou": 0.1339,
+            "support_points": 125
+          },
+          {
+            "class_name": "other-structure",
+            "class_id": 52,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 34
+          },
+          {
+            "class_name": "lane-marking",
+            "class_id": 60,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 74
+          },
+          {
+            "class_name": "vegetation",
+            "class_id": 70,
+            "precision": 0.8492,
+            "recall": 0.9643,
+            "f1_score": 0.9031,
+            "iou": 0.8233,
+            "support_points": 14410
+          },
+          {
+            "class_name": "trunk",
+            "class_id": 71,
+            "precision": 0.9291,
+            "recall": 0.9346,
+            "f1_score": 0.9318,
+            "iou": 0.8724,
+            "support_points": 1697
+          },
+          {
+            "class_name": "terrain",
+            "class_id": 72,
+            "precision": 0.64,
+            "recall": 0.5045,
+            "f1_score": 0.5642,
+            "iou": 0.393,
+            "support_points": 222
+          },
+          {
+            "class_name": "pole",
+            "class_id": 80,
+            "precision": 0.8984,
+            "recall": 0.7658,
+            "f1_score": 0.8268,
+            "iou": 0.7047,
+            "support_points": 427
+          },
+          {
+            "class_name": "traffic-sign",
+            "class_id": 81,
+            "precision": 0.8773,
+            "recall": 0.9279,
+            "f1_score": 0.9019,
+            "iou": 0.8213,
+            "support_points": 208
+          },
+          {
+            "class_name": "other-object",
+            "class_id": 99,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 1994
+          }
+        ],
+        "object_class_summaries": {
+          "vehicle": {
+            "class_name": "vehicle",
+            "class_id": null,
+            "precision": 0.99,
+            "recall": 0.9918,
+            "f1_score": 0.9909,
+            "iou": 0.9819,
+            "support_points": 19362
+          },
+          "pedestrian": {
+            "class_name": "pedestrian",
+            "class_id": null,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 0
+          },
+          "cyclist": {
+            "class_name": "cyclist",
+            "class_id": null,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 0
+          },
+          "pole": {
+            "class_name": "pole",
+            "class_id": null,
+            "precision": 0.9252,
+            "recall": 0.9021,
+            "f1_score": 0.9135,
+            "iou": 0.8407,
+            "support_points": 2124
+          },
+          "static_obstacle": {
+            "class_name": "static_obstacle",
+            "class_id": null,
+            "precision": 0.9858,
+            "recall": 0.9217,
+            "f1_score": 0.9526,
+            "iou": 0.9095,
+            "support_points": 28092
+          }
+        },
+        "distance_bins": [
+          {
+            "bin_range": "0-10m",
+            "min_dist_m": 0.0,
+            "max_dist_m": 10.0,
+            "point_count": 64239,
+            "accuracy": 0.9704,
+            "mean_iou": 0.7638
+          },
+          {
+            "bin_range": "10-30m",
+            "min_dist_m": 10.0,
+            "max_dist_m": 30.0,
+            "point_count": 50198,
+            "accuracy": 0.9507,
+            "mean_iou": 0.5612
+          },
+          {
+            "bin_range": "30-50m",
+            "min_dist_m": 30.0,
+            "max_dist_m": 50.0,
+            "point_count": 5697,
+            "accuracy": 0.9143,
+            "mean_iou": 0.4363
+          },
+          {
+            "bin_range": "50-100m",
+            "min_dist_m": 50.0,
+            "max_dist_m": 100.0,
+            "point_count": 0,
+            "accuracy": 0.0,
+            "mean_iou": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "frame_id": "000098.bin",
+      "session_id": "semantic_kitti_sequence_00",
+      "timestamp": "2026-09-15T14:32:48.344467+00:00",
+      "device_used": "CPU/Disk",
+      "model_name": "Fast-FRNet (SEMANTICKITTI)",
+      "timings": {
+        "lidar_preprocessing_ms": 20.94,
+        "salsanext_inference_ms": 1738.15,
+        "terrain_analysis_ms": 36.05,
+        "object_detection_tracking_ms": 11.49,
+        "adaptive_grid_ms": 42.87,
+        "total_latency_ms": 1936.67,
+        "preprocessing_ms": 20.94,
+        "inference_ms": 1738.15,
+        "terrain_ms": 36.05,
+        "clustering_ms": 11.49,
+        "grid_ms": 42.87,
+        "total_ms": 1936.67
+      },
+      "actual_fps": 0.52,
+      "resource_metrics": {
+        "input_point_count": 122234,
+        "fine_cells_count": 1179,
+        "medium_cells_count": 418,
+        "coarse_cells_count": 294,
+        "total_cells_count": 1891,
+        "adaptive_grid_bytes": 121024,
+        "serialized_map_bytes": 242048,
+        "uniform_baseline_bytes": 8396696,
+        "uniform_voxel_size_m": 0.5,
+        "uniform_bytes_per_voxel": 4,
+        "uniform_total_voxels": 2099174,
+        "memory_reduction_percentage": 98.56,
+        "spatial_bounds": {
+          "min_x": -79.43,
+          "max_x": 79.014,
+          "min_y": -75.415,
+          "max_y": 74.712,
+          "min_z": -7.883,
+          "max_z": 2.85,
+          "span_x": 158.444,
+          "span_y": 150.126,
+          "span_z": 10.733,
+          "volume_m3": 255296.213
+        },
+        "methodology_note": "Uniform 3D baseline is calculated as (span_x/voxel_size) * (span_y/voxel_size) * (span_z/voxel_size) * bytes_per_voxel using real scan bounding box."
+      },
+      "accuracy_metrics": {
+        "accuracy_available": true,
+        "reason_unavailable": null,
+        "overall_accuracy": 0.9588,
+        "mean_iou": 0.5255,
+        "evaluated_points_count": 120286,
+        "per_class_metrics": [
+          {
+            "class_name": "outlier",
+            "class_id": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 78
+          },
+          {
+            "class_name": "car",
+            "class_id": 10,
+            "precision": 0.9906,
+            "recall": 0.9888,
+            "f1_score": 0.9897,
+            "iou": 0.9795,
+            "support_points": 18400
+          },
+          {
+            "class_name": "bicycle",
+            "class_id": 11,
+            "precision": 0.75,
+            "recall": 0.806,
+            "f1_score": 0.777,
+            "iou": 0.6353,
+            "support_points": 67
+          },
+          {
+            "class_name": "motorcycle",
+            "class_id": 15,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 1
+          },
+          {
+            "class_name": "other-vehicle",
+            "class_id": 20,
+            "precision": 0.9524,
+            "recall": 0.9569,
+            "f1_score": 0.9547,
+            "iou": 0.9132,
+            "support_points": 209
+          },
+          {
+            "class_name": "road",
+            "class_id": 40,
+            "precision": 0.9845,
+            "recall": 0.9901,
+            "f1_score": 0.9873,
+            "iou": 0.9749,
+            "support_points": 35874
+          },
+          {
+            "class_name": "parking",
+            "class_id": 44,
+            "precision": 0.9463,
+            "recall": 0.9265,
+            "f1_score": 0.9363,
+            "iou": 0.8802,
+            "support_points": 6696
+          },
+          {
+            "class_name": "sidewalk",
+            "class_id": 48,
+            "precision": 0.9578,
+            "recall": 0.9704,
+            "f1_score": 0.9641,
+            "iou": 0.9306,
+            "support_points": 14863
+          },
+          {
+            "class_name": "other-ground",
+            "class_id": 49,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 47
+          },
+          {
+            "class_name": "building",
+            "class_id": 50,
+            "precision": 0.9849,
+            "recall": 0.9967,
+            "f1_score": 0.9907,
+            "iou": 0.9816,
+            "support_points": 24887
+          },
+          {
+            "class_name": "fence",
+            "class_id": 51,
+            "precision": 0.3415,
+            "recall": 0.1217,
+            "f1_score": 0.1795,
+            "iou": 0.0986,
+            "support_points": 115
+          },
+          {
+            "class_name": "other-structure",
+            "class_id": 52,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 46
+          },
+          {
+            "class_name": "lane-marking",
+            "class_id": 60,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 82
+          },
+          {
+            "class_name": "vegetation",
+            "class_id": 70,
+            "precision": 0.8457,
+            "recall": 0.9563,
+            "f1_score": 0.8976,
+            "iou": 0.8142,
+            "support_points": 14381
+          },
+          {
+            "class_name": "trunk",
+            "class_id": 71,
+            "precision": 0.9141,
+            "recall": 0.9501,
+            "f1_score": 0.9318,
+            "iou": 0.8722,
+            "support_points": 1624
+          },
+          {
+            "class_name": "terrain",
+            "class_id": 72,
+            "precision": 0.5482,
+            "recall": 0.4596,
+            "f1_score": 0.5,
+            "iou": 0.3333,
+            "support_points": 235
+          },
+          {
+            "class_name": "pole",
+            "class_id": 80,
+            "precision": 0.9266,
+            "recall": 0.7773,
+            "f1_score": 0.8454,
+            "iou": 0.7321,
+            "support_points": 422
+          },
+          {
+            "class_name": "traffic-sign",
+            "class_id": 81,
+            "precision": 0.8802,
+            "recall": 0.9455,
+            "f1_score": 0.9117,
+            "iou": 0.8377,
+            "support_points": 202
+          },
+          {
+            "class_name": "other-object",
+            "class_id": 99,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 2057
+          }
+        ],
+        "object_class_summaries": {
+          "vehicle": {
+            "class_name": "vehicle",
+            "class_id": null,
+            "precision": 0.9893,
+            "recall": 0.9878,
+            "f1_score": 0.9886,
+            "iou": 0.9774,
+            "support_points": 18677
+          },
+          "pedestrian": {
+            "class_name": "pedestrian",
+            "class_id": null,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 0
+          },
+          "cyclist": {
+            "class_name": "cyclist",
+            "class_id": null,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 0
+          },
+          "pole": {
+            "class_name": "pole",
+            "class_id": null,
+            "precision": 0.9192,
+            "recall": 0.9174,
+            "f1_score": 0.9183,
+            "iou": 0.8489,
+            "support_points": 2046
+          },
+          "static_obstacle": {
+            "class_name": "static_obstacle",
+            "class_id": null,
+            "precision": 0.9859,
+            "recall": 0.9188,
+            "f1_score": 0.9512,
+            "iou": 0.9069,
+            "support_points": 27683
+          }
+        },
+        "distance_bins": [
+          {
+            "bin_range": "0-10m",
+            "min_dist_m": 0.0,
+            "max_dist_m": 10.0,
+            "point_count": 63936,
+            "accuracy": 0.972,
+            "mean_iou": 0.7775
+          },
+          {
+            "bin_range": "10-30m",
+            "min_dist_m": 10.0,
+            "max_dist_m": 30.0,
+            "point_count": 50646,
+            "accuracy": 0.9469,
+            "mean_iou": 0.5421
+          },
+          {
+            "bin_range": "30-50m",
+            "min_dist_m": 30.0,
+            "max_dist_m": 50.0,
+            "point_count": 5704,
+            "accuracy": 0.9165,
+            "mean_iou": 0.3883
+          },
+          {
+            "bin_range": "50-100m",
+            "min_dist_m": 50.0,
+            "max_dist_m": 100.0,
+            "point_count": 0,
+            "accuracy": 0.0,
+            "mean_iou": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "frame_id": "000098.bin",
+      "session_id": "semantic_kitti_sequence_00",
+      "timestamp": "2026-09-15T14:32:48.344467+00:00",
+      "device_used": "CPU/Disk",
+      "model_name": "Fast-FRNet (SEMANTICKITTI)",
+      "timings": {
+        "lidar_preprocessing_ms": 20.94,
+        "salsanext_inference_ms": 1738.15,
+        "terrain_analysis_ms": 36.05,
+        "object_detection_tracking_ms": 11.49,
+        "adaptive_grid_ms": 42.87,
+        "total_latency_ms": 1936.67,
+        "preprocessing_ms": 20.94,
+        "inference_ms": 1738.15,
+        "terrain_ms": 36.05,
+        "clustering_ms": 11.49,
+        "grid_ms": 42.87,
+        "total_ms": 1936.67
+      },
+      "actual_fps": 0.52,
+      "resource_metrics": {
+        "input_point_count": 122234,
+        "fine_cells_count": 1179,
+        "medium_cells_count": 418,
+        "coarse_cells_count": 294,
+        "total_cells_count": 1891,
+        "adaptive_grid_bytes": 121024,
+        "serialized_map_bytes": 242048,
+        "uniform_baseline_bytes": 8396696,
+        "uniform_voxel_size_m": 0.5,
+        "uniform_bytes_per_voxel": 4,
+        "uniform_total_voxels": 2099174,
+        "memory_reduction_percentage": 98.56,
+        "spatial_bounds": {
+          "min_x": -79.43,
+          "max_x": 79.014,
+          "min_y": -75.415,
+          "max_y": 74.712,
+          "min_z": -7.883,
+          "max_z": 2.85,
+          "span_x": 158.444,
+          "span_y": 150.126,
+          "span_z": 10.733,
+          "volume_m3": 255296.213
+        },
+        "methodology_note": "Uniform 3D baseline is calculated as (span_x/voxel_size) * (span_y/voxel_size) * (span_z/voxel_size) * bytes_per_voxel using real scan bounding box."
+      },
+      "accuracy_metrics": {
+        "accuracy_available": true,
+        "reason_unavailable": null,
+        "overall_accuracy": 0.9588,
+        "mean_iou": 0.5255,
+        "evaluated_points_count": 120286,
+        "per_class_metrics": [
+          {
+            "class_name": "outlier",
+            "class_id": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 78
+          },
+          {
+            "class_name": "car",
+            "class_id": 10,
+            "precision": 0.9906,
+            "recall": 0.9888,
+            "f1_score": 0.9897,
+            "iou": 0.9795,
+            "support_points": 18400
+          },
+          {
+            "class_name": "bicycle",
+            "class_id": 11,
+            "precision": 0.75,
+            "recall": 0.806,
+            "f1_score": 0.777,
+            "iou": 0.6353,
+            "support_points": 67
+          },
+          {
+            "class_name": "motorcycle",
+            "class_id": 15,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 1
+          },
+          {
+            "class_name": "other-vehicle",
+            "class_id": 20,
+            "precision": 0.9524,
+            "recall": 0.9569,
+            "f1_score": 0.9547,
+            "iou": 0.9132,
+            "support_points": 209
+          },
+          {
+            "class_name": "road",
+            "class_id": 40,
+            "precision": 0.9845,
+            "recall": 0.9901,
+            "f1_score": 0.9873,
+            "iou": 0.9749,
+            "support_points": 35874
+          },
+          {
+            "class_name": "parking",
+            "class_id": 44,
+            "precision": 0.9463,
+            "recall": 0.9265,
+            "f1_score": 0.9363,
+            "iou": 0.8802,
+            "support_points": 6696
+          },
+          {
+            "class_name": "sidewalk",
+            "class_id": 48,
+            "precision": 0.9578,
+            "recall": 0.9704,
+            "f1_score": 0.9641,
+            "iou": 0.9306,
+            "support_points": 14863
+          },
+          {
+            "class_name": "other-ground",
+            "class_id": 49,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 47
+          },
+          {
+            "class_name": "building",
+            "class_id": 50,
+            "precision": 0.9849,
+            "recall": 0.9967,
+            "f1_score": 0.9907,
+            "iou": 0.9816,
+            "support_points": 24887
+          },
+          {
+            "class_name": "fence",
+            "class_id": 51,
+            "precision": 0.3415,
+            "recall": 0.1217,
+            "f1_score": 0.1795,
+            "iou": 0.0986,
+            "support_points": 115
+          },
+          {
+            "class_name": "other-structure",
+            "class_id": 52,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 46
+          },
+          {
+            "class_name": "lane-marking",
+            "class_id": 60,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 82
+          },
+          {
+            "class_name": "vegetation",
+            "class_id": 70,
+            "precision": 0.8457,
+            "recall": 0.9563,
+            "f1_score": 0.8976,
+            "iou": 0.8142,
+            "support_points": 14381
+          },
+          {
+            "class_name": "trunk",
+            "class_id": 71,
+            "precision": 0.9141,
+            "recall": 0.9501,
+            "f1_score": 0.9318,
+            "iou": 0.8722,
+            "support_points": 1624
+          },
+          {
+            "class_name": "terrain",
+            "class_id": 72,
+            "precision": 0.5482,
+            "recall": 0.4596,
+            "f1_score": 0.5,
+            "iou": 0.3333,
+            "support_points": 235
+          },
+          {
+            "class_name": "pole",
+            "class_id": 80,
+            "precision": 0.9266,
+            "recall": 0.7773,
+            "f1_score": 0.8454,
+            "iou": 0.7321,
+            "support_points": 422
+          },
+          {
+            "class_name": "traffic-sign",
+            "class_id": 81,
+            "precision": 0.8802,
+            "recall": 0.9455,
+            "f1_score": 0.9117,
+            "iou": 0.8377,
+            "support_points": 202
+          },
+          {
+            "class_name": "other-object",
+            "class_id": 99,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 2057
+          }
+        ],
+        "object_class_summaries": {
+          "vehicle": {
+            "class_name": "vehicle",
+            "class_id": null,
+            "precision": 0.9893,
+            "recall": 0.9878,
+            "f1_score": 0.9886,
+            "iou": 0.9774,
+            "support_points": 18677
+          },
+          "pedestrian": {
+            "class_name": "pedestrian",
+            "class_id": null,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 0
+          },
+          "cyclist": {
+            "class_name": "cyclist",
+            "class_id": null,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "iou": 0.0,
+            "support_points": 0
+          },
+          "pole": {
+            "class_name": "pole",
+            "class_id": null,
+            "precision": 0.9192,
+            "recall": 0.9174,
+            "f1_score": 0.9183,
+            "iou": 0.8489,
+            "support_points": 2046
+          },
+          "static_obstacle": {
+            "class_name": "static_obstacle",
+            "class_id": null,
+            "precision": 0.9859,
+            "recall": 0.9188,
+            "f1_score": 0.9512,
+            "iou": 0.9069,
+            "support_points": 27683
+          }
+        },
+        "distance_bins": [
+          {
+            "bin_range": "0-10m",
+            "min_dist_m": 0.0,
+            "max_dist_m": 10.0,
+            "point_count": 63936,
+            "accuracy": 0.972,
+            "mean_iou": 0.7775
+          },
+          {
+            "bin_range": "10-30m",
+            "min_dist_m": 10.0,
+            "max_dist_m": 30.0,
+            "point_count": 50646,
+            "accuracy": 0.9469,
+            "mean_iou": 0.5421
+          },
+          {
+            "bin_range": "30-50m",
+            "min_dist_m": 30.0,
+            "max_dist_m": 50.0,
+            "point_count": 5704,
+            "accuracy": 0.9165,
+            "mean_iou": 0.3883
+          },
+          {
+            "bin_range": "50-100m",
+            "min_dist_m": 50.0,
+            "max_dist_m": 100.0,
+            "point_count": 0,
+            "accuracy": 0.0,
+            "mean_iou": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "frame_id": "000099.bin",
+      "session_id": "semantic_kitti_sequence_00",
+      "timestamp": "2026-09-15T14:32:50.670880+00:00",
+      "device_used": "CPU/Disk",
+      "model_name": "Fast-FRNet (SEMANTICKITTI)",
+      "timings": {
+        "lidar_preprocessing_ms": 24.92,
+        "salsanext_inference_ms": 2043.51,
+        "terrain_analysis_ms": 25.53,
+        "object_detection_tracking_ms": 15.25,
+        "adaptive_grid_ms": 61.8,
+        "total_latency_ms": 2286.5,
+        "preprocessing_ms": 24.92,
+        "inference_ms": 2043.51,
+        "terrain_ms": 25.53,
+        "clustering_ms": 15.25,
+        "grid_ms": 61.8,
+        "total_ms": 2286.5
+      },
+      "actual_fps": 0.44,
+      "resource_metrics": {
+        "input_point_count": 122492,
+        "fine_cells_count": 1184,
+        "medium_cells_count": 426,
+        "coarse_cells_count": 281,
+        "total_cells_count": 1891,
+        "adaptive_grid_bytes": 121024,
+        "serialized_map_bytes": 242048,
+        "uniform_baseline_bytes": 13696704,
+        "uniform_voxel_size_m": 0.5,
+        "uniform_bytes_per_voxel": 4,
+        "uniform_total_voxels": 3424176,
+        "memory_reduction_percentage": 99.12,
+        "spatial_bounds": {
+          "min_x": -79.443,
+          "max_x": 78.155,
+          "min_y": -75.612,
+          "max_y": 74.416,
+          "min_z": -14.864,
+          "max_z": 2.916,
+          "span_x": 157.598,
+          "span_y": 150.028,
+          "span_z": 17.78,
+          "volume_m3": 420401.827
+        },
+        "methodology_note": "Uniform 3D baseline is calculated as (span_x/voxel_size) * (span_y/voxel_size) * (span_z/voxel_size) * bytes_per_voxel using real scan bounding box."
+      },
+      "accuracy_metrics": null
+    }
+  ],
+  "timestamp": "2026-09-15T14:32:50.672585+00:00"
+}

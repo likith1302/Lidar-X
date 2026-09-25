@@ -1,0 +1,822 @@
+{
+  "rellis": {
+    "baseline": {
+      "model_variant": "baseline_fp32",
+      "spec": "rellis",
+      "frame_count": 5,
+      "total_points": 182237,
+      "latency_ms": {
+        "mean": 2060.66,
+        "std": 11.68,
+        "min": 2039.35,
+        "max": 2074.82,
+        "p50": 2062.33,
+        "p95": 2072.97
+      },
+      "fps": 0.49,
+      "peak_ram_mb": 982.38,
+      "frames": [
+        {
+          "frame_id": "000000",
+          "point_count": 36383,
+          "latency_ms": 2074.82,
+          "ram_mb": 815.63,
+          "output_shape": [
+            36383,
+            20
+          ]
+        },
+        {
+          "frame_id": "000001",
+          "point_count": 36468,
+          "latency_ms": 2062.33,
+          "ram_mb": 916.96,
+          "output_shape": [
+            36468,
+            20
+          ]
+        },
+        {
+          "frame_id": "000002",
+          "point_count": 36478,
+          "latency_ms": 2039.35,
+          "ram_mb": 957.89,
+          "output_shape": [
+            36478,
+            20
+          ]
+        },
+        {
+          "frame_id": "000003",
+          "point_count": 36413,
+          "latency_ms": 2065.57,
+          "ram_mb": 967.71,
+          "output_shape": [
+            36413,
+            20
+          ]
+        },
+        {
+          "frame_id": "000004",
+          "point_count": 36495,
+          "latency_ms": 2061.23,
+          "ram_mb": 982.09,
+          "output_shape": [
+            36495,
+            20
+          ]
+        }
+      ],
+      "checkpoint_file": "best_frnet_rellis.pth",
+      "file_size_bytes": 121068314,
+      "file_size_mb": 121.07,
+      "param_count": 10019252,
+      "weight_dtype": "torch.float32"
+    },
+    "stages": {
+      "stage_a_inference_only_fp32": {
+        "model_variant": "inference_only_fp32",
+        "spec": "rellis",
+        "frame_count": 5,
+        "total_points": 182237,
+        "latency_ms": {
+          "mean": 2113.67,
+          "std": 100.58,
+          "min": 2022.31,
+          "max": 2283.09,
+          "p50": 2068.53,
+          "p95": 2260.71
+        },
+        "fps": 0.47,
+        "peak_ram_mb": 1012.02,
+        "frames": [
+          {
+            "frame_id": "000000",
+            "point_count": 36383,
+            "latency_ms": 2022.31,
+            "ram_mb": 1028.64,
+            "output_shape": [
+              36383,
+              20
+            ],
+            "agreement_pct": 100.0,
+            "logit_max_diff": 0.0,
+            "logit_mean_diff": 0.0,
+            "prob_max_diff": 0.0,
+            "prob_mean_diff": 0.0
+          },
+          {
+            "frame_id": "000001",
+            "point_count": 36468,
+            "latency_ms": 2283.09,
+            "ram_mb": 1058.32,
+            "output_shape": [
+              36468,
+              20
+            ],
+            "agreement_pct": 100.0,
+            "logit_max_diff": 0.0,
+            "logit_mean_diff": 0.0,
+            "prob_max_diff": 0.0,
+            "prob_mean_diff": 0.0
+          },
+          {
+            "frame_id": "000002",
+            "point_count": 36478,
+            "latency_ms": 2068.53,
+            "ram_mb": 982.5,
+            "output_shape": [
+              36478,
+              20
+            ],
+            "agreement_pct": 100.0,
+            "logit_max_diff": 0.0,
+            "logit_mean_diff": 0.0,
+            "prob_max_diff": 0.0,
+            "prob_mean_diff": 0.0
+          },
+          {
+            "frame_id": "000003",
+            "point_count": 36413,
+            "latency_ms": 2023.2,
+            "ram_mb": 901.27,
+            "output_shape": [
+              36413,
+              20
+            ],
+            "agreement_pct": 100.0,
+            "logit_max_diff": 0.0,
+            "logit_mean_diff": 0.0,
+            "prob_max_diff": 0.0,
+            "prob_mean_diff": 0.0
+          },
+          {
+            "frame_id": "000004",
+            "point_count": 36495,
+            "latency_ms": 2171.2,
+            "ram_mb": 1011.97,
+            "output_shape": [
+              36495,
+              20
+            ],
+            "agreement_pct": 100.0,
+            "logit_max_diff": 0.0,
+            "logit_mean_diff": 0.0,
+            "prob_max_diff": 0.0,
+            "prob_mean_diff": 0.0
+          }
+        ],
+        "prediction_agreement_pct": 100.0,
+        "logits_max_abs_diff": 0.0,
+        "logits_mean_abs_diff": 0.0,
+        "probs_max_abs_diff": 0.0,
+        "probs_mean_abs_diff": 0.0,
+        "file_size_bytes": 40097008,
+        "file_size_mb": 40.1,
+        "size_reduction_pct": 66.88,
+        "param_count": 10019252,
+        "weight_dtype": "torch.float32"
+      },
+      "stage_b_fp16_deploy": {
+        "model_variant": "deploy_fp16",
+        "spec": "rellis",
+        "frame_count": 5,
+        "total_points": 182237,
+        "latency_ms": {
+          "mean": 2046.39,
+          "std": 66.53,
+          "min": 1955.16,
+          "max": 2140.32,
+          "p50": 2025.61,
+          "p95": 2132.72
+        },
+        "fps": 0.49,
+        "peak_ram_mb": 1233.6,
+        "frames": [
+          {
+            "frame_id": "000000",
+            "point_count": 36383,
+            "latency_ms": 1955.16,
+            "ram_mb": 1100.09,
+            "output_shape": [
+              36383,
+              20
+            ],
+            "agreement_pct": 99.8626,
+            "logit_max_diff": 0.323639,
+            "logit_mean_diff": 0.017866,
+            "prob_max_diff": 0.029592,
+            "prob_mean_diff": 0.000166
+          },
+          {
+            "frame_id": "000001",
+            "point_count": 36468,
+            "latency_ms": 2140.32,
+            "ram_mb": 1173.18,
+            "output_shape": [
+              36468,
+              20
+            ],
+            "agreement_pct": 99.8135,
+            "logit_max_diff": 0.381821,
+            "logit_mean_diff": 0.017419,
+            "prob_max_diff": 0.039268,
+            "prob_mean_diff": 0.000212
+          },
+          {
+            "frame_id": "000002",
+            "point_count": 36478,
+            "latency_ms": 2008.59,
+            "ram_mb": 1156.74,
+            "output_shape": [
+              36478,
+              20
+            ],
+            "agreement_pct": 99.7642,
+            "logit_max_diff": 0.340591,
+            "logit_mean_diff": 0.018095,
+            "prob_max_diff": 0.049593,
+            "prob_mean_diff": 0.000226
+          },
+          {
+            "frame_id": "000003",
+            "point_count": 36413,
+            "latency_ms": 2102.3,
+            "ram_mb": 1237.47,
+            "output_shape": [
+              36413,
+              20
+            ],
+            "agreement_pct": 99.7638,
+            "logit_max_diff": 0.429947,
+            "logit_mean_diff": 0.017065,
+            "prob_max_diff": 0.035328,
+            "prob_mean_diff": 0.000187
+          },
+          {
+            "frame_id": "000004",
+            "point_count": 36495,
+            "latency_ms": 2025.61,
+            "ram_mb": 1233.6,
+            "output_shape": [
+              36495,
+              20
+            ],
+            "agreement_pct": 99.8438,
+            "logit_max_diff": 0.542313,
+            "logit_mean_diff": 0.018183,
+            "prob_max_diff": 0.034247,
+            "prob_mean_diff": 0.000187
+          }
+        ],
+        "prediction_agreement_pct": 99.8096,
+        "logits_max_abs_diff": 0.542313,
+        "logits_mean_abs_diff": 0.017726,
+        "probs_max_abs_diff": 0.049593,
+        "probs_mean_abs_diff": 0.000196,
+        "checkpoint_file": "best_frnet_rellis_deploy.pth",
+        "file_size_bytes": 20208792,
+        "file_size_mb": 20.21,
+        "size_reduction_pct": 83.31,
+        "param_count": 10019252,
+        "weight_dtype": "torch.float16 (stored) -> torch.float32 (runtime CPU)"
+      },
+      "stage_c_int8_dynamic": {
+        "model_variant": "int8_dynamic",
+        "spec": "rellis",
+        "frame_count": 5,
+        "total_points": 182237,
+        "latency_ms": {
+          "mean": 1869.95,
+          "std": 75.67,
+          "min": 1763.92,
+          "max": 1951.95,
+          "p50": 1900.46,
+          "p95": 1948.84
+        },
+        "fps": 0.53,
+        "peak_ram_mb": 1316.38,
+        "frames": [
+          {
+            "frame_id": "000000",
+            "point_count": 36383,
+            "latency_ms": 1936.42,
+            "ram_mb": 1257.32,
+            "output_shape": [
+              36383,
+              20
+            ],
+            "agreement_pct": 71.2008,
+            "logit_max_diff": 93.094315,
+            "logit_mean_diff": 3.255371,
+            "prob_max_diff": 0.996004,
+            "prob_mean_diff": 0.029395
+          },
+          {
+            "frame_id": "000001",
+            "point_count": 36468,
+            "latency_ms": 1900.46,
+            "ram_mb": 1272.78,
+            "output_shape": [
+              36468,
+              20
+            ],
+            "agreement_pct": 72.6281,
+            "logit_max_diff": 69.119339,
+            "logit_mean_diff": 3.366062,
+            "prob_max_diff": 0.999768,
+            "prob_mean_diff": 0.027534
+          },
+          {
+            "frame_id": "000002",
+            "point_count": 36478,
+            "latency_ms": 1951.95,
+            "ram_mb": 1289.34,
+            "output_shape": [
+              36478,
+              20
+            ],
+            "agreement_pct": 69.2966,
+            "logit_max_diff": 64.194366,
+            "logit_mean_diff": 3.515685,
+            "prob_max_diff": 0.997851,
+            "prob_mean_diff": 0.029486
+          },
+          {
+            "frame_id": "000003",
+            "point_count": 36413,
+            "latency_ms": 1797.02,
+            "ram_mb": 1278.43,
+            "output_shape": [
+              36413,
+              20
+            ],
+            "agreement_pct": 72.3066,
+            "logit_max_diff": 64.136787,
+            "logit_mean_diff": 3.352367,
+            "prob_max_diff": 0.999958,
+            "prob_mean_diff": 0.029041
+          },
+          {
+            "frame_id": "000004",
+            "point_count": 36495,
+            "latency_ms": 1763.92,
+            "ram_mb": 1313.4,
+            "output_shape": [
+              36495,
+              20
+            ],
+            "agreement_pct": 62.5291,
+            "logit_max_diff": 74.706779,
+            "logit_mean_diff": 3.744746,
+            "prob_max_diff": 0.999475,
+            "prob_mean_diff": 0.036018
+          }
+        ],
+        "prediction_agreement_pct": 69.5896,
+        "logits_max_abs_diff": 93.094315,
+        "logits_mean_abs_diff": 3.446846,
+        "probs_max_abs_diff": 0.999958,
+        "probs_mean_abs_diff": 0.030295,
+        "file_size_bytes": 38273504,
+        "file_size_mb": 38.27,
+        "size_reduction_pct": 68.39,
+        "weight_dtype": "torch.qint8 (Linear) + torch.float32 (Conv2d)"
+      }
+    }
+  },
+  "semantickitti": {
+    "baseline": {
+      "model_variant": "baseline_fp32",
+      "spec": "semantickitti",
+      "frame_count": 5,
+      "total_points": 621887,
+      "latency_ms": {
+        "mean": 4708.87,
+        "std": 83.06,
+        "min": 4639.22,
+        "max": 4870.43,
+        "p50": 4679.08,
+        "p95": 4835.72
+      },
+      "fps": 0.21,
+      "peak_ram_mb": 2729.34,
+      "frames": [
+        {
+          "frame_id": "000000",
+          "point_count": 124668,
+          "latency_ms": 4870.43,
+          "ram_mb": 2702.79,
+          "output_shape": [
+            124668,
+            20
+          ],
+          "miou": 0.17,
+          "accuracy": 0.33
+        },
+        {
+          "frame_id": "000001",
+          "point_count": 124605,
+          "latency_ms": 4696.88,
+          "ram_mb": 2705.97,
+          "output_shape": [
+            124605,
+            20
+          ],
+          "miou": 0.17,
+          "accuracy": 0.39
+        },
+        {
+          "frame_id": "000002",
+          "point_count": 124478,
+          "latency_ms": 4658.73,
+          "ram_mb": 2730.48,
+          "output_shape": [
+            124478,
+            20
+          ],
+          "miou": 0.11,
+          "accuracy": 0.26
+        },
+        {
+          "frame_id": "000003",
+          "point_count": 124167,
+          "latency_ms": 4639.22,
+          "ram_mb": 2732.5,
+          "output_shape": [
+            124167,
+            20
+          ],
+          "miou": 0.14,
+          "accuracy": 0.29
+        },
+        {
+          "frame_id": "000004",
+          "point_count": 123969,
+          "latency_ms": 4679.08,
+          "ram_mb": 2728.98,
+          "output_shape": [
+            123969,
+            20
+          ],
+          "miou": 0.11,
+          "accuracy": 0.28
+        }
+      ],
+      "mIoU": 0.14,
+      "accuracy": 0.31,
+      "checkpoint_file": "best_frnet_semantickitti.pth",
+      "file_size_bytes": 40327676,
+      "file_size_mb": 40.33,
+      "param_count": 10019252,
+      "weight_dtype": "torch.float32"
+    },
+    "stages": {
+      "stage_a_inference_only_fp32": {
+        "model_variant": "inference_only_fp32",
+        "spec": "semantickitti",
+        "frame_count": 5,
+        "total_points": 621887,
+        "latency_ms": {
+          "mean": 3132.88,
+          "std": 1331.95,
+          "min": 1692.24,
+          "max": 4756.96,
+          "p50": 2858.68,
+          "p95": 4726.81
+        },
+        "fps": 0.32,
+        "peak_ram_mb": 2711.11,
+        "frames": [
+          {
+            "frame_id": "000000",
+            "point_count": 124668,
+            "latency_ms": 4756.96,
+            "ram_mb": 2709.21,
+            "output_shape": [
+              124668,
+              20
+            ],
+            "agreement_pct": 100.0,
+            "logit_max_diff": 0.0,
+            "logit_mean_diff": 0.0,
+            "prob_max_diff": 0.0,
+            "prob_mean_diff": 0.0,
+            "miou": 0.17,
+            "accuracy": 0.33
+          },
+          {
+            "frame_id": "000001",
+            "point_count": 124605,
+            "latency_ms": 4606.22,
+            "ram_mb": 2715.74,
+            "output_shape": [
+              124605,
+              20
+            ],
+            "agreement_pct": 100.0,
+            "logit_max_diff": 0.0,
+            "logit_mean_diff": 0.0,
+            "prob_max_diff": 0.0,
+            "prob_mean_diff": 0.0,
+            "miou": 0.17,
+            "accuracy": 0.39
+          },
+          {
+            "frame_id": "000002",
+            "point_count": 124478,
+            "latency_ms": 2858.68,
+            "ram_mb": 2705.5,
+            "output_shape": [
+              124478,
+              20
+            ],
+            "agreement_pct": 100.0,
+            "logit_max_diff": 0.0,
+            "logit_mean_diff": 0.0,
+            "prob_max_diff": 0.0,
+            "prob_mean_diff": 0.0,
+            "miou": 0.11,
+            "accuracy": 0.26
+          },
+          {
+            "frame_id": "000003",
+            "point_count": 124167,
+            "latency_ms": 1750.32,
+            "ram_mb": 2690.81,
+            "output_shape": [
+              124167,
+              20
+            ],
+            "agreement_pct": 100.0,
+            "logit_max_diff": 0.0,
+            "logit_mean_diff": 0.0,
+            "prob_max_diff": 0.0,
+            "prob_mean_diff": 0.0,
+            "miou": 0.14,
+            "accuracy": 0.29
+          },
+          {
+            "frame_id": "000004",
+            "point_count": 123969,
+            "latency_ms": 1692.24,
+            "ram_mb": 2711.76,
+            "output_shape": [
+              123969,
+              20
+            ],
+            "agreement_pct": 100.0,
+            "logit_max_diff": 0.0,
+            "logit_mean_diff": 0.0,
+            "prob_max_diff": 0.0,
+            "prob_mean_diff": 0.0,
+            "miou": 0.11,
+            "accuracy": 0.28
+          }
+        ],
+        "prediction_agreement_pct": 100.0,
+        "logits_max_abs_diff": 0.0,
+        "logits_mean_abs_diff": 0.0,
+        "probs_max_abs_diff": 0.0,
+        "probs_mean_abs_diff": 0.0,
+        "mIoU": 0.14,
+        "accuracy": 0.31,
+        "file_size_bytes": 40097008,
+        "file_size_mb": 40.1,
+        "size_reduction_pct": 0.57,
+        "param_count": 10019252,
+        "weight_dtype": "torch.float32"
+      },
+      "stage_b_fp16_deploy": {
+        "model_variant": "deploy_fp16",
+        "spec": "semantickitti",
+        "frame_count": 5,
+        "total_points": 621887,
+        "latency_ms": {
+          "mean": 4428.27,
+          "std": 423.79,
+          "min": 3583.1,
+          "max": 4679.47,
+          "p50": 4646.66,
+          "p95": 4673.64
+        },
+        "fps": 0.23,
+        "peak_ram_mb": 2710.45,
+        "frames": [
+          {
+            "frame_id": "000000",
+            "point_count": 124668,
+            "latency_ms": 3583.1,
+            "ram_mb": 2685.05,
+            "output_shape": [
+              124668,
+              20
+            ],
+            "agreement_pct": 99.9848,
+            "logit_max_diff": 0.234829,
+            "logit_mean_diff": 0.012585,
+            "prob_max_diff": 0.013671,
+            "prob_mean_diff": 1.8e-05,
+            "miou": 0.17,
+            "accuracy": 0.33
+          },
+          {
+            "frame_id": "000001",
+            "point_count": 124605,
+            "latency_ms": 4646.66,
+            "ram_mb": 2715.12,
+            "output_shape": [
+              124605,
+              20
+            ],
+            "agreement_pct": 99.9831,
+            "logit_max_diff": 0.204424,
+            "logit_mean_diff": 0.013022,
+            "prob_max_diff": 0.01464,
+            "prob_mean_diff": 1.6e-05,
+            "miou": 0.17,
+            "accuracy": 0.39
+          },
+          {
+            "frame_id": "000002",
+            "point_count": 124478,
+            "latency_ms": 4679.47,
+            "ram_mb": 2701.15,
+            "output_shape": [
+              124478,
+              20
+            ],
+            "agreement_pct": 99.9815,
+            "logit_max_diff": 0.225426,
+            "logit_mean_diff": 0.012713,
+            "prob_max_diff": 0.016437,
+            "prob_mean_diff": 1.8e-05,
+            "miou": 0.11,
+            "accuracy": 0.25
+          },
+          {
+            "frame_id": "000003",
+            "point_count": 124167,
+            "latency_ms": 4581.81,
+            "ram_mb": 2692.43,
+            "output_shape": [
+              124167,
+              20
+            ],
+            "agreement_pct": 99.9783,
+            "logit_max_diff": 0.23386,
+            "logit_mean_diff": 0.012666,
+            "prob_max_diff": 0.016866,
+            "prob_mean_diff": 1.7e-05,
+            "miou": 0.14,
+            "accuracy": 0.29
+          },
+          {
+            "frame_id": "000004",
+            "point_count": 123969,
+            "latency_ms": 4650.32,
+            "ram_mb": 2710.97,
+            "output_shape": [
+              123969,
+              20
+            ],
+            "agreement_pct": 99.9863,
+            "logit_max_diff": 0.199593,
+            "logit_mean_diff": 0.011605,
+            "prob_max_diff": 0.022158,
+            "prob_mean_diff": 1.6e-05,
+            "miou": 0.11,
+            "accuracy": 0.28
+          }
+        ],
+        "prediction_agreement_pct": 99.9828,
+        "logits_max_abs_diff": 0.234829,
+        "logits_mean_abs_diff": 0.012518,
+        "probs_max_abs_diff": 0.022158,
+        "probs_mean_abs_diff": 1.7e-05,
+        "mIoU": 0.14,
+        "accuracy": 0.31,
+        "checkpoint_file": "best_frnet_semantickitti_deploy.pth",
+        "file_size_bytes": 20211853,
+        "file_size_mb": 20.21,
+        "size_reduction_pct": 49.88,
+        "param_count": 10019252,
+        "weight_dtype": "torch.float16 (stored) -> torch.float32 (runtime CPU)"
+      },
+      "stage_c_int8_dynamic": {
+        "model_variant": "int8_dynamic",
+        "spec": "semantickitti",
+        "frame_count": 5,
+        "total_points": 621887,
+        "latency_ms": {
+          "mean": 4091.7,
+          "std": 95.0,
+          "min": 3957.45,
+          "max": 4249.1,
+          "p50": 4072.66,
+          "p95": 4223.47
+        },
+        "fps": 0.24,
+        "peak_ram_mb": 2731.28,
+        "frames": [
+          {
+            "frame_id": "000000",
+            "point_count": 124668,
+            "latency_ms": 4249.1,
+            "ram_mb": 2655.08,
+            "output_shape": [
+              124668,
+              20
+            ],
+            "agreement_pct": 36.7584,
+            "logit_max_diff": 28.31934,
+            "logit_mean_diff": 3.907539,
+            "prob_max_diff": 0.999734,
+            "prob_mean_diff": 0.06097,
+            "miou": 3.96,
+            "accuracy": 19.87
+          },
+          {
+            "frame_id": "000001",
+            "point_count": 124605,
+            "latency_ms": 4058.37,
+            "ram_mb": 2684.03,
+            "output_shape": [
+              124605,
+              20
+            ],
+            "agreement_pct": 38.6004,
+            "logit_max_diff": 33.215771,
+            "logit_mean_diff": 3.924168,
+            "prob_max_diff": 0.999848,
+            "prob_mean_diff": 0.0602,
+            "miou": 3.0,
+            "accuracy": 17.5
+          },
+          {
+            "frame_id": "000002",
+            "point_count": 124478,
+            "latency_ms": 4072.66,
+            "ram_mb": 2701.23,
+            "output_shape": [
+              124478,
+              20
+            ],
+            "agreement_pct": 31.5236,
+            "logit_max_diff": 31.825092,
+            "logit_mean_diff": 4.037399,
+            "prob_max_diff": 0.999606,
+            "prob_mean_diff": 0.06465,
+            "miou": 3.22,
+            "accuracy": 19.76
+          },
+          {
+            "frame_id": "000003",
+            "point_count": 124167,
+            "latency_ms": 4120.94,
+            "ram_mb": 2721.41,
+            "output_shape": [
+              124167,
+              20
+            ],
+            "agreement_pct": 39.2834,
+            "logit_max_diff": 27.156126,
+            "logit_mean_diff": 3.934642,
+            "prob_max_diff": 0.999864,
+            "prob_mean_diff": 0.059082,
+            "miou": 2.99,
+            "accuracy": 16.74
+          },
+          {
+            "frame_id": "000004",
+            "point_count": 123969,
+            "latency_ms": 3957.45,
+            "ram_mb": 2721.43,
+            "output_shape": [
+              123969,
+              20
+            ],
+            "agreement_pct": 40.2294,
+            "logit_max_diff": 27.988922,
+            "logit_mean_diff": 3.781849,
+            "prob_max_diff": 0.999818,
+            "prob_mean_diff": 0.05833,
+            "miou": 3.32,
+            "accuracy": 17.78
+          }
+        ],
+        "prediction_agreement_pct": 37.2757,
+        "logits_max_abs_diff": 33.215771,
+        "logits_mean_abs_diff": 3.917119,
+        "probs_max_abs_diff": 0.999864,
+        "probs_mean_abs_diff": 0.060646,
+        "mIoU": 3.3,
+        "accuracy": 18.33,
+        "file_size_bytes": 38273504,
+        "file_size_mb": 38.27,
+        "size_reduction_pct": 5.09,
+        "weight_dtype": "torch.qint8 (Linear) + torch.float32 (Conv2d)"
+      }
+    }
+  }
+}

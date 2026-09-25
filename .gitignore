@@ -1,0 +1,70 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.pytest_cache/
+
+# Node / Frontend
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# SalsaNext Model Checkpoints & Large Data Artifacts
+backend/models/salsanext/*.pth
+backend/models/salsanext/*.pt
+backend/models/salsanext/*.bin
+!backend/models/salsanext/SalsaNext
+!backend/models/salsanext/arch_cfg.yaml
+!backend/models/salsanext/data_cfg.yaml
+backend/data/predictions/*.label
+backend/data/predictions/*.bin
+backend/data/predictions/*.npz
+backend/data/frames/*/*.npz
+backend/data/labels/*.npz
+
+# Large Precomputed sequence caches
+data/precomputed/
+data/frames/
+backend/data/precomputed/
+backend/data/frames/
+restore_checkpoint_baseline/
+*.zip
+yarn-error.log*
+
+# IDE, OS & Local Settings
+.claude/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.bak
+*.tmp
+* - Copy.*
+backend/data/temp_uploads/*
+!backend/data/temp_uploads/.gitkeep
+
+# Raw large dataset archives and folders
+backend/data/sequences/semantic_kitti_sequence_00/
+backend/data/sequences/*/velodyne/
+backend/data/sequences/*/labels/

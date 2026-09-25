@@ -1,0 +1,196 @@
+# SemanticKITTI Class ID to Project Categories and Object Types Mapping
+
+dataset: "SemanticKITTI"
+version: "1.0"
+
+# Target project categories:
+# - drivable
+# - non_drivable
+# - static_obstacle
+# - dynamic_object
+# - vegetation
+# - infrastructure
+# - unknown
+
+classes:
+  0:
+    name: "unknown"
+    category: "unknown"
+    is_dynamic: false
+    clusterable: true
+  1:
+    name: "outlier"
+    category: "unknown"
+    is_dynamic: false
+    clusterable: false
+  10:
+    name: "car"
+    category: "dynamic_object"
+    is_dynamic: true
+    clusterable: true
+  11:
+    name: "bicycle"
+    category: "dynamic_object"
+    is_dynamic: true
+    clusterable: true
+  13:
+    name: "bus"
+    category: "dynamic_object"
+    is_dynamic: true
+    clusterable: true
+  15:
+    name: "motorcycle"
+    category: "dynamic_object"
+    is_dynamic: true
+    clusterable: true
+  16:
+    name: "on-rails"
+    category: "dynamic_object"
+    is_dynamic: true
+    clusterable: true
+  18:
+    name: "truck"
+    category: "dynamic_object"
+    is_dynamic: true
+    clusterable: true
+  20:
+    name: "other-vehicle"
+    category: "dynamic_object"
+    is_dynamic: true
+    clusterable: true
+  30:
+    name: "person"
+    category: "dynamic_object"
+    is_dynamic: true
+    clusterable: true
+  31:
+    name: "bicyclist"
+    category: "dynamic_object"
+    is_dynamic: true
+    clusterable: true
+  32:
+    name: "motorcyclist"
+    category: "dynamic_object"
+    is_dynamic: true
+    clusterable: true
+  40:
+    name: "road"
+    category: "drivable"
+    is_dynamic: false
+    clusterable: false
+  44:
+    name: "parking"
+    category: "drivable"
+    is_dynamic: false
+    clusterable: false
+  48:
+    name: "sidewalk"
+    category: "non_drivable"
+    is_dynamic: false
+    clusterable: false
+  49:
+    name: "other-ground"
+    category: "non_drivable"
+    is_dynamic: false
+    clusterable: false
+  50:
+    name: "building"
+    category: "infrastructure"
+    is_dynamic: false
+    clusterable: true
+  51:
+    name: "fence"
+    category: "static_obstacle"
+    is_dynamic: false
+    clusterable: true
+  52:
+    name: "other-structure"
+    category: "infrastructure"
+    is_dynamic: false
+    clusterable: true
+  53:
+    name: "wall"
+    category: "static_obstacle"
+    is_dynamic: false
+    clusterable: true
+  54:
+    name: "barrier"
+    category: "static_obstacle"
+    is_dynamic: false
+    clusterable: true
+  60:
+    name: "lane-marking"
+    category: "drivable"
+    is_dynamic: false
+    clusterable: false
+  70:
+    name: "vegetation"
+    category: "vegetation"
+    is_dynamic: false
+    clusterable: true
+  71:
+    name: "trunk"
+    category: "vegetation"
+    is_dynamic: false
+    clusterable: true
+  72:
+    name: "terrain"
+    category: "non_drivable"
+    is_dynamic: false
+    clusterable: false
+  80:
+    name: "pole"
+    category: "static_obstacle"
+    is_dynamic: false
+    clusterable: true
+  81:
+    name: "traffic-sign"
+    category: "static_obstacle"
+    is_dynamic: false
+    clusterable: true
+  99:
+    name: "other-object"
+    category: "static_obstacle"
+    is_dynamic: false
+    clusterable: true
+  # Moving classes (SemanticKITTI format 252-259)
+  252:
+    name: "moving-car"
+    category: "dynamic_object"
+    is_dynamic: true
+    clusterable: true
+  253:
+    name: "moving-bicyclist"
+    category: "dynamic_object"
+    is_dynamic: true
+    clusterable: true
+  254:
+    name: "moving-person"
+    category: "dynamic_object"
+    is_dynamic: true
+    clusterable: true
+  255:
+    name: "moving-motorcyclist"
+    category: "dynamic_object"
+    is_dynamic: true
+    clusterable: true
+  256:
+    name: "moving-on-rails"
+    category: "dynamic_object"
+    is_dynamic: true
+    clusterable: true
+  257:
+    name: "moving-bus"
+    category: "dynamic_object"
+    is_dynamic: true
+    clusterable: true
+  258:
+    name: "moving-truck"
+    category: "dynamic_object"
+    is_dynamic: true
+    clusterable: true
+  259:
+    name: "moving-other-vehicle"
+    category: "dynamic_object"
+    is_dynamic: true
+    clusterable: true
