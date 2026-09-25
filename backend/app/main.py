@@ -52,26 +52,28 @@ app = FastAPI(
 # Configure CORS for local development and Render deployment
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=settings.CORS_ORIGINS if isinstance(settings.CORS_ORIGINS, list) else ["*"],
+    allow_origins=["*"],
     allow_origin_regex=r"^https?://.*",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Register API v1 Routes
-app.include_router(health.router, prefix=settings.API_V1_STR)
-app.include_router(frames.router, prefix=f"{settings.API_V1_STR}/frames")
-app.include_router(terrain.router, prefix=f"{settings.API_V1_STR}/terrain")
-app.include_router(semantic.router, prefix=f"{settings.API_V1_STR}/semantic")
-app.include_router(objects.router, prefix=f"{settings.API_V1_STR}/objects")
-app.include_router(objects.tracks_router, prefix=f"{settings.API_V1_STR}/tracks")
-app.include_router(grid_policy.router, prefix=settings.API_V1_STR)
-app.include_router(maps.router, prefix=f"{settings.API_V1_STR}/maps")
-app.include_router(inference.router, prefix=f"{settings.API_V1_STR}/inference")
-app.include_router(replay.router, prefix=f"{settings.API_V1_STR}/replay")
-app.include_router(metrics.router, prefix=f"{settings.API_V1_STR}/metrics")
-app.include_router(pipeline.router, prefix=settings.API_V1_STR)
+# Register API routes with both /api/v1 and root prefixes for seamless frontend compatibility
+for pfx in (settings.API_V1_STR, ""):
+    app.include_router(health.router, prefix=pfx)
+    app.include_router(frames.router, prefix=f"{pfx}/frames")
+    app.include_router(terrain.router, prefix=f"{pfx}/terrain")
+    app.include_router(semantic.router, prefix=f"{pfx}/semantic")
+    app.include_router(objects.router, prefix=f"{pfx}/objects")
+    app.include_router(objects.tracks_router, prefix=f"{pfx}/tracks")
+    app.include_router(grid_policy.router, prefix=pfx)
+    app.include_router(maps.router, prefix=f"{pfx}/maps")
+    app.include_router(maps.router, prefix=f"{pfx}/map")
+    app.include_router(inference.router, prefix=f"{pfx}/inference")
+    app.include_router(replay.router, prefix=f"{pfx}/replay")
+    app.include_router(metrics.router, prefix=f"{pfx}/metrics")
+    app.include_router(pipeline.router, prefix=pfx)
 
 
 @app.get("/", tags=["Root"])

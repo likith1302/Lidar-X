@@ -12,12 +12,49 @@ from ...models.map_schemas import (
     MapResetResponse,
     AdaptiveGridCell,
     MapMode,
+    GridPolicyConfig,
 )
 from ...services.storage import StorageService
 from ...services.map_fusion import MapFusionService
 from ...services.map_serialization import MapSerializationService
+from ...services.resolution_policy import ResolutionPolicyService
+from ...services.replay_session import replay_session_manager
 
 router = APIRouter(tags=["2.5D Adaptive Grid & Maps"])
+
+
+@router.get(
+    "/local-cells",
+    response_model=List[AdaptiveGridCell],
+    summary="Get Local Map Cells",
+    description="Retrieve 2.5D local map cells from active map or default replay session.",
+)
+async def get_local_map_cells(
+    level: Optional[str] = None,
+    limit: int = Query(5000, ge=1, le=10000),
+) -> List[AdaptiveGridCell]:
+    # 1. Check if default map has cells
+    cells = MapFusionService.get_cells("default", level=level, limit=limit)
+    if cells:
+        return cells
+    # 2. Check if active replay session has cells
+    for sid in ("foveamap_sequence00_replay", "semantic_kitti_sequence_00"):
+        session = replay_session_manager.get_session(sid)
+        if session:
+            session_cells = session.list_global_cells(level=level, limit=limit)
+            if session_cells:
+                return session_cells
+    return []
+
+
+@router.get(
+    "/resolution-policy",
+    response_model=GridPolicyConfig,
+    summary="Get Variable-Resolution Grid Policy",
+    description="Retrieve the active distance thresholds, base resolutions, and refinement overrides.",
+)
+async def get_map_resolution_policy() -> GridPolicyConfig:
+    return ResolutionPolicyService.get_policy()
 
 
 @router.post(

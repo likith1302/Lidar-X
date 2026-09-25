@@ -14,6 +14,7 @@ Performs genuine neural inference with:
 
 import os
 import sys
+import gc
 import threading
 import logging
 from pathlib import Path
