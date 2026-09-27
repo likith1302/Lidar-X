@@ -83,7 +83,8 @@ class ReplaySession:
             self.is_demo = (
                 has_cached
                 or self.session_id.startswith("foveamap_sequence")
-                or self.session_id in ("demo", "sample", "default")
+                or self.session_id.startswith("semantic_kitti")
+                or self.session_id in ("demo", "sample", "default", "semantic_kitti_sequence_00")
             )
             self.playback_mode = PlaybackMode.OFFLINE_PRECOMPUTED_REPLAY if self.is_demo else PlaybackMode.LIVE_PROCESSING
         self.frames_meta: List[Dict[str, Any]] = session_data["frames"]

@@ -70,12 +70,12 @@ export const PerformanceValidationPanel: React.FC<PerformanceValidationPanelProp
     };
 
     fetchMetrics();
-    const interval = setInterval(fetchMetrics, 4000);
+    const interval = setInterval(fetchMetrics, 5000);
     return () => {
       isMounted = false;
       clearInterval(interval);
     };
-  }, [currentFrameId, sessionId, activePerformance, contextPerf]);
+  }, [sessionId]);
 
   // Compute exact real metrics from active frame, map, and telemetry
   const computedMetrics = useMemo(() => {

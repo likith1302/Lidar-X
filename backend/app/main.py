@@ -52,6 +52,8 @@ app = FastAPI(
 )
 
 
+from starlette.middleware.gzip import GZipMiddleware
+
 # Configure CORS for local development and Render deployment
 app.add_middleware(
     CORSMiddleware,
@@ -61,6 +63,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Enable GZip compression for responses > 1000 bytes (compresses 1.9MB JSON down to ~180KB)
+app.add_middleware(GZipMiddleware, minimum_size=1000)
 
 # Register API routes with both /api/v1 and root prefixes for seamless frontend compatibility
 for pfx in (settings.API_V1_STR, ""):

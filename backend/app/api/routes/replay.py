@@ -8,7 +8,7 @@ import uuid
 from pathlib import Path
 from typing import Optional
 from pydantic import BaseModel
-from fastapi import APIRouter, File, UploadFile, HTTPException, Query, status, WebSocket, WebSocketDisconnect
+from fastapi import APIRouter, File, UploadFile, HTTPException, Query, status, WebSocket, WebSocketDisconnect, Response
 
 from ...config import settings
 from ...models.replay_schemas import (
@@ -403,7 +403,6 @@ async def seek_replay(session_id: str, req: ReplaySeekRequest):
 
 @router.get(
     "/{session_id}/next-frame",
-    response_model=ReplayFrameStreamPayload,
     summary="Advance to next frame and retrieve full perception payload",
 )
 async def get_next_frame(session_id: str):
@@ -413,6 +412,23 @@ async def get_next_frame(session_id: str):
             status_code=status.HTTP_404_NOT_FOUND,
             detail=f"Replay session '{session_id}' not found.",
         )
+
+    use_demo_precomputed = (
+        session.is_demo
+        and not getattr(session, "is_manual_upload", False)
+        and session.playback_mode == PlaybackMode.OFFLINE_PRECOMPUTED_REPLAY
+    )
+    if use_demo_precomputed:
+        if session.current_frame_index >= session.total_frames:
+            session.current_frame_index = 0
+        cur_idx = session.current_frame_index
+        raw_json = precompute_service.get_raw_frame_json(session.session_id, cur_idx)
+        if raw_json is not None:
+            session.current_frame_index += 1
+            if session.current_frame_index >= session.total_frames:
+                session.current_frame_index = 0
+            return Response(content=raw_json, media_type="application/json")
+
     payload = session.advance_and_get_frame()
     if payload is None:
         session.seek(0)

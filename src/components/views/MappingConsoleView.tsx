@@ -281,10 +281,10 @@ export const MappingConsoleView: React.FC<MappingConsoleViewProps> = ({ initialM
   };
 
   useEffect(() => {
-    if (selectedFrameId) {
+    if (selectedFrameId && consoleMode === 'single-frame') {
       fetchPipelineGateStatus(selectedFrameId);
     }
-  }, [selectedFrameId, fetchPipelineGateStatus]);
+  }, [selectedFrameId, consoleMode, fetchPipelineGateStatus]);
 
   // Synchronize rendered cells from active 2.5D map or terrain analysis or mock
   useEffect(() => {
@@ -633,6 +633,7 @@ export const MappingConsoleView: React.FC<MappingConsoleViewProps> = ({ initialM
 
   const handlePauseReplay = () => {
     if (!replaySessionId) return;
+    frameQueueRef.current = [];
     setReplayPlaybackState('paused');
     frameArrivalsRef.current = [];
     if (wsStreamRef.current) {
@@ -645,6 +646,7 @@ export const MappingConsoleView: React.FC<MappingConsoleViewProps> = ({ initialM
 
   const handleStopReplay = () => {
     if (!replaySessionId) return;
+    frameQueueRef.current = [];
     setReplayPlaybackState('ready');
     setReplayFrameIndex(0);
     frameArrivalsRef.current = [];
@@ -659,6 +661,7 @@ export const MappingConsoleView: React.FC<MappingConsoleViewProps> = ({ initialM
 
   const handleSeekReplay = (targetIndex: number) => {
     if (!replaySessionId) return;
+    frameQueueRef.current = [];
     setReplayFrameIndex(targetIndex);
     if (wsStreamRef.current) {
       wsStreamRef.current.send({ action: 'seek', frame_index: targetIndex });
@@ -667,40 +670,26 @@ export const MappingConsoleView: React.FC<MappingConsoleViewProps> = ({ initialM
     }
   };
 
-  // Active HTTP Frame Playback Loop
-  // If WebSocket is disconnected or blocked (e.g. on Render reverse-proxy),
-  // actively advance frames via getNextFrame at the requested replay FPS.
-  const isFetchingNextFrameRef = useRef<boolean>(false);
+  // Client-side Decoupled Frame Buffer Pipeline for High-Rate 6-10+ FPS Playback
+  const frameQueueRef = useRef<ReplayFrameStreamPayload[]>([]);
+  const inFlightCountRef = useRef<number>(0);
 
+  // 1. Display Loop: Consistently renders buffered frames at the target FPS (default 10 FPS = 100ms)
   useEffect(() => {
     if (replayPlaybackState !== 'playing' || !replaySessionId) {
       return;
     }
 
-    const intervalMs = Math.max(60, Math.round(1000 / (replayFps || 10)));
-    const httpPlayerTimer = setInterval(async () => {
-      // If WebSocket is connected and frames are actively arriving (< 400ms), let WebSocket handle it
+    const intervalMs = Math.max(70, Math.round(1000 / (replayFps || 10)));
+    const httpPlayerTimer = setInterval(() => {
+      // If WebSocket is connected and frames are actively arriving (< 400ms), let WebSocket drive rendering
       if (isWebSocketConnected && Date.now() - lastFrameArrivalRef.current < 400) {
         return;
       }
 
-      if (isFetchingNextFrameRef.current) return;
-      isFetchingNextFrameRef.current = true;
-
-      try {
-        const nextRes = await replayService.getNextFrame(replaySessionId);
-        if (nextRes.success && nextRes.data) {
-          handleFramePayload(nextRes.data);
-        } else {
-          // Loop back to start if finished
-          await replayService.seekReplay(replaySessionId, 0);
-        }
-      } catch {
-        try {
-          await replayService.seekReplay(replaySessionId, 0);
-        } catch { /* ignore */ }
-      } finally {
-        isFetchingNextFrameRef.current = false;
+      if (frameQueueRef.current.length > 0) {
+        const nextFrame = frameQueueRef.current.shift()!;
+        handleFramePayload(nextFrame);
       }
     }, intervalMs);
 
@@ -708,6 +697,59 @@ export const MappingConsoleView: React.FC<MappingConsoleViewProps> = ({ initialM
       clearInterval(httpPlayerTimer);
     };
   }, [replayPlaybackState, replaySessionId, replayFps, isWebSocketConnected, handleFramePayload]);
+
+  // 2. Prefetch Pipeline: Keeps the buffer stocked 4-8 frames ahead via concurrent HTTP requests
+  useEffect(() => {
+    if (replayPlaybackState !== 'playing' || !replaySessionId) {
+      frameQueueRef.current = [];
+      return;
+    }
+
+    let isCancelled = false;
+
+    const pumpPrefetch = () => {
+      if (isCancelled) return;
+      if (isWebSocketConnected && Date.now() - lastFrameArrivalRef.current < 400) {
+        return;
+      }
+
+      // Maintain up to 6 buffered frames ahead, with up to 2 concurrent in-flight fetches
+      while (
+        !isCancelled &&
+        frameQueueRef.current.length + inFlightCountRef.current < 6 &&
+        inFlightCountRef.current < 2
+      ) {
+        inFlightCountRef.current += 1;
+        replayService
+          .getNextFrame(replaySessionId)
+          .then((nextRes) => {
+            if (isCancelled) return;
+            if (nextRes.success && nextRes.data) {
+              frameQueueRef.current.push(nextRes.data);
+              // If buffer had drained and canvas is idle, display immediately for responsive playback
+              if (frameQueueRef.current.length === 1 && Date.now() - lastFrameArrivalRef.current > 120) {
+                const immediate = frameQueueRef.current.shift()!;
+                handleFramePayload(immediate);
+              }
+            } else {
+              replayService.seekReplay(replaySessionId, 0).catch(() => {});
+            }
+          })
+          .catch(() => {})
+          .finally(() => {
+            inFlightCountRef.current = Math.max(0, inFlightCountRef.current - 1);
+          });
+      }
+    };
+
+    pumpPrefetch();
+    const pumpTimer = setInterval(pumpPrefetch, 50);
+
+    return () => {
+      isCancelled = true;
+      clearInterval(pumpTimer);
+    };
+  }, [replayPlaybackState, replaySessionId, isWebSocketConnected, handleFramePayload]);
 
   const handleTriggerPrecompute = async () => {
     if (!replaySessionId) return;
