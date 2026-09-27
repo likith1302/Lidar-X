@@ -91,6 +91,7 @@ export const MappingConsoleView: React.FC<MappingConsoleViewProps> = ({ initialM
     activePerformance,
     setActivePerformance,
     isBackendConnected,
+    setIsBackendConnected,
     setCurrentTab,
   } = useAppState();
 
@@ -331,6 +332,9 @@ export const MappingConsoleView: React.FC<MappingConsoleViewProps> = ({ initialM
   const handleFramePayload = useCallback(
     (payload: ReplayFrameStreamPayload) => {
       lastFrameArrivalRef.current = Date.now();
+      // Valid frame arrival confirms active backend connection
+      setIsBackendConnected(true);
+
       // 1. Update active frame ID and raw points
       setSelectedFrameId(payload.frame_filename);
       const adaptedRawPoints: Point3D[] = (payload.points_sample || []).map((p) => ({
@@ -469,7 +473,7 @@ export const MappingConsoleView: React.FC<MappingConsoleViewProps> = ({ initialM
         );
       }
     },
-    [addEvent, setActiveLidarFrame, setActiveSemanticFrame, setActiveTerrainResponse, setActiveObjectDetection, setActiveTracks, setActiveMapResponse, setSelectedFrameId, setActivePerformance]
+    [addEvent, setActiveLidarFrame, setActiveSemanticFrame, setActiveTerrainResponse, setActiveObjectDetection, setActiveTracks, setActiveMapResponse, setSelectedFrameId, setActivePerformance, setIsBackendConnected]
   );
 
   // Handle Sequence ZIP Upload - Always executes real computing (live Fast-FRNet + terrain + clustering + adaptive grid)
@@ -1424,17 +1428,25 @@ export const MappingConsoleView: React.FC<MappingConsoleViewProps> = ({ initialM
     }
   };
 
-  // Automatically start playing precomputed Sequence 00 when backend connects
+  // Automatically start playing precomputed Sequence 00 on mount
   useEffect(() => {
     if (!autoLoadDemo) return;
-    if ((isBackendConnected || apiClient.isMockMode()) && !hasAutoPlayedRef.current) {
+    if (!hasAutoPlayedRef.current) {
       hasAutoPlayedRef.current = true;
       const timer = setTimeout(() => {
         handleLoadSampleSequence(true);
-      }, 500);
+      }, 200);
       return () => clearTimeout(timer);
     }
-  }, [isBackendConnected, autoLoadDemo]);
+  }, [autoLoadDemo]);
+
+  // If backend connects later while replay is ready, trigger play immediately
+  useEffect(() => {
+    if (!autoLoadDemo) return;
+    if (isBackendConnected && replayPlaybackState === 'ready') {
+      handlePlayReplay();
+    }
+  }, [isBackendConnected, autoLoadDemo, replayPlaybackState]);
 
   const selectedObject = useMemo(() => {
     if (!selectedInstanceId) return null;

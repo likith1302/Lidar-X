@@ -28,6 +28,7 @@ import { SUPPORTED_MODELS } from '../mocks/mockSettings';
 import { terrainService } from '../services/terrainService';
 import { gridPolicyService, defaultGridPolicyConfig } from '../services/gridPolicyService';
 import { semanticService } from '../services/semanticService';
+import { replayService } from '../services/replayService';
 import { apiClient } from '../services/api';
 
 interface AppStateContextType {
@@ -164,32 +165,63 @@ export const AppStateProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   ]);
 
   const checkBackend = React.useCallback(async (isMounted = true) => {
+    let connected = false;
+
+    // Check 1: Primary /health endpoint
     try {
       const res = await terrainService.checkHealth();
-      if (isMounted && res.success && !res.isMock) {
-        setIsBackendConnected(true);
-        setBackendConnectSuccessMessage(true);
-        setTimeout(() => {
-          if (isMounted) setBackendConnecting(false);
-        }, 1200);
-
-        // Sync grid policy
-        const polRes = await gridPolicyService.getPolicy();
-        if (polRes.success && polRes.data && isMounted) {
-          setActiveGridPolicy(polRes.data);
-        }
-
-        // Sync inference model status
-        const infStatusRes = await semanticService.getInferenceStatus();
-        if (infStatusRes.success && infStatusRes.data && isMounted) {
-          setActiveInferenceStatus(infStatusRes.data);
-        }
-        return true;
+      if (res.success && !res.isMock) {
+        connected = true;
       }
     } catch {
-      if (isMounted) setIsBackendConnected(false);
+      // Fallback to check 2
     }
-    return false;
+
+    // Check 2: Fallback replay status check
+    if (!connected) {
+      try {
+        const replayRes = await replayService.getStatus('semantic_kitti_sequence_00');
+        if (replayRes && replayRes.success && !replayRes.isMock) {
+          connected = true;
+        }
+      } catch {
+        // Fallback failed
+      }
+    }
+
+    if (connected && isMounted) {
+      setIsBackendConnected(true);
+      setBackendConnectSuccessMessage(true);
+      setTimeout(() => {
+        if (isMounted) setBackendConnecting(false);
+      }, 1200);
+
+      // Isolated auxiliary sync: grid policy
+      try {
+        const polRes = await gridPolicyService.getPolicy();
+        if (polRes?.success && polRes.data && isMounted) {
+          setActiveGridPolicy(polRes.data);
+        }
+      } catch {
+        // Non-fatal
+      }
+
+      // Isolated auxiliary sync: inference model status
+      try {
+        const infStatusRes = await semanticService.getInferenceStatus();
+        if (infStatusRes?.success && infStatusRes.data && isMounted) {
+          setActiveInferenceStatus(infStatusRes.data);
+        }
+      } catch {
+        // Non-fatal
+      }
+
+      return true;
+    } else if (!connected && isMounted) {
+      // Do not flip to false if connection was already established
+      setIsBackendConnected((prev) => (prev ? prev : false));
+    }
+    return connected;
   }, []);
 
   const retryBackendConnection = async () => {
