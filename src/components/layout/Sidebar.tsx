@@ -22,11 +22,11 @@ interface NavItem {
 }
 
 const NAV_ITEMS: NavItem[] = [
-  { id: 'overview', label: 'Overview', icon: LayoutDashboard },
+  { id: 'scenes-replay', label: 'Demo / Replay', icon: Film, tag: '00' },
   { id: 'mapping-console', label: 'Mapping Console', icon: Compass },
+  { id: 'overview', label: 'Overview', icon: LayoutDashboard },
   { id: 'architecture', label: 'Architecture', icon: Network },
   { id: 'performance-lab', label: 'Performance Lab', icon: Gauge },
-  { id: 'scenes-replay', label: 'Scenes / Replay', icon: Film },
   { id: 'diagnostics', label: 'Diagnostics', icon: ShieldCheck },
 ];
 
@@ -101,7 +101,14 @@ export const Sidebar: React.FC = () => {
                 )}
               />
               {!isSidebarCollapsed && (
-                <span className="truncate font-sans text-left">{item.label}</span>
+                <div className="flex items-center justify-between flex-1 min-w-0">
+                  <span className="truncate font-sans text-left">{item.label}</span>
+                  {item.tag && (
+                    <span className="text-[9px] font-mono font-bold px-1.5 py-0.5 rounded bg-cyan-500/20 text-cyan-300 border border-cyan-500/40">
+                      {item.tag}
+                    </span>
+                  )}
+                </div>
               )}
 
               {/* Active Indicator bar */}

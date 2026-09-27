@@ -28,6 +28,7 @@ import { SUPPORTED_MODELS } from '../mocks/mockSettings';
 import { terrainService } from '../services/terrainService';
 import { gridPolicyService, defaultGridPolicyConfig } from '../services/gridPolicyService';
 import { semanticService } from '../services/semanticService';
+import { apiClient } from '../services/api';
 
 interface AppStateContextType {
   currentTab: NavigationTab;
@@ -54,9 +55,15 @@ interface AppStateContextType {
   isNotificationsOpen: boolean;
   setIsNotificationsOpen: (open: boolean) => void;
 
-  // Real Backend State
+  // Real Backend State & Loading Modal
   isBackendConnected: boolean;
   setIsBackendConnected: (connected: boolean) => void;
+  backendConnecting: boolean;
+  backendElapsedSeconds: number;
+  hasDismissedBackendLoading: boolean;
+  setHasDismissedBackendLoading: (dismissed: boolean) => void;
+  backendConnectSuccessMessage: boolean;
+  retryBackendConnection: () => Promise<void>;
   activeTerrainResponse: TerrainAnalysisResponse | null;
   setActiveTerrainResponse: (res: TerrainAnalysisResponse | null) => void;
   activeLidarFrame: LidarFrame | null;
@@ -90,8 +97,10 @@ interface AppStateContextType {
 const AppStateContext = createContext<AppStateContextType | undefined>(undefined);
 
 export const AppStateProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [currentTab, setCurrentTab] = useState<NavigationTab>('overview');
-  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
+  // Directly open Demo / Replay page by default instead of home overview
+  const [currentTab, setCurrentTab] = useState<NavigationTab>('scenes-replay');
+  // Collapse sidebar menu by default for better viewing space
+  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(true);
   const [isMobileDrawerOpen, setIsMobileDrawerOpen] = useState(false);
 
   const [mapLayers, setMapLayers] = useState<MapLayersState>({
@@ -105,14 +114,19 @@ export const AppStateProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
   const [selectedCell, setSelectedCell] = useState<GridCell | null>(null);
   const [selectedModelName, setSelectedModelName] = useState<string>(SUPPORTED_MODELS[0].modelName);
-  const [selectedSequence, setSelectedSequence] = useState<string>('SEQ_CAMPUS_AUTONOMOUS_01 (Mock)');
-  const [selectedFrameId, setSelectedFrameId] = useState<string>('FRAME_0001 (Mock)');
+  const [selectedSequence, setSelectedSequence] = useState<string>('SemanticKITTI Sequence 00');
+  const [selectedFrameId, setSelectedFrameId] = useState<string>('000000.bin');
   const [pointCloudViewMode, setPointCloudViewMode] = useState<ViewMode>('perspective');
   const [resolutionPolicy, setResolutionPolicy] = useState<ResolutionPolicyConfigFrontend>(defaultResolutionPolicy);
   const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
 
-  // Backend connection & result state
+  // Backend connection & loading popup state
   const [isBackendConnected, setIsBackendConnected] = useState(false);
+  const [backendConnecting, setBackendConnecting] = useState(!apiClient.isMockMode());
+  const [backendElapsedSeconds, setBackendElapsedSeconds] = useState(0);
+  const [hasDismissedBackendLoading, setHasDismissedBackendLoading] = useState(false);
+  const [backendConnectSuccessMessage, setBackendConnectSuccessMessage] = useState(false);
+
   const [activeTerrainResponse, setActiveTerrainResponse] = useState<TerrainAnalysisResponse | null>(null);
   const [activeLidarFrame, setActiveLidarFrame] = useState<LidarFrame | null>(null);
   const [activeSemanticFrame, setActiveSemanticFrame] = useState<SemanticFrameResponse | null>(null);
@@ -149,38 +163,62 @@ export const AppStateProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     },
   ]);
 
-  // Check backend health periodically and sync grid policy + model status
+  const checkBackend = React.useCallback(async (isMounted = true) => {
+    try {
+      const res = await terrainService.checkHealth();
+      if (isMounted && res.success && !res.isMock) {
+        setIsBackendConnected(true);
+        setBackendConnectSuccessMessage(true);
+        setTimeout(() => {
+          if (isMounted) setBackendConnecting(false);
+        }, 1200);
+
+        // Sync grid policy
+        const polRes = await gridPolicyService.getPolicy();
+        if (polRes.success && polRes.data && isMounted) {
+          setActiveGridPolicy(polRes.data);
+        }
+
+        // Sync inference model status
+        const infStatusRes = await semanticService.getInferenceStatus();
+        if (infStatusRes.success && infStatusRes.data && isMounted) {
+          setActiveInferenceStatus(infStatusRes.data);
+        }
+        return true;
+      }
+    } catch {
+      if (isMounted) setIsBackendConnected(false);
+    }
+    return false;
+  }, []);
+
+  const retryBackendConnection = async () => {
+    await checkBackend(true);
+  };
+
+  // Check backend health periodically and dynamic elapsed timer
   useEffect(() => {
     let isMounted = true;
-    const checkBackend = async () => {
-      try {
-        const res = await terrainService.checkHealth();
-        if (isMounted && res.success && !res.isMock) {
-          setIsBackendConnected(true);
+    checkBackend(isMounted);
 
-          // Sync grid policy
-          const polRes = await gridPolicyService.getPolicy();
-          if (polRes.success && polRes.data) {
-            setActiveGridPolicy(polRes.data);
-          }
-
-          // Sync inference model status
-          const infStatusRes = await semanticService.getInferenceStatus();
-          if (infStatusRes.success && infStatusRes.data) {
-            setActiveInferenceStatus(infStatusRes.data);
-          }
-        }
-      } catch {
-        if (isMounted) setIsBackendConnected(false);
+    // Count elapsed seconds while waiting for backend
+    const timer = setInterval(() => {
+      if (isMounted && !isBackendConnected) {
+        setBackendElapsedSeconds((prev) => prev + 1);
       }
-    };
-    checkBackend();
-    const interval = setInterval(checkBackend, 15000);
+    }, 1000);
+
+    // Fast polling (2.5s) while connecting, standard (15s) once connected
+    const pollInterval = setInterval(() => {
+      checkBackend(isMounted);
+    }, isBackendConnected ? 15000 : 2500);
+
     return () => {
       isMounted = false;
-      clearInterval(interval);
+      clearInterval(timer);
+      clearInterval(pollInterval);
     };
-  }, []);
+  }, [isBackendConnected, checkBackend]);
 
   const toggleLayer = (layerKey: keyof MapLayersState) => {
     setMapLayers(prev => ({
@@ -224,6 +262,12 @@ export const AppStateProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         setIsNotificationsOpen,
         isBackendConnected,
         setIsBackendConnected,
+        backendConnecting,
+        backendElapsedSeconds,
+        hasDismissedBackendLoading,
+        setHasDismissedBackendLoading,
+        backendConnectSuccessMessage,
+        retryBackendConnection,
         activeTerrainResponse,
         setActiveTerrainResponse,
         activeLidarFrame,

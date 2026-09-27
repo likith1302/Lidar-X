@@ -47,6 +47,7 @@ import { objectService } from '../../services/objectService';
 import { trackingService } from '../../services/trackingService';
 import { mapService } from '../../services/mapService';
 import { replayService } from '../../services/replayService';
+import { apiClient } from '../../services/api';
 import { GridCell, MapLayersState } from '../../types/map';
 import { Point3D, ViewMode } from '../../types/lidar';
 import { ObjectInstance, TrackedObject } from '../../types/objects';
@@ -61,9 +62,10 @@ import { Badge } from '../common/Badge';
 
 export interface MappingConsoleViewProps {
   initialMode?: 'single-frame' | 'sequence-replay';
+  autoLoadDemo?: boolean;
 }
 
-export const MappingConsoleView: React.FC<MappingConsoleViewProps> = ({ initialMode }) => {
+export const MappingConsoleView: React.FC<MappingConsoleViewProps> = ({ initialMode, autoLoadDemo = true }) => {
   const {
     mapLayers,
     toggleLayer,
@@ -105,25 +107,28 @@ export const MappingConsoleView: React.FC<MappingConsoleViewProps> = ({ initialM
       setConsoleMode(initialMode);
     }
   }, [initialMode]);
+
   // Controls whether the user has uploaded/selected data or is viewing the ingestion portal
-  const [hasUploaded, setHasUploaded] = useState<boolean>(false);
+  // Start as true so precomputed demo frames are displayed immediately on site visit
+  const [hasUploaded, setHasUploaded] = useState<boolean>(autoLoadDemo ?? true);
   const sequenceInputRef = useRef<HTMLInputElement | null>(null);
 
-  // Sequence Replay State
-  const [replaySessionId, setReplaySessionId] = useState<string | null>(null);
-  const [replaySequenceName, setReplaySequenceName] = useState<string>('SemanticKITTI Sequence');
+  // Sequence Replay State - Pre-configured for precomputed Sequence 00
+  const [replaySessionId, setReplaySessionId] = useState<string | null>('semantic_kitti_sequence_00');
+  const [replaySequenceName, setReplaySequenceName] = useState<string>('SemanticKITTI Sequence 00');
   const [replayPlaybackState, setReplayPlaybackState] = useState<ReplayState>('ready');
   const [replayFrameIndex, setReplayFrameIndex] = useState<number>(0);
-  const [replayTotalFrames, setReplayTotalFrames] = useState<number>(0);
+  const [replayTotalFrames, setReplayTotalFrames] = useState<number>(100);
   const [replayFps, setReplayFps] = useState<number>(10.0);
   const [realtimeFps, setRealtimeFps] = useState<number>(0.0);
   const frameArrivalsRef = useRef<number[]>([]);
   const [replayDataMode, setReplayDataMode] = useState<ReplayDataMode>('precomputed_labels');
-  const [replaySemanticSource, setReplaySemanticSource] = useState<SemanticSource>('LIVE GEOMETRIC');
+  const [replaySemanticSource, setReplaySemanticSource] = useState<SemanticSource>('PRECOMPUTED');
   const [replayProcessingTimeMs, setReplayProcessingTimeMs] = useState<number>(0);
   const [isUploadingSequence, setIsUploadingSequence] = useState<boolean>(false);
   const wsStreamRef = useRef<{ send: (msg: any) => void; close: () => void; isConnected?: () => boolean } | null>(null);
   const [isWebSocketConnected, setIsWebSocketConnected] = useState<boolean>(false);
+  const hasAutoPlayedRef = useRef<boolean>(false);
 
   // Precompute progress (per replay session)
   const [precomputeStatus, setPrecomputeStatus] = useState<{
@@ -1282,15 +1287,20 @@ export const MappingConsoleView: React.FC<MappingConsoleViewProps> = ({ initialM
   };
 
   // Launch pre-bundled demo sequence replay
-  const handleLoadSampleSequence = async () => {
+  const handleLoadSampleSequence = async (autoPlay: boolean = false) => {
     setConsoleMode('sequence-replay');
     setHasUploaded(true);
     const demoSessionId = 'semantic_kitti_sequence_00';
     setReplaySessionId(demoSessionId);
     setReplaySequenceName('SemanticKITTI Sequence 00');
     setReplayFrameIndex(0);
-    setReplayPlaybackState('ready');
     setReplayDataMode('precomputed_labels');
+    setReplaySemanticSource('PRECOMPUTED');
+    if (autoPlay) {
+      setReplayPlaybackState('playing');
+    } else {
+      setReplayPlaybackState('ready');
+    }
 
     if (wsStreamRef.current) {
       wsStreamRef.current.close();
@@ -1299,9 +1309,14 @@ export const MappingConsoleView: React.FC<MappingConsoleViewProps> = ({ initialM
       demoSessionId,
       (frame) => handleFramePayload(frame),
       (status, info) => {
-        setReplayPlaybackState(status.state);
+        setReplayPlaybackState((prev) => {
+          if (prev === 'playing' && status.state === 'ready') return 'playing';
+          return status.state;
+        });
         setReplayFrameIndex(status.current_frame_index);
-        setReplayTotalFrames(status.total_frames);
+        if (status.total_frames) {
+          setReplayTotalFrames(status.total_frames);
+        }
         if (info.resync) {
           addEvent('Replay WebSocket Resynced', `Recovered to frame ${status.current_frame_index + 1} of ${status.total_frames}`, 'info');
         }
@@ -1309,7 +1324,16 @@ export const MappingConsoleView: React.FC<MappingConsoleViewProps> = ({ initialM
       (err) => {
         console.warn('Replay WebSocket error:', err);
       },
-      (connected) => setIsWebSocketConnected(connected)
+      (connected) => {
+        setIsWebSocketConnected(connected);
+        if (connected && autoPlay) {
+          try {
+            wsStreamRef.current?.send({ action: 'play', fps: replayFps });
+          } catch (e) {
+            console.warn('Failed to send play via WebSocket:', e);
+          }
+        }
+      }
     );
 
     // Try to fetch precompute progress for the demo session (it should
@@ -1343,7 +1367,29 @@ export const MappingConsoleView: React.FC<MappingConsoleViewProps> = ({ initialM
     } catch (e) {
       console.warn('Error loading initial replay frame:', e);
     }
+
+    if (autoPlay) {
+      try {
+        await replayService.startReplay(demoSessionId, replayFps);
+        setReplayPlaybackState('playing');
+        addEvent('Sequence 00 Playing', `Streaming precomputed frames at ${replayFps} FPS`, 'complete');
+      } catch (err) {
+        console.warn('Auto play trigger error:', err);
+      }
+    }
   };
+
+  // Automatically start playing precomputed Sequence 00 when backend connects
+  useEffect(() => {
+    if (!autoLoadDemo) return;
+    if ((isBackendConnected || apiClient.isMockMode()) && !hasAutoPlayedRef.current) {
+      hasAutoPlayedRef.current = true;
+      const timer = setTimeout(() => {
+        handleLoadSampleSequence(true);
+      }, 500);
+      return () => clearTimeout(timer);
+    }
+  }, [isBackendConnected, autoLoadDemo]);
 
   const selectedObject = useMemo(() => {
     if (!selectedInstanceId) return null;
@@ -1484,7 +1530,7 @@ export const MappingConsoleView: React.FC<MappingConsoleViewProps> = ({ initialM
               </button>
 
               <button
-                onClick={handleLoadSampleSequence}
+                onClick={() => handleLoadSampleSequence(true)}
                 className="w-full py-2.5 px-4 rounded-xl bg-dark-850 hover:bg-dark-800 text-gray-300 hover:text-white border border-white/10 text-xs font-mono transition-colors flex items-center justify-center gap-2 cursor-pointer"
               >
                 <Play className="w-3.5 h-3.5 text-cyan-400" />

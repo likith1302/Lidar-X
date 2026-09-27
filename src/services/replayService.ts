@@ -207,6 +207,17 @@ export class ReplayService {
       try { onConnectionChange?.(conn); } catch { /* ignore */ }
     };
 
+    const pendingQueue: string[] = [];
+
+    const flushQueue = () => {
+      while (pendingQueue.length > 0 && ws && ws.readyState === WebSocket.OPEN) {
+        const nextMsg = pendingQueue.shift();
+        if (nextMsg) {
+          try { ws.send(nextMsg); } catch { /* ignore */ }
+        }
+      }
+    };
+
     const open = () => {
       if (isClosedExplicitly) return;
       try {
@@ -220,6 +231,7 @@ export class ReplayService {
       ws.onopen = () => {
         attempt = 0;
         notify(true);
+        flushQueue();
       };
 
       ws.onmessage = (event) => {
@@ -263,8 +275,11 @@ export class ReplayService {
 
     return {
       send: (msg: any) => {
+        const payload = typeof msg === 'string' ? msg : JSON.stringify(msg);
         if (ws && ws.readyState === WebSocket.OPEN) {
-          ws.send(typeof msg === 'string' ? msg : JSON.stringify(msg));
+          try { ws.send(payload); } catch { /* ignore */ }
+        } else {
+          pendingQueue.push(payload);
         }
       },
       close: () => {

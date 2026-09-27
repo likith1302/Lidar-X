@@ -347,30 +347,7 @@ export const SequenceReplayBar: React.FC<SequenceReplayBarProps> = ({
           </span>
         </div>
 
-        {/* Speed Controls */}
-        <div className="flex items-center gap-1 bg-dark-850 px-2.5 py-1 rounded-xl border border-white/5 shrink-0">
-          <span className="text-[10px] font-mono text-gray-400 mr-1 uppercase">Speed:</span>
-          {[
-            { label: '0.5x', value: 5 },
-            { label: '1x', value: 10 },
-            { label: '2x', value: 20 },
-            { label: '30 FPS', value: 30 },
-            { label: '60 MAX', value: 60 },
-          ].map((preset) => (
-            <button
-              key={preset.value}
-              onClick={() => onSetFps(preset.value)}
-              className={`px-2 py-0.5 rounded text-[10px] font-mono font-semibold transition-colors ${
-                fps === preset.value
-                  ? 'bg-cyan-500/30 text-cyan-300 border border-cyan-500/50'
-                  : 'bg-dark-800 text-gray-400 hover:text-white border border-transparent'
-              }`}
-              title={`Set playback speed to ${preset.value} FPS`}
-            >
-              {preset.label}
-            </button>
-          ))}
-        </div>
+
 
         {isWebSocketConnected === false && (
           <div className="flex items-center gap-2 shrink-0 text-xs font-mono">

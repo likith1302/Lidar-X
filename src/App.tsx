@@ -6,6 +6,7 @@ import { MappingConsoleView } from './components/views/MappingConsoleView';
 import { ArchitectureView } from './components/views/ArchitectureView';
 import { PerformanceLabView } from './components/views/PerformanceLabView';
 import { DiagnosticsView } from './components/views/DiagnosticsView';
+import { BackendLoadingModal } from './components/common/BackendLoadingModal';
 import { Menu } from 'lucide-react';
 
 const MainContent: React.FC = () => {
@@ -22,11 +23,11 @@ const MainContent: React.FC = () => {
       case 'performance-lab':
         return <PerformanceLabView />;
       case 'scenes-replay':
-        return <MappingConsoleView initialMode="sequence-replay" />;
+        return <MappingConsoleView initialMode="sequence-replay" autoLoadDemo={true} />;
       case 'diagnostics':
         return <DiagnosticsView />;
       default:
-        return <OverviewView />;
+        return <MappingConsoleView initialMode="sequence-replay" autoLoadDemo={true} />;
     }
   };
 
@@ -51,6 +52,9 @@ const MainContent: React.FC = () => {
           {renderCurrentView()}
         </main>
       </div>
+
+      {/* Backend Connecting / Loading Modal Dialog */}
+      <BackendLoadingModal />
     </div>
   );
 };
