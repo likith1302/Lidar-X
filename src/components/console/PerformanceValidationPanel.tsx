@@ -70,7 +70,7 @@ export const PerformanceValidationPanel: React.FC<PerformanceValidationPanelProp
     };
 
     fetchMetrics();
-    const interval = setInterval(fetchMetrics, 1000);
+    const interval = setInterval(fetchMetrics, 4000);
     return () => {
       isMounted = false;
       clearInterval(interval);

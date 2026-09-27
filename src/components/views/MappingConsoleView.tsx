@@ -325,9 +325,12 @@ export const MappingConsoleView: React.FC<MappingConsoleViewProps> = ({ initialM
     };
   }, [activeMapResponse, activeTerrainResponse]);
 
+  const lastFrameArrivalRef = useRef<number>(0);
+
   // Handle stream frame arrival from WebSocket or Step API
   const handleFramePayload = useCallback(
     (payload: ReplayFrameStreamPayload) => {
+      lastFrameArrivalRef.current = Date.now();
       // 1. Update active frame ID and raw points
       setSelectedFrameId(payload.frame_filename);
       const adaptedRawPoints: Point3D[] = (payload.points_sample || []).map((p) => ({
@@ -659,6 +662,48 @@ export const MappingConsoleView: React.FC<MappingConsoleViewProps> = ({ initialM
       replayService.seekReplay(replaySessionId, targetIndex);
     }
   };
+
+  // Active HTTP Frame Playback Loop
+  // If WebSocket is disconnected or blocked (e.g. on Render reverse-proxy),
+  // actively advance frames via getNextFrame at the requested replay FPS.
+  const isFetchingNextFrameRef = useRef<boolean>(false);
+
+  useEffect(() => {
+    if (replayPlaybackState !== 'playing' || !replaySessionId) {
+      return;
+    }
+
+    const intervalMs = Math.max(60, Math.round(1000 / (replayFps || 10)));
+    const httpPlayerTimer = setInterval(async () => {
+      // If WebSocket is connected and frames are actively arriving (< 400ms), let WebSocket handle it
+      if (isWebSocketConnected && Date.now() - lastFrameArrivalRef.current < 400) {
+        return;
+      }
+
+      if (isFetchingNextFrameRef.current) return;
+      isFetchingNextFrameRef.current = true;
+
+      try {
+        const nextRes = await replayService.getNextFrame(replaySessionId);
+        if (nextRes.success && nextRes.data) {
+          handleFramePayload(nextRes.data);
+        } else {
+          // Loop back to start if finished
+          await replayService.seekReplay(replaySessionId, 0);
+        }
+      } catch {
+        try {
+          await replayService.seekReplay(replaySessionId, 0);
+        } catch { /* ignore */ }
+      } finally {
+        isFetchingNextFrameRef.current = false;
+      }
+    }, intervalMs);
+
+    return () => {
+      clearInterval(httpPlayerTimer);
+    };
+  }, [replayPlaybackState, replaySessionId, replayFps, isWebSocketConnected, handleFramePayload]);
 
   const handleTriggerPrecompute = async () => {
     if (!replaySessionId) return;

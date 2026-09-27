@@ -42,6 +42,9 @@ async def get_frame_metrics(
 ) -> FramePerformanceMetrics:
     metric = MetricsService.get_frame_metrics(frame_id=frame_id, session_id=session_id)
     if metric is None:
+        latest = MetricsService.get_latest_metrics(session_id=session_id)
+        if latest is not None:
+            return latest
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail=f"No performance metrics recorded for frame '{frame_id}'.",
