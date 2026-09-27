@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  PlayCircle,
   LayoutDashboard,
   Compass,
   Network,
@@ -22,6 +23,7 @@ interface NavItem {
 }
 
 const NAV_ITEMS: NavItem[] = [
+  { id: 'demo', label: 'Live Demo', icon: PlayCircle },
   { id: 'overview', label: 'Overview', icon: LayoutDashboard },
   { id: 'mapping-console', label: 'Mapping Console', icon: Compass },
   { id: 'architecture', label: 'Architecture', icon: Network },
@@ -50,7 +52,7 @@ export const Sidebar: React.FC = () => {
       {/* Brand Header */}
       <div className="flex items-center justify-between p-4 border-b border-white/10 h-16">
         <div
-          onClick={() => handleNavClick('overview')}
+          onClick={() => handleNavClick('demo')}
           className="flex items-center gap-3 cursor-pointer overflow-hidden"
         >
           <div className="w-8 h-8 rounded-lg overflow-hidden border border-cyan-500/30 flex items-center justify-center shadow-glow-cyan shrink-0 bg-dark-950">
@@ -120,7 +122,10 @@ export const Sidebar: React.FC = () => {
         )}
         <button
           onClick={() => setIsSidebarCollapsed((prev: boolean) => !prev)}
-          className="p-1.5 rounded-lg text-gray-400 hover:text-white hover:bg-white/10 transition-colors ml-auto"
+          className={clsx(
+            'p-1.5 rounded-lg text-gray-400 hover:text-white hover:bg-white/10 transition-colors cursor-pointer',
+            isSidebarCollapsed ? 'mx-auto' : 'ml-auto'
+          )}
           title={isSidebarCollapsed ? 'Expand Sidebar' : 'Collapse Sidebar'}
         >
           {isSidebarCollapsed ? <ChevronRight className="w-4 h-4" /> : <ChevronLeft className="w-4 h-4" />}
