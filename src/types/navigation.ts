@@ -3,7 +3,6 @@
  */
 
 export type NavigationTab =
-  | 'demo'
   | 'overview'
   | 'mapping-console'
   | 'architecture'

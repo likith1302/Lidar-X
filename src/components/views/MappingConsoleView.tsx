@@ -61,10 +61,9 @@ import { Badge } from '../common/Badge';
 
 export interface MappingConsoleViewProps {
   initialMode?: 'single-frame' | 'sequence-replay';
-  autoStartDemo?: boolean;
 }
 
-export const MappingConsoleView: React.FC<MappingConsoleViewProps> = ({ initialMode, autoStartDemo }) => {
+export const MappingConsoleView: React.FC<MappingConsoleViewProps> = ({ initialMode }) => {
   const {
     mapLayers,
     toggleLayer,
@@ -1345,13 +1344,6 @@ export const MappingConsoleView: React.FC<MappingConsoleViewProps> = ({ initialM
       console.warn('Error loading initial replay frame:', e);
     }
   };
-
-  // Auto-launch demo sequence when requested (e.g. from judge demo mode)
-  useEffect(() => {
-    if (autoStartDemo && !hasUploaded) {
-      handleLoadSampleSequence();
-    }
-  }, [autoStartDemo]);
 
   const selectedObject = useMemo(() => {
     if (!selectedInstanceId) return null;

@@ -4,29 +4,8 @@
  * model selection, live backend frame/terrain state, semantic predictions, objects, tracks, 2.5D maps, and SalsaNext inference.
  */
 
-import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 import { NavigationTab } from '../types/navigation';
-
-function parseRouteFromLocation(): NavigationTab {
-  if (typeof window === 'undefined') return 'demo';
-
-  const path = window.location.pathname.toLowerCase().replace(/^\/+|\/+$/g, '');
-  const hash = window.location.hash.toLowerCase().replace(/^#\/?/, '').replace(/\/+$/, '');
-  const segment = hash || path;
-
-  // Root URL "/" automatically routes to /demo
-  if (!segment || segment === '' || segment === 'demo') {
-    return 'demo';
-  }
-  if (segment === 'overview' || segment === 'home') return 'overview';
-  if (segment === 'mapping-console' || segment === 'console') return 'mapping-console';
-  if (segment === 'architecture') return 'architecture';
-  if (segment === 'performance-lab' || segment === 'performance') return 'performance-lab';
-  if (segment === 'scenes-replay' || segment === 'replay') return 'scenes-replay';
-  if (segment === 'diagnostics') return 'diagnostics';
-
-  return 'demo';
-}
 import {
   GridCell,
   MapLayersState,
@@ -111,45 +90,9 @@ interface AppStateContextType {
 const AppStateContext = createContext<AppStateContextType | undefined>(undefined);
 
 export const AppStateProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const initialTab = parseRouteFromLocation();
-  const [currentTab, setCurrentTabState] = useState<NavigationTab>(initialTab);
-  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState<boolean>(initialTab === 'demo');
+  const [currentTab, setCurrentTab] = useState<NavigationTab>('overview');
+  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
   const [isMobileDrawerOpen, setIsMobileDrawerOpen] = useState(false);
-
-  // If initial route is root "/" or empty, cleanly replace URL in address bar with "/demo"
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const rawPath = window.location.pathname.toLowerCase().replace(/^\/+|\/+$/g, '');
-      const rawHash = window.location.hash.toLowerCase().replace(/^#\/?/, '').replace(/\/+$/, '');
-      if (!rawPath && !rawHash) {
-        window.history.replaceState({ tab: 'demo' }, '', '/demo');
-      }
-    }
-  }, []);
-
-  // Listen to popstate (back/forward navigation)
-  useEffect(() => {
-    const handlePopState = () => {
-      const tabFromUrl = parseRouteFromLocation();
-      setCurrentTabState(tabFromUrl);
-    };
-    window.addEventListener('popstate', handlePopState);
-    return () => window.removeEventListener('popstate', handlePopState);
-  }, []);
-
-  // Custom setCurrentTab to sync history and auto-collapse sidebar on demo
-  const setCurrentTab = useCallback((tab: NavigationTab) => {
-    setCurrentTabState(tab);
-    if (tab === 'demo') {
-      setIsSidebarCollapsed(true);
-    }
-    if (typeof window !== 'undefined') {
-      const targetPath = `/${tab}`;
-      if (window.location.pathname !== targetPath) {
-        window.history.pushState({ tab }, '', targetPath);
-      }
-    }
-  }, []);
 
   const [mapLayers, setMapLayers] = useState<MapLayersState>({
     semanticClasses: true,
