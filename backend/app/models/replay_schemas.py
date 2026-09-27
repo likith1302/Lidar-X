@@ -80,7 +80,7 @@ class ReplaySessionStatus(BaseModel):
     state: str = Field(..., description="ready, playing, paused, completed, failed, or no_predictions")
     current_frame_index: int = Field(..., ge=0, description="Current 0-indexed frame position")
     total_frames: int = Field(..., ge=0, description="Total number of frames in sequence")
-    fps: float = Field(default=2.0, description="Target replay playback frames per second")
+    fps: float = Field(default=10.0, description="Target replay playback frames per second")
     playback_mode: str = Field(default="offline_precomputed_replay")
     data_mode: str = Field(default="precomputed_labels")
     semantic_source: str = Field(default="LIVE GEOMETRIC", description="LIVE GEOMETRIC, LIVE SALSANEXT, GROUND TRUTH, or PRECOMPUTED")
@@ -98,7 +98,7 @@ class ReplaySeekRequest(BaseModel):
 
 
 class ReplayStartRequest(BaseModel):
-    fps: Optional[float] = Field(default=2.0, ge=0.2, le=60.0, description="Playback speed in frames per second")
+    fps: Optional[float] = Field(default=10.0, ge=0.2, le=60.0, description="Playback speed in frames per second")
     playback_mode: Optional[str] = Field(default=None, description="Playback mode: offline_precomputed_replay or live_processing")
 
 

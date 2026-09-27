@@ -409,30 +409,26 @@ export const MappingConsoleView: React.FC<MappingConsoleViewProps> = ({ initialM
       // 7. Dynamic Real-Time Streaming FPS Calculation
       const now = performance.now();
       const arrivals = frameArrivalsRef.current;
+
+      // If gap since last frame was large (> 700ms from startup or pause), reset arrival buffer
+      if (arrivals.length > 0 && now - arrivals[arrivals.length - 1] > 700) {
+        arrivals.length = 0;
+      }
       arrivals.push(now);
 
-      // Keep recent sliding buffer (up to 12 frames or arrivals within last 5 seconds)
-      while (arrivals.length > 12 || (arrivals.length > 2 && arrivals[0] < now - 5000)) {
+      // Keep recent sliding buffer (up to 10 frames within the last 1.5 seconds)
+      while (arrivals.length > 10 || (arrivals.length > 2 && arrivals[0] < now - 1500)) {
         arrivals.shift();
       }
 
-      const computeFps =
-        payload.performance?.actual_fps && payload.performance.actual_fps > 0
-          ? payload.performance.actual_fps
-          : payload.processing_time_ms > 0
-          ? 1000.0 / payload.processing_time_ms
-          : null;
-
       if (arrivals.length > 1) {
         const elapsedSec = (now - arrivals[0]) / 1000;
-        if (elapsedSec > 0) {
+        if (elapsedSec > 0.05) {
           const measuredDeliveryFps = (arrivals.length - 1) / elapsedSec;
           setRealtimeFps(Number(measuredDeliveryFps.toFixed(1)));
-        } else if (computeFps !== null && computeFps > 0) {
-          setRealtimeFps(Number(computeFps.toFixed(1)));
         }
-      } else if (computeFps !== null && computeFps > 0) {
-        setRealtimeFps(Number(computeFps.toFixed(1)));
+      } else {
+        setRealtimeFps(Number((replayFps || 10.0).toFixed(1)));
       }
 
       // 8. Update Replay state counters
