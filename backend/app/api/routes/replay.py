@@ -441,6 +441,35 @@ async def get_next_frame(session_id: str):
     return payload
 
 
+@router.get(
+    "/{session_id}/frame/{frame_index}",
+    summary="Retrieve full perception payload for a specific frame index",
+)
+async def get_frame_by_index(session_id: str, frame_index: int):
+    session = replay_session_manager.get_session(session_id)
+    if not session:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"Replay session '{session_id}' not found.",
+        )
+
+    use_demo_precomputed = (
+        session.is_demo
+        and not getattr(session, "is_manual_upload", False)
+        and session.playback_mode == PlaybackMode.OFFLINE_PRECOMPUTED_REPLAY
+    )
+    if use_demo_precomputed:
+        raw_json = precompute_service.get_raw_frame_json(session.session_id, frame_index)
+        if raw_json is not None:
+            return Response(content=raw_json, media_type="application/json")
+
+    session.seek(frame_index)
+    payload = session.get_current_frame()
+    if payload:
+        return payload
+    raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Frame {frame_index} not found.")
+
+
 @router.post(
     "/{session_id}/precompute",
     summary="Start background precomputation for sequence frames to enable 60 FPS playback",

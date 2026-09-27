@@ -112,6 +112,12 @@ export class ReplayService {
     );
   }
 
+  public async getFrameByIndex(sessionId: string, frameIndex: number): Promise<ApiResponse<ReplayFrameStreamPayload>> {
+    return apiClient.get<ReplayFrameStreamPayload>(
+      `/replay/${encodeURIComponent(sessionId)}/frame/${frameIndex}`
+    );
+  }
+
   /**
    * Look up a single cell from the session-global fused map.  Used to keep a
    * selected cell inspectable across replay frames.
